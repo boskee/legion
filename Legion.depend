@@ -561,10 +561,10 @@
 	<Engine2d/Extras.h>
 	"utl_locale.h"
 
-1394225787 source:/home/voitek/Projects/fresh-legion-pc/engine/_alan_interials.cpp
+1394226771 source:/home/voitek/Projects/fresh-legion-pc/engine/_alan_interials.cpp
 	"_alan_interials.h"
 
-1394225787 /home/voitek/Projects/fresh-legion-pc/engine/_alan_interials.h
+1394226772 /home/voitek/Projects/fresh-legion-pc/engine/_alan_interials.h
 	<string>
 	<vector>
 	<map>
@@ -574,20 +574,20 @@
 	"Utils.h"
 	"Rand.h"
 
-1394225787 /home/voitek/Projects/fresh-legion-pc/engine/Textures.h
+1394226772 /home/voitek/Projects/fresh-legion-pc/engine/Textures.h
 	<string>
 	<map>
 	<GL/gl.h>
 	<SDL/SDL_image.h>
 	"Utils.h"
 
-1394225787 /home/voitek/Projects/fresh-legion-pc/engine/Utils.h
+1394226772 /home/voitek/Projects/fresh-legion-pc/engine/Utils.h
 	<string>
 	<iostream>
 
-1394225787 /home/voitek/Projects/fresh-legion-pc/engine/Rand.h
+1394226772 /home/voitek/Projects/fresh-legion-pc/engine/Rand.h
 
-1394225787 source:/home/voitek/Projects/fresh-legion-pc/engine/Alan.cpp
+1394226771 source:/home/voitek/Projects/fresh-legion-pc/engine/Alan.cpp
 	<iostream>
 	<fstream>
 	<sstream>
@@ -595,20 +595,21 @@
 	"Bob.h"
 	"alan_parser.hh"
 
-1394225787 /home/voitek/Projects/fresh-legion-pc/engine/Alan.h
+1394226866 /home/voitek/Projects/fresh-legion-pc/engine/Alan.h
 	<map>
+	<string>
 
-1394225787 /home/voitek/Projects/fresh-legion-pc/engine/Bob.h
+1394226772 /home/voitek/Projects/fresh-legion-pc/engine/Bob.h
 	"Grid.h"
 	"Utils.h"
 	"Alan.h"
 
-1394225787 /home/voitek/Projects/fresh-legion-pc/engine/Grid.h
+1394226772 /home/voitek/Projects/fresh-legion-pc/engine/Grid.h
 	<list>
 	<GL/gl.h>
 	"Types.h"
 
-1394225787 /home/voitek/Projects/fresh-legion-pc/engine/Types.h
+1394226772 /home/voitek/Projects/fresh-legion-pc/engine/Types.h
 
 1394225787 /home/voitek/Projects/fresh-legion-pc/engine/alan_parser.hh
 	<iostream>
@@ -640,38 +641,38 @@
 1394225787 source:/home/voitek/Projects/fresh-legion-pc/engine/alan_token.cc
 	"alan_token.hh"
 
-1394225787 source:/home/voitek/Projects/fresh-legion-pc/engine/Basic.cpp
+1394226771 source:/home/voitek/Projects/fresh-legion-pc/engine/Basic.cpp
 	<math.h>
 	"Basic.h"
 	"Bob.h"
 	"Types.h"
 	"Pictures.h"
 
-1394225787 /home/voitek/Projects/fresh-legion-pc/engine/Basic.h
+1394226772 /home/voitek/Projects/fresh-legion-pc/engine/Basic.h
 	<GL/gl.h>
 
-1394225787 /home/voitek/Projects/fresh-legion-pc/engine/Pictures.h
+1394226772 /home/voitek/Projects/fresh-legion-pc/engine/Pictures.h
 	<string>
 
-1394225787 source:/home/voitek/Projects/fresh-legion-pc/engine/Bob.cpp
+1394226771 source:/home/voitek/Projects/fresh-legion-pc/engine/Bob.cpp
 	"Bob.h"
 	"Textures.h"
 
-1394225787 source:/home/voitek/Projects/fresh-legion-pc/engine/Collision.cpp
+1394226771 source:/home/voitek/Projects/fresh-legion-pc/engine/Collision.cpp
 	"Collision.h"
 	"Basic.h"
 
-1394225787 /home/voitek/Projects/fresh-legion-pc/engine/Collision.h
+1394226772 /home/voitek/Projects/fresh-legion-pc/engine/Collision.h
 	<GL/gl.h>
 
-1394225787 source:/home/voitek/Projects/fresh-legion-pc/engine/Core.cpp
+1394226771 source:/home/voitek/Projects/fresh-legion-pc/engine/Core.cpp
 	<iostream>
 	"Core.h"
 	"Utils.h"
 	"Bob.h"
 	"Collision.h"
 
-1394225787 /home/voitek/Projects/fresh-legion-pc/engine/Core.h
+1394226772 /home/voitek/Projects/fresh-legion-pc/engine/Core.h
 	<string>
 	<SDL/SDL.h>
 	<SDL/SDL_mixer.h>
@@ -681,16 +682,16 @@
 	"Types.h"
 	"Events.h"
 
-1394225787 /home/voitek/Projects/fresh-legion-pc/engine/Settings.h
+1394226772 /home/voitek/Projects/fresh-legion-pc/engine/Settings.h
 	<string>
 
-1394225787 /home/voitek/Projects/fresh-legion-pc/engine/Events.h
+1394226772 /home/voitek/Projects/fresh-legion-pc/engine/Events.h
 
-1394225787 source:/home/voitek/Projects/fresh-legion-pc/engine/Events.cpp
+1394226771 source:/home/voitek/Projects/fresh-legion-pc/engine/Events.cpp
 	<SDL/SDL.h>
 	"Events.h"
 
-1394225787 source:/home/voitek/Projects/fresh-legion-pc/engine/Font.cpp
+1394226771 source:/home/voitek/Projects/fresh-legion-pc/engine/Font.cpp
 	<cstdio>
 	<SDL/SDL.h>
 	<SDL/SDL_image.h>
@@ -703,18 +704,18 @@
 	"Basic.h"
 	"Settings.h"
 
-1394225787 /home/voitek/Projects/fresh-legion-pc/engine/Font.h
+1394226772 /home/voitek/Projects/fresh-legion-pc/engine/Font.h
 	<string>
 	<map>
 
-1394225787 source:/home/voitek/Projects/fresh-legion-pc/engine/Gfx.cpp
+1394226771 source:/home/voitek/Projects/fresh-legion-pc/engine/Gfx.cpp
 	<iostream>
 	"Gfx.h"
 	"Utils.h"
 	<SDL/SDL.h>
 	<SDL/SDL_image.h>
 
-1394225787 /home/voitek/Projects/fresh-legion-pc/engine/Gfx.h
+1394226772 /home/voitek/Projects/fresh-legion-pc/engine/Gfx.h
 	"Alan.h"
 	"Basic.h"
 	"Bob.h"
@@ -723,28 +724,28 @@
 	"Pictures.h"
 	"PicDraw.h"
 
-1394225787 /home/voitek/Projects/fresh-legion-pc/engine/PicDraw.h
+1394226772 /home/voitek/Projects/fresh-legion-pc/engine/PicDraw.h
 
-1394225787 source:/home/voitek/Projects/fresh-legion-pc/engine/Grid.cpp
+1394226771 source:/home/voitek/Projects/fresh-legion-pc/engine/Grid.cpp
 	"Grid.h"
 	"Collision.h"
 	"Types.h"
 	"Bob.h"
 	"Basic.h"
 
-1394225787 source:/home/voitek/Projects/fresh-legion-pc/engine/Locale.cpp
+1394226771 source:/home/voitek/Projects/fresh-legion-pc/engine/Locale.cpp
 	"Locale.h"
 
-1394225787 /home/voitek/Projects/fresh-legion-pc/engine/Locale.h
+1394226772 /home/voitek/Projects/fresh-legion-pc/engine/Locale.h
 	<string>
 	<map>
 
-1394225787 source:/home/voitek/Projects/fresh-legion-pc/engine/PicDraw.cpp
+1394226771 source:/home/voitek/Projects/fresh-legion-pc/engine/PicDraw.cpp
 	"PicDraw.h"
 	"Pictures.h"
 	"Utils.h"
 
-1394226238 source:/home/voitek/Projects/fresh-legion-pc/engine/Pictures.cpp
+1394226771 source:/home/voitek/Projects/fresh-legion-pc/engine/Pictures.cpp
 	<string>
 	<cstdio>
 	<libpng12/png.h>
@@ -753,22 +754,22 @@
 	"Pictures.h"
 	"Utils.h"
 
-1394225787 source:/home/voitek/Projects/fresh-legion-pc/engine/Rand.cpp
+1394226771 source:/home/voitek/Projects/fresh-legion-pc/engine/Rand.cpp
 	<ctime>
 	"Rand.h"
 
-1394225787 source:/home/voitek/Projects/fresh-legion-pc/engine/Samples.cpp
+1394226771 source:/home/voitek/Projects/fresh-legion-pc/engine/Samples.cpp
 	"Samples.h"
 	"Settings.h"
 	"Utils.h"
 
-1394225787 /home/voitek/Projects/fresh-legion-pc/engine/Samples.h
+1394226772 /home/voitek/Projects/fresh-legion-pc/engine/Samples.h
 	<string>
 	<map>
 	<SDL/SDL.h>
 	<SDL/SDL_mixer.h>
 
-1394225787 source:/home/voitek/Projects/fresh-legion-pc/engine/Settings.cpp
+1394226771 source:/home/voitek/Projects/fresh-legion-pc/engine/Settings.cpp
 	<iostream>
 	<fstream>
 	<sstream>
@@ -798,7 +799,7 @@
 	<cstring>
 	"_settings_symbols.h"
 
-1394225787 /home/voitek/Projects/fresh-legion-pc/engine/_settings_symbols.h
+1394226772 /home/voitek/Projects/fresh-legion-pc/engine/_settings_symbols.h
 	<string>
 	<vector>
 	<map>
@@ -813,7 +814,7 @@
 1394225787 source:/home/voitek/Projects/fresh-legion-pc/engine/settings_token.cc
 	"settings_token.hh"
 
-1394225787 source:/home/voitek/Projects/fresh-legion-pc/engine/Textures.cpp
+1394226771 source:/home/voitek/Projects/fresh-legion-pc/engine/Textures.cpp
 	<iostream>
 	<GL/glu.h>
 	<GL/glext.h>
@@ -824,11 +825,11 @@
 	"Settings.h"
 	"Pictures.h"
 
-1394225787 source:/home/voitek/Projects/fresh-legion-pc/engine/Utils.cpp
+1394226771 source:/home/voitek/Projects/fresh-legion-pc/engine/Utils.cpp
 	<cstdio>
 	"Utils.h"
 
-1394226269 source:/home/voitek/Projects/fresh-legion-pc/game/Amos.cpp
+1394226721 source:/home/voitek/Projects/fresh-legion-pc/game/Amos.cpp
 	<string>
 	<cstdio>
 	<vector>
@@ -847,30 +848,30 @@
 	"AmosMusic.h"
 	"AmosImage.h"
 
-1394225787 /home/voitek/Projects/fresh-legion-pc/engine/Sfx.h
+1394226772 /home/voitek/Projects/fresh-legion-pc/engine/Sfx.h
 	"Samples.h"
 
-1394226291 /home/voitek/Projects/fresh-legion-pc/game/main.h
+1394226719 /home/voitek/Projects/fresh-legion-pc/game/main.h
 	"../engine/Core.h"
 
-1394226301 /home/voitek/Projects/fresh-legion-pc/game/Amos.h
+1394226719 /home/voitek/Projects/fresh-legion-pc/game/Amos.h
 	<vector>
 	"../engine/Core.h"
 	"../engine/Gfx.h"
 	"amos_types.h"
 
-1394225788 /home/voitek/Projects/fresh-legion-pc/game/amos_types.h
+1394226719 /home/voitek/Projects/fresh-legion-pc/game/amos_types.h
 	<string>
 
-1394225788 /home/voitek/Projects/fresh-legion-pc/game/AmosMusic.h
+1394226719 /home/voitek/Projects/fresh-legion-pc/game/AmosMusic.h
 	<SDL/SDL_mixer.h>
 
-1394225788 /home/voitek/Projects/fresh-legion-pc/game/AmosImage.h
+1394226719 /home/voitek/Projects/fresh-legion-pc/game/AmosImage.h
 
-1394225788 source:/home/voitek/Projects/fresh-legion-pc/game/AmosImage.cpp
+1394226721 source:/home/voitek/Projects/fresh-legion-pc/game/AmosImage.cpp
 	"AmosImage.h"
 
-1394226315 source:/home/voitek/Projects/fresh-legion-pc/game/AmosMusic.cpp
+1394226721 source:/home/voitek/Projects/fresh-legion-pc/game/AmosMusic.cpp
 	<iostream>
 	<cstdio>
 	<string>
@@ -878,6 +879,198 @@
 	"AmosMusic.h"
 	"../engine/Utils.h"
 
-1394225788 source:/home/voitek/Projects/fresh-legion-pc/game/hq2x.cpp
+1394226721 source:/home/voitek/Projects/fresh-legion-pc/game/hq2x.cpp
 	<cstdlib>
+
+1394226721 source:/home/voitek/Projects/fresh-legion-pc/game/legion.cpp
+	"../engine/Gfx.h"
+	"Amos.h"
+	"legion.h"
+	"lgn_armia.h"
+	"lgn_diskacs.h"
+	"lgn_intro.h"
+	"lgn_mapa.h"
+	"lgn_miasto.h"
+	"lgn_przygoda.h"
+	"lgn_util.h"
+	"lgn_wczytaj.h"
+	"utl_locale.h"
+	"version.h"
+
+1394226719 /home/voitek/Projects/fresh-legion-pc/game/legion.h
+	"amos_types.h"
+
+1394226719 /home/voitek/Projects/fresh-legion-pc/game/lgn_armia.h
+
+1394226719 /home/voitek/Projects/fresh-legion-pc/game/lgn_diskacs.h
+
+1394226719 /home/voitek/Projects/fresh-legion-pc/game/lgn_intro.h
+
+1394226719 /home/voitek/Projects/fresh-legion-pc/game/lgn_mapa.h
+
+1394226719 /home/voitek/Projects/fresh-legion-pc/game/lgn_miasto.h
+	"amos_types.h"
+
+1394226719 /home/voitek/Projects/fresh-legion-pc/game/lgn_przygoda.h
+
+1394226719 /home/voitek/Projects/fresh-legion-pc/game/lgn_util.h
+	"amos_types.h"
+
+1394226719 /home/voitek/Projects/fresh-legion-pc/game/lgn_wczytaj.h
+
+1394226719 /home/voitek/Projects/fresh-legion-pc/game/utl_locale.h
+	<string>
+
+1394226719 /home/voitek/Projects/fresh-legion-pc/game/version.h
+
+1394226721 source:/home/voitek/Projects/fresh-legion-pc/game/lgn_akcja.cpp
+	<cmath>
+	"Amos.h"
+	"legion.h"
+	"lgn_akcja.h"
+	"lgn_diskacs.h"
+	"lgn_ekran1.h"
+	"lgn_przygoda.h"
+	"lgn_sceneria.h"
+	"lgn_sklep.h"
+	"lgn_util.h"
+	"main.h"
+	"utl_locale.h"
+
+1394226719 /home/voitek/Projects/fresh-legion-pc/game/lgn_akcja.h
+
+1394226719 /home/voitek/Projects/fresh-legion-pc/game/lgn_ekran1.h
+
+1394226719 /home/voitek/Projects/fresh-legion-pc/game/lgn_sceneria.h
+
+1394226719 /home/voitek/Projects/fresh-legion-pc/game/lgn_sklep.h
+
+1394226721 source:/home/voitek/Projects/fresh-legion-pc/game/lgn_armia.cpp
+	"Amos.h"
+	"legion.h"
+	"lgn_akcja.h"
+	"lgn_armia.h"
+	"lgn_miasto.h"
+	"lgn_diskacs.h"
+	"lgn_mapa.h"
+	"lgn_sceneria.h"
+	"lgn_util.h"
+	"utl_locale.h"
+
+1394226721 source:/home/voitek/Projects/fresh-legion-pc/game/lgn_diskacs.cpp
+	"Amos.h"
+	"legion.h"
+	"lgn_diskacs.h"
+	"lgn_util.h"
+	"utl_locale.h"
+
+1394226721 source:/home/voitek/Projects/fresh-legion-pc/game/lgn_ekran1.cpp
+	"Amos.h"
+	"legion.h"
+	"lgn_ekran1.h"
+	"lgn_util.h"
+
+1394226721 source:/home/voitek/Projects/fresh-legion-pc/game/lgn_intro.cpp
+	"Amos.h"
+	"legion.h"
+	"lgn_diskacs.h"
+	"lgn_intro.h"
+	"lgn_util.h"
+	"utl_locale.h"
+
+1394226721 source:/home/voitek/Projects/fresh-legion-pc/game/lgn_mapa.cpp
+	"Amos.h"
+	"legion.h"
+	"lgn_akcja.h"
+	"lgn_armia.h"
+	"lgn_diskacs.h"
+	"lgn_intro.h"
+	"lgn_mapa.h"
+	"lgn_miasto.h"
+	"lgn_opcje.h"
+	"lgn_przygoda.h"
+	"lgn_sceneria.h"
+	"lgn_util.h"
+	"utl_locale.h"
+	<cmath>
+
+1394226719 /home/voitek/Projects/fresh-legion-pc/game/lgn_opcje.h
+
+1394226721 source:/home/voitek/Projects/fresh-legion-pc/game/lgn_miasto.cpp
+	"Amos.h"
+	"legion.h"
+	"lgn_akcja.h"
+	"lgn_diskacs.h"
+	"lgn_ekran1.h"
+	"lgn_mapa.h"
+	"lgn_miasto.h"
+	"lgn_przygoda.h"
+	"lgn_sceneria.h"
+	"lgn_util.h"
+	"utl_locale.h"
+
+1394226721 source:/home/voitek/Projects/fresh-legion-pc/game/lgn_opcje.cpp
+	"Amos.h"
+	"legion.h"
+	"lgn_opcje.h"
+	"lgn_diskacs.h"
+	"lgn_mapa.h"
+	"lgn_util.h"
+	"utl_locale.h"
+
+1394226721 source:/home/voitek/Projects/fresh-legion-pc/game/lgn_przygoda.cpp
+	"Amos.h"
+	"legion.h"
+	"lgn_przygoda.h"
+	"lgn_util.h"
+	"locale.h"
+
+1394226721 source:/home/voitek/Projects/fresh-legion-pc/game/lgn_sceneria.cpp
+	"Amos.h"
+	"legion.h"
+	"lgn_sceneria.h"
+	"lgn_akcja.h"
+	"lgn_diskacs.h"
+	"lgn_ekran1.h"
+	"lgn_util.h"
+
+1394226721 source:/home/voitek/Projects/fresh-legion-pc/game/lgn_sklep.cpp
+	"Amos.h"
+	"legion.h"
+	"lgn_diskacs.h"
+	"lgn_ekran1.h"
+	"lgn_akcja.h"
+	"lgn_sklep.h"
+	"lgn_util.h"
+	"utl_locale.h"
+
+1394226721 source:/home/voitek/Projects/fresh-legion-pc/game/lgn_util.cpp
+	<cmath>
+	"Amos.h"
+	"legion.h"
+	"lgn_util.h"
+	"lgn_intro.h"
+	"utl_locale.h"
+
+1394226721 source:/home/voitek/Projects/fresh-legion-pc/game/lgn_wczytaj.cpp
+	"Amos.h"
+	"legion.h"
+	"lgn_wczytaj.h"
+	"utl_locale.h"
+
+1394226902 source:/home/voitek/Projects/fresh-legion-pc/game/main.cpp
+	"../engine/Core.h"
+	"../engine/Gfx.h"
+	"main.h"
+	"Amos.h"
+	"AmosImage.h"
+	"legion.h"
+	"utl_locale.h"
+
+1394226721 source:/home/voitek/Projects/fresh-legion-pc/game/utl_locale.cpp
+	"../engine/Extras.h"
+	"utl_locale.h"
+
+1394226772 /home/voitek/Projects/fresh-legion-pc/engine/Extras.h
+	"Locale.h"
 

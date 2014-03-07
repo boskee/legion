@@ -1,25 +1,64 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="engine\Basic.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="5561" topLine="207" />
+	<File name="game/main.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="68" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="game\Amos.cpp" open="1" top="1" tabpos="1">
-		<Cursor position="10023" topLine="115" />
+	<File name="game/Amos.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="299" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="game\Amos.h" open="1" top="0" tabpos="3">
-		<Cursor position="489" topLine="252" />
+	<File name="game/legion.cpp" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="167" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="game\legion.cpp" open="0" top="0" tabpos="2">
-		<Cursor position="316" topLine="0" />
+	<File name="engine/Core.cpp" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="521" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="game\lgn_akcja.cpp" open="1" top="0" tabpos="2">
-		<Cursor position="201588" topLine="3328" />
+	<File name="game/AmosMusic.cpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="301" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="game\main.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="119" topLine="0" />
+	<File name="game/main.cpp" open="1" top="1" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="159" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="game\utl_locale.cpp" open="0" top="0" tabpos="5">
-		<Cursor position="313" topLine="0" />
+	<File name="game/Amos.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="114" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="engine/Pictures.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="17279" topLine="642" />
+		</Cursor>
+	</File>
+	<File name="game/utl_locale.cpp" open="1" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="31" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="game/lgn_akcja.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="345" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="game/legion.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="420" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="engine/Alan.h" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="71" topLine="0" />
+		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

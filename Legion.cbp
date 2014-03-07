@@ -34,14 +34,13 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Linker>
-			<Add library="mingw32" />
 			<Add library="SDLmain" />
 			<Add library="SDL" />
 			<Add library="SDL_image" />
 			<Add library="SDL_mixer" />
 			<Add library="SDL_ttf" />
-			<Add library="opengl32" />
-			<Add library="glu32" />
+			<Add library="GL" />
+			<Add library="GLU" />
 			<Add library="png" />
 			<Add library="jpeg" />
 		</Linker>
