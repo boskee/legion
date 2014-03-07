@@ -8,9 +8,6 @@
 #include "legion.h"
 #include "utl_locale.h"
 
-#include <SDL_main.h>
-#include <SDL.h>
-
 using namespace Core;
 using namespace Gfx;
 
