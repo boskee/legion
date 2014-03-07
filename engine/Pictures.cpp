@@ -550,7 +550,7 @@ void Pic::Set(const Pic& src,int dm) {
 			conv.mc_src_buf = src.buf;
 			break;
 		default:
-			ERROR("Nieobs≥ugiwany zrÛd≥owy tryb danych rysunku");
+			ERROR("Nieobs≈Çugiwany zr√≥d≈Çowy tryb danych rysunku");
 			return;
 	}
 
@@ -580,7 +580,7 @@ void Pic::Set(const Pic& src,int dm) {
 			conv.mc_dst_buf = this->buf;
 			break;
 		default:
-			ERROR("Nieobs≥ugiwany docelowy tryb danych rysunku");
+			ERROR("Nieobs≈Çugiwany docelowy tryb danych rysunku");
 			return;
 	}
 

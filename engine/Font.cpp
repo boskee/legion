@@ -288,7 +288,7 @@ int FontManager :: Load(const string& filename,const string& root) {
 
 int FontManager :: Load(const Settings& sets,const string& root) {
 	if( ! sets.isValid() ) {
-		ERROR("Obiekt opisuj¹cy tekstury jest niewa¿ny");
+		ERROR("Obiekt opisujący tekstury jest nieważny");
 		return -2;
 	}
 
