@@ -677,8 +677,8 @@ void Pic::FixAlphaZero(void) {
 string Pic::Dump(void) const {
 	string ret = "";
 	ret += "Pic: w=" + toString(w) + " h=" + toString(h) + " data_mode=" + toString(data_mode);
-	ret += " buf=" + toString((int)buf,"%8.8x") + " buf_owner=" + (buf_owner ? "TRUE" : "FALSE");
-	ret += " priv_data=" + toString((int)priv_data,"%8.8x");
+	ret += " buf=" + toString(*((int *)buf),"%8.8x") + " buf_owner=" + (buf_owner ? "TRUE" : "FALSE");
+	ret += " priv_data=" + toString(*((int *)priv_data),"%8.8x");
 	return ret;
 }
 

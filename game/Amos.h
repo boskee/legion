@@ -2,8 +2,8 @@
 #define D_AMOS_H_D
 
 #include <vector>
-#include <Engine2d/Core.h>
-#include <Engine2d/Gfx.h>
+#include "../engine/Core.h"
+#include "../engine/Gfx.h"
 
 #include "amos_types.h"
 

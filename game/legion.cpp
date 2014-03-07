@@ -1,5 +1,5 @@
 
-#include <Engine2d/Gfx.h>
+#include "../engine/Gfx.h"
 
 #include "Amos.h"
 #include "legion.h"

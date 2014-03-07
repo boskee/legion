@@ -1,7 +1,7 @@
 #ifndef D_MAIN_H_D
 #define D_MAIN_H_D
 
-#include <Engine2d/Core.h>
+#include "../engine/Core.h"
 
 #define DISPLAY_WIDTH 640
 #define DISPLAY_HEIGHT 520

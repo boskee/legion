@@ -15,9 +15,9 @@ Implementacja czesci funkcjonalnosci Amosa
 
 #include <GL/gl.h>
 
-#include <Engine2d/Core.h>
-#include <Engine2d/Gfx.h>
-#include <Engine2d/Sfx.h>
+#include "../engine/Core.h"
+#include "../engine/Gfx.h"
+#include "../engine/Sfx.h"
 
 #include "main.h"
 #include "Amos.h"
