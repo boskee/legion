@@ -1,9 +1,12 @@
+#include <fstream>
+#include <vector>
 
 #include "Amos.h"
 
 #include "legion.h"
 #include "lgn_wczytaj.h"
 #include "utl_locale.h"
+#include "../lib/rapidxml-1.13/rapidxml.hpp"
 
 void WCZYTAJ_BRON(void) {
 		//	Procedure WCZYTAJ_BRON
@@ -734,6 +737,62 @@ void WCZYTAJ_ROZMOWE(void) {
 		//
 
 		aint r=0;
+
+        rapidxml::xml_document<> doc;
+        rapidxml::xml_node<> * root_node;
+
+        // Read the xml file into a vector
+        astr xml_path = KAT_S + "data/xml/dialogues.xml";
+
+        ifstream theFile(xml_path.c_str());
+
+        if (!theFile) {
+            return;
+        }
+
+        vector<char> buffer((istreambuf_iterator<char>(theFile)), istreambuf_iterator<char>());
+        buffer.push_back('\0');
+        // Parse the buffer using the xml file parsing library into doc
+        doc.parse<0>(&buffer[0]);
+        // Find our root node
+        root_node = doc.first_node("Dialogues");
+        // Iterate over the brewerys
+        aint I = 0;
+
+        astr currentLang = GetLang();
+
+        for (rapidxml::xml_node<> * dialogue_node = root_node->first_node("Dialogue"); dialogue_node; dialogue_node = dialogue_node->next_sibling())
+        {
+            astr Tmp = "";
+            for (rapidxml::xml_node<> * text_node = dialogue_node->first_node("Text"); text_node; text_node = text_node->next_sibling())
+            {
+                if (text_node->value())
+                {
+                    rapidxml::xml_node<> const* CData = text_node->first_node();
+                    if (CData && CData->type() == rapidxml::node_cdata) {
+                        Tmp = CData->value();
+                    } else {
+                        Tmp = text_node->value();
+                    }
+
+                    if (text_node->first_attribute("lang")->value() == currentLang) {
+                        break;
+                    }
+                }
+            }
+            ROZMOWA2_S[I] = Tmp;
+            r++;
+            ++I;
+        }
+
+		for(aint I=1; I<=2; ++I ) {
+		  for(aint J=0; J<=4; ++J ) {
+		     ROZMOWA_S[I][J]=GS("R"+toString(r,"%3.3d"));
+		     r++;
+			}
+		}
+		/*
+
 		for(aint I=0; I<=33; ++I ) {
 		  ROZMOWA2_S[I]=GS("R"+toString(r,"%3.3d"));
 		  r++;
@@ -744,6 +803,7 @@ void WCZYTAJ_ROZMOWE(void) {
 		     r++;
 			}
 		}
+		*/
 
 		//	End Proc
 }

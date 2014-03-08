@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dialogues>
+    <!-- atak -->
+    <Dialogue>
+        <Text lang="EN"><![CDATA[Fight like a warrior!]]></Text>
+        <Text lang="PL"><![CDATA[Walcz jak wojownik]]></Text>
+    </Dialogue>
+    <Dialogue>
+        <Text lang="EN"><![CDATA[My blade will answer you.]]></Text>
+        <Text lang="PL"><![CDATA[Nie wiem czy najpierw odrąbać ci łeb czy ręce.]]></Text>
+    </Dialogue>
+    <Dialogue>
+        <Text lang="EN"><![CDATA[Do they pay you more for abusing?]]></Text>
+        <Text lang="PL"><![CDATA[Płacą ci dodatkowy żołd za szczekanie?]]></Text>
+    </Dialogue>
+    <!-- defence -->
+    <Dialogue>
+        <Text lang="EN"><![CDATA[I wonder how much I will get for your scalp?]]></Text>
+        <Text lang="PL"><![CDATA[Ciekawe ile dostanę za twój skalp.]]></Text>
+    </Dialogue>
+    <Dialogue>
+        <Text lang="EN"><![CDATA[There is no good news for you.]]></Text>
+        <Text lang="PL"><![CDATA[Nie mam dla ciebie dobrych wiadomości.]]></Text>
+    </Dialogue>
+    <Dialogue>
+        <Text lang="EN"><![CDATA[You stink of carrion man.]]></Text>
+        <Text lang="PL"><![CDATA[Śmierdzisz padliną synu.]]></Text>
+    </Dialogue>
+    <!-- PANIC -->
+    <Dialogue>
+        <Text lang="EN"><![CDATA[I clubbed many curious.]]></Text>
+        <Text lang="PL"><![CDATA[Wielu ciekawych już zatłukłem.]]></Text>
+    </Dialogue>
+    <Dialogue>
+        <Text lang="EN"><![CDATA[None of your business.]]></Text>
+        <Text lang="PL"><![CDATA[Nie interesuj się]]></Text>
+    </Dialogue>
+    <Dialogue>
+        <Text lang="EN"><![CDATA[Die you monster!]]></Text>
+        <Text lang="PL"><![CDATA[Giń poczwaro!]]></Text>
+    </Dialogue>
+    <!-- peace -->
+    <Dialogue>
+        <Text lang="EN"><![CDATA[Everything as before.]]></Text>
+        <Text lang="PL"><![CDATA[Wszysto po staremu.]]></Text>
+    </Dialogue>
+    <Dialogue>
+        <Text lang="EN"><![CDATA[Nothing interesting.]]></Text>
+        <Text lang="PL"><![CDATA[Nic ciekawego.]]></Text>
+    </Dialogue>
+    <Dialogue>
+        <Text lang="EN"><![CDATA[Nothing.]]></Text>
+        <Text lang="PL"><![CDATA[Nic.]]></Text>
+    </Dialogue>
+    <Dialogue>
+        <Text lang="EN"><![CDATA[Villagers are good decoy for animals.]]></Text>
+        <Text lang="PL"><![CDATA[Wieśniacy są dobrą przynętą na zwierzyne.]]></Text>
+    </Dialogue>
+    <Dialogue>
+        <Text lang="EN"><![CDATA[You'd better not go to swaps. Deuced beasts live there.]]></Text>
+        <Text lang="PL"><![CDATA[Nie radzę ci chodzić po bagnach, żyją tam bestie z piekła rodem.]]></Text>
+    </Dialogue>
+    <Dialogue>
+        <Text lang="EN"><![CDATA[A Shopkeeper will pay any price for mole's root. You can find it only in the swaps.]]></Text>
+        <Text lang="PL"><![CDATA[Handlarz zapłaci za kreci korzeń każdą cenę. Znajdziesz go tylko na bagnach.]]></Text>
+    </Dialogue>
+    <Dialogue>
+        <Text lang="EN"><![CDATA[You can find stones to catapults in the mountains.]]></Text>
+        <Text lang="PL"><![CDATA[W górach znajdziesz głazy do katapult.]]></Text>
+    </Dialogue>
+    <Dialogue>
+        <Text lang="EN"><![CDATA[Caves are worth penetrating. Gold lies about everywhere.]]></Text>
+        <Text lang="PL"><![CDATA[Warto penetrować jaskinie, złoto wala się pod nogami.]]></Text>
+    </Dialogue>
+    <Dialogue>
+        <Text lang="EN"><![CDATA[Avoid Chaos warriors. I saw them slaughtering selective squads.]]></Text>
+        <Text lang="PL"><![CDATA[Nie wchodź w drogę wojownikom chaosu, widziałem jak wycinali w pień elitarne oddziały.]]></Text>
+    </Dialogue>
+    <Dialogue>
+        <Text lang="EN"><![CDATA[Mind your steps in the forest. You can find valuable herbs.]]></Text>
+        <Text lang="PL"><![CDATA[W lesie patrz pod nogi a znajdziesz cenne zioła.]]></Text>
+    </Dialogue>
+    <Dialogue>
+        <Text lang="EN"><![CDATA[Gargoyl's fell is worth fortune.]]></Text>
+        <Text lang="PL"><![CDATA[Skóra z gargoili kosztuje majątek.]]></Text>
+    </Dialogue>
+    <Dialogue>
+        <Text lang="EN"><![CDATA[Watch gargoyls. This little beast can cut a man with one snap of its teeth.]]></Text>
+        <Text lang="PL"><![CDATA[Strzeż się gargoili, ta bestyjka jednym kłapnięciem szczeny przegryza człowieka na pół.]]></Text>
+    </Dialogue>
+    <Dialogue>
+        <Text lang="EN"><![CDATA[A bottle of healing mixture can save your life during the a battle.]]></Text>
+        <Text lang="PL"><![CDATA[Buteleczka uzdrawiającej mikstury, w czasie bitwy, może uratować ci życie]]></Text>
+    </Dialogue>
+    <Dialogue>
+        <Text lang="EN"><![CDATA[Nothing heals wounds as well as bay leaves.]]></Text>
+        <Text lang="PL"><![CDATA[Nic tak nie goi ran jak liść bobkowy]]></Text>
+    </Dialogue>
+    <Dialogue>
+        <Text lang="EN"><![CDATA[Don't go to glociers without shoes or clothes.]]></Text>
+        <Text lang="PL"><![CDATA[Nie wybieraj się na lodowiec bez butów lub ubrania.]]></Text>
+    </Dialogue>
+    <Dialogue>
+        <Text lang="EN"><![CDATA[Elves are the best archers.]]></Text>
+        <Text lang="PL"><![CDATA[Elfy są najlepszymi łucznikami.]]></Text>
+    </Dialogue>
+    <Dialogue>
+        <Text lang="EN"><![CDATA[Don't eat too much herbs. Their power is delusive.]]></Text>
+        <Text lang="PL"><![CDATA[Durne trole uwielbiają maczugi.]]></Text>
+    </Dialogue>
+    <Dialogue>
+        <Text lang="EN"><![CDATA[Many daredevils didn't come back from swamps.]]></Text>
+        <Text lang="PL"><![CDATA[Wielu śmiałków nie wróciło już z bagien.]]></Text>
+    </Dialogue>
+    <Dialogue>
+        <Text lang="EN"><![CDATA[Castor - herbs are a bit poisonous but they add to speed.]]></Text>
+        <Text lang="PL"><![CDATA[Rycynowe zioła są troche trujące, ale jakiego masz po nich kopa.]]></Text>
+    </Dialogue>
+    <Dialogue>
+        <Text lang="EN"><![CDATA[I recommend mole's root.]]></Text>
+        <Text lang="PL"><![CDATA[Polecam kreci korzeń.]]></Text>
+    </Dialogue>
+    <Dialogue>
+        <Text lang="EN"><![CDATA[Hog's meat is nutritious.]]></Text>
+        <Text lang="PL"><![CDATA[Pajęcze udka są wyśmienite.]]></Text>
+    </Dialogue>
+    <Dialogue>
+        <Text lang="EN"><![CDATA[It's getting worse, taxes go up, groups of skeletors ravage the area, infuriated wolves approach the houses && attack our herds.]]></Text>
+        <Text lang="PL"><![CDATA[Co raz gorzej, podatki rosną, watachy szkieletorów pustoszą okolice, rozwścieczone wilki podchodzą pod domostwa i atakują naszą trzodę.]]></Text>
+    </Dialogue>
+    <Dialogue>
+        <Text lang="EN"><![CDATA[Great spiders can throw down with one bite even an ogre.]]></Text>
+        <Text lang="PL"><![CDATA[Wielgachne pająki mogą jednym ukąszeniem powalić nawet ogra.]]></Text>
+    </Dialogue>
+    <Dialogue>
+        <Text lang="EN"><![CDATA[You haven't seen much if you haven't seen skirial.]]></Text>
+        <Text lang="PL"><![CDATA[Jeśli nie widziałeś skiriali, to niewiele widziałeś.]]></Text>
+    </Dialogue>
+    <Dialogue>
+        <Text lang="EN"><![CDATA[It's useful to have about three villagers in the squad to find a way through swaps.]]></Text>
+        <Text lang="PL"><![CDATA[Warto mieć w drużynie ze trzech wieśniaków do odnajdywania drogi przez bagna.]]></Text>
+    </Dialogue>
+</Dialogues>
