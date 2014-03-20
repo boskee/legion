@@ -1,11 +1,19 @@
 #include <iostream>
 
-//#include <GL/glut.h>
-#include <GL/glu.h>
-#include <GL/glext.h>
-
 #include <SDL/SDL.h>
-#include <SDL/SDL_image.h>
+#ifdef _WIN32
+    // Windows (x64 and x86)
+#elif __linux__
+    #include <SDL/SDL_image.h>
+
+    #include <GL/glu.h>
+    #include <GL/glext.h>
+#elif __APPLE__
+    #include <SDL_image/SDL_image.h>
+
+    #include <OpenGL/glu.h>
+    #include <OpenGL/glext.h>
+#endif
 
 #include "Textures.h"
 #include "Utils.h"

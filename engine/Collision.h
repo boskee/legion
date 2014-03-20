@@ -1,7 +1,13 @@
 #ifndef D_COLLISION_H_D
 #define D_COLLISION_H_D
 
-#include <GL/gl.h>
+#ifdef _WIN32
+    // Windows (x64 and x86)
+#elif __linux__
+    #include <GL/gl.h>
+#elif __APPLE__
+    #include <OpenGL/gl.h>
+#endif
 
 namespace Fzx {
 

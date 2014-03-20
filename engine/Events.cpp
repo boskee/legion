@@ -4,7 +4,7 @@
 #include "Events.h"
 
 namespace Core {
-	
+
 extern void _CoreResizeEvent(int w,int h);
 
 //wskazniki na funkcję, ktore beda wolane w przypadku zdarzenia
@@ -44,15 +44,15 @@ REG_EVENT(ResizeEvent,ifp_resize,iud_resize)
 bool ProcessEvents(void) {
 	SDL_Event event;
 	bool ib_quit = false;
-	
+
 	while (SDL_PollEvent(&event)) {
 		switch (event.type) {
-			
+
 			case SDL_QUIT:
 				ib_quit = true;
 				if( ifp_quit ) ifp_quit(iud_quit);				//wolamy funkcje obslugi zdarzenia
 				break;
-				
+
 			case SDL_KEYDOWN:
 				if( ifp_keydown) ifp_keydown(event.key.keysym.sym,iud_keydown);		//wolamy funkcje obslugi zdarzenia
 				break;
@@ -60,11 +60,11 @@ bool ProcessEvents(void) {
 			case SDL_KEYUP:
 				if( ifp_keyup) ifp_keyup(event.key.keysym.sym,iud_keyup);					//wolamy funkcje obslugi zdarzenia
 				break;
-				
+
 			case SDL_MOUSEBUTTONDOWN:
 				if( ifp_mousebuttondown ) ifp_mousebuttondown(event.button.button,event.button.x,event.button.y,iud_mousebuttondown);					//wolamy funkcje obslugi zdarzenia
 				break;
-				
+
 			case SDL_MOUSEBUTTONUP:
 				if( ifp_mousebuttonup ) ifp_mousebuttonup(event.button.button,event.button.x,event.button.y,iud_mousebuttonup);					//wolamy funkcje obslugi zdarzenia
 				break;
@@ -83,7 +83,7 @@ bool ProcessEvents(void) {
 
 		}
 	}
-	
+
 	return ib_quit;
 }
 

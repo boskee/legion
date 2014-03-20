@@ -4,8 +4,15 @@
 #include <string>
 #include <map>
 
-#include <GL/gl.h>
-#include <SDL/SDL_image.h>
+#ifdef _WIN32
+    // Windows (x64 and x86)
+#elif __linux__
+    #include <GL/gl.h>
+    #include <SDL/SDL_image.h>
+#elif __APPLE__
+    #include <OpenGL/gl.h>
+    #include <SDL_image/SDL_image.h>
+#endif
 
 #include "Utils.h"
 

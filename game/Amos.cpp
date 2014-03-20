@@ -10,10 +10,19 @@ Implementacja czesci funkcjonalnosci Amosa
 #include <algorithm>
 
 #include <SDL/SDL.h>
-#include <SDL/SDL_image.h>
-#include <SDL/SDL_mixer.h>
+#ifdef _WIN32
+    // Windows (x64 and x86)
+#elif __linux__
+    #include <SDL/SDL_image.h>
+    #include <SDL/SDL_mixer.h>
 
-#include <GL/gl.h>
+    #include <GL/gl.h>
+#elif __APPLE__
+    #include <SDL_image/SDL_image.h>
+    #include <SDL_mixer/SDL_mixer.h>
+
+    #include <OpenGL/gl.h>
+#endif
 
 #include "../engine/Core.h"
 #include "../engine/Gfx.h"

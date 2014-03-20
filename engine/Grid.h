@@ -2,7 +2,13 @@
 #define D_GRID_H_D
 
 #include <list>
-#include <GL/gl.h>
+#ifdef _WIN32
+    // Windows (x64 and x86)
+#elif __linux__
+    #include <GL/gl.h>
+#elif __APPLE__
+    #include <OpenGL/gl.h>
+#endif
 
 #include "Types.h"
 

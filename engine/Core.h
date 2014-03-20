@@ -4,7 +4,14 @@
 #include <string>
 
 #include <SDL/SDL.h>
-#include <SDL/SDL_mixer.h>
+
+#ifdef _WIN32
+    // Windows (x64 and x86)
+#elif __linux__
+    #include <SDL/SDL_mixer.h>
+#elif __APPLE__
+    #include <SDL_mixer/SDL_mixer.h>
+#endif
 
 //ponizsze includy po to aby program korzystajacy z biblioteki nie musial bawic sie w szczegolowe
 //wyliczanie includow

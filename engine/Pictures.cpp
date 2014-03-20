@@ -8,7 +8,13 @@ extern "C" {
 }
 #undef HAVE_STDLIB_H	//SDL definiuje to w ciemno, tak samo JPEGLIB i w rezultacie dostajemy ostrzezenie, czego nie lubie ;-)
 
-#include <SDL/SDL_image.h>
+#ifdef _WIN32
+    // Windows (x64 and x86)
+#elif __linux__
+    #include <SDL/SDL_image.h>
+#elif __APPLE__
+    #include <SDL_image/SDL_image.h>
+#endif
 
 #include "Pictures.h"
 #include "Utils.h"
