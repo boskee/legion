@@ -34,14 +34,7 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Linker>
-			<Add library="SDLmain" />
-			<Add library="SDL" />
-			<Add library="SDL_image" />
-			<Add library="SDL_mixer" />
-			<Add library="SDL_ttf" />
-			<Add library="GL" />
-			<Add library="GLU" />
-			<Add library="png" />
+			<Add option="-I/Library/Frameworks/SDL.framework/Headers -framework SDL SDLmain.m -framework SDL_image -framework SDL_mixer -framework SDL_ttf -framework Cocoa -framework OpenGL -framework GLUT -framework libpng12 -framework AppKit" />
 			<Add library="jpeg" />
 		</Linker>
 		<Unit filename="engine/Alan.cpp" />
