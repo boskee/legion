@@ -39,7 +39,6 @@ Implementacja czesci funkcjonalnosci Amosa
 using namespace std;
 
 aint Param;
-astr Param_S;
 aflt Param_F;
 
 

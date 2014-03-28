@@ -36,8 +36,8 @@ void NOWA_PRZYGODA(aint A,aint NR,aint TYP,aint LEVEL) {
 		} while( !( BRON[_BRON][B_CENA]>=1000 && BRON[_BRON][BCENA]<100+LEVEL*1000 && BTYP!=5 && BTYP!=8 && BTYP!=13 && BTYP!=14 && BTYP<16) );																													//	      Until BRON(BRON,B_CENA)>=1000 and BRON(BRON,BCENA)<100+LEVEL*1000 and BTYP<>5 and BTYP<>8 and BTYP<>13 and BTYP<>14 and BTYP<16
 		PRZYGODY[NR][P_BRON]=_BRON;															//	      PRZYGODY(NR,P_BRON)=BRON
 		PRZYGODY[NR][P_TEREN]=9;																//	      PRZYGODY(NR,P_TEREN)=9
-		ROB_IMIE();																							//	      ROB_IMIE
-		IM_PRZYGODY_S[NR]=Param_S;															//	      IM_PRZYGODY$(NR)=Param$
+																									//	      ROB_IMIE
+		IM_PRZYGODY_S[NR]=ROB_IMIE();															//	      IM_PRZYGODY$(NR)=Param$
 	}																													//	   End If
 	if( TYP==3 ) {																						//	   If TYP=3
 		//---bandyci---																					//	      'bandyci
@@ -55,8 +55,8 @@ void NOWA_PRZYGODA(aint A,aint NR,aint TYP,aint LEVEL) {
 		PRZYGODY[NR][P_NAGRODA]=_MIASTO;												//	      PRZYGODY(NR,P_NAGRODA)=MIASTO
 		PRZYGODY[NR][P_BRON]=0;																	//	      PRZYGODY(NR,P_BRON)=0
 		PRZYGODY[NR][P_TEREN]=0;																//	      PRZYGODY(NR,P_TEREN)=0
-		ROB_IMIE();																							//	      ROB_IMIE
-		IM_PRZYGODY_S[NR]=Param_S;															//	      IM_PRZYGODY$(NR)=Param$
+																									//	      ROB_IMIE
+		IM_PRZYGODY_S[NR]=ROB_IMIE();															//	      IM_PRZYGODY$(NR)=Param$
 	}																													//	   End If
 	if( TYP==5 ) {																						//	   If TYP=5
 		//---gora jakas tam---																	//	      'góra jakaô tam
@@ -66,8 +66,8 @@ void NOWA_PRZYGODA(aint A,aint NR,aint TYP,aint LEVEL) {
 		PRZYGODY[NR][P_NAGRODA]=_MIASTO;												//	      PRZYGODY(NR,P_NAGRODA)=MIASTO
 		PRZYGODY[NR][P_TEREN]=4;																//	      PRZYGODY(NR,P_TEREN)=4
 		PRZYGODY[NR][P_BRON]=0;																	//	      PRZYGODY(NR,P_BRON)=0
-		ROB_IMIE();																							//	      ROB_IMIE
-		IM_PRZYGODY_S[NR]=Param_S;															//	      IM_PRZYGODY$(NR)=Param$
+																									//	      ROB_IMIE
+		IM_PRZYGODY_S[NR]=ROB_IMIE();															//	      IM_PRZYGODY$(NR)=Param$
 	}																													//	   End If
 	if( TYP==6 ) {																						//	   If TYP=6
 		//---super mag---																			//	      'super mag
@@ -77,8 +77,8 @@ void NOWA_PRZYGODA(aint A,aint NR,aint TYP,aint LEVEL) {
 		PRZYGODY[NR][P_NAGRODA]=_MIASTO;												//	      PRZYGODY(NR,P_NAGRODA)=MIASTO
 		PRZYGODY[NR][P_TEREN]=0;																//	      PRZYGODY(NR,P_TEREN)=0
 		PRZYGODY[NR][P_BRON]=0;																	//	      PRZYGODY(NR,P_BRON)=0
-		ROB_IMIE();																							//	      ROB_IMIE
-		IM_PRZYGODY_S[NR]=Param_S;															//	      IM_PRZYGODY$(NR)=Param$
+																									//	      ROB_IMIE
+		IM_PRZYGODY_S[NR]=ROB_IMIE();															//	      IM_PRZYGODY$(NR)=Param$
 	}																													//	   End If
 	if( TYP==7 ) {																						//	   If TYP=7
 		//---gora paladyna ufola---															//	      'grota paladyna ufola
@@ -88,8 +88,8 @@ void NOWA_PRZYGODA(aint A,aint NR,aint TYP,aint LEVEL) {
 		PRZYGODY[NR][P_NAGRODA]=_MIASTO;												//	      PRZYGODY(NR,P_NAGRODA)=MIASTO
 		PRZYGODY[NR][P_TEREN]=8;																//	      PRZYGODY(NR,P_TEREN)=8
 		PRZYGODY[NR][P_BRON]=0;																	//	      PRZYGODY(NR,P_BRON)=0
-		ROB_IMIE();																							//	      ROB_IMIE
-		IM_PRZYGODY_S[NR]=Param_S;															//	      IM_PRZYGODY$(NR)=Param$
+																									//	      ROB_IMIE
+		IM_PRZYGODY_S[NR]=ROB_IMIE();															//	      IM_PRZYGODY$(NR)=Param$
 	}																													//	   End If
 																														//
 	if( TYP==8 ) {																						//	   If TYP=8
@@ -121,8 +121,8 @@ void NOWA_PRZYGODA(aint A,aint NR,aint TYP,aint LEVEL) {
 		PRZYGODY[NR][P_CENA]=Rnd(100)+30;												//	      PRZYGODY(NR,P_CENA)=Rnd(100)+30
 		PRZYGODY[NR][P_TEREN]=7;																//	      PRZYGODY(NR,P_TEREN)=7
 		PRZYGODY[NR][P_BRON]=0;																	//	      PRZYGODY(NR,P_BRON)=0
-		ROB_IMIE();																							//	      ROB_IMIE
-		IM_PRZYGODY_S[NR]=Param_S;															//	      IM_PRZYGODY$(NR)=Param$
+																									//	      ROB_IMIE
+		IM_PRZYGODY_S[NR]=ROB_IMIE();															//	      IM_PRZYGODY$(NR)=Param$
 	}																													//	   End If
 																														//
 	if( TYP==11 ) {																						//	   If TYP=11
@@ -138,8 +138,8 @@ void NOWA_PRZYGODA(aint A,aint NR,aint TYP,aint LEVEL) {
 			goto AGAIN;																						//	         Goto AGAIN
 		}																												//	      End If
 		PRZYGODY[NR][P_BRON]=RSA;																//	      PRZYGODY(NR,P_BRON)=RSA
-		ROB_IMIE();																							//	      ROB_IMIE
-		IM_PRZYGODY_S[NR]=Param_S;															//	      IM_PRZYGODY$(NR)=Param$
+																									//	      ROB_IMIE
+		IM_PRZYGODY_S[NR]=ROB_IMIE();															//	      IM_PRZYGODY$(NR)=Param$
 	}																													//	   End If
 																														//
 	if( TYP==12 ) {																						//	   If TYP=12

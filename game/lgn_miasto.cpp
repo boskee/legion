@@ -298,8 +298,8 @@ void ZROB_MIASTA() {
 			MIASTA[I][0][M_CZYJE]=CZYJE;	//	         MIASTA(I,0,M_CZYJE)=CZYJE
 			MIASTA[I][0][M_MUR]=MUR;			//	         MIASTA(I,0,M_MUR)=MUR
 			MIASTA[I][1][M_Y]=30;					//	         MIASTA(I,1,M_Y)=30
-			ROB_IMIE();										//	         ROB_IMIE
-			MIASTA_S[I]=Param_S;					//	         MIASTA$(I)=Param$
+													//	         ROB_IMIE
+			MIASTA_S[I]=ROB_IMIE();					//	         MIASTA$(I)=Param$
 			X=50; Y=50;										//	         X=50 : Y=50
 			for(J=2;J<=9;++J)	{						//	         For J=2 To 9
 				BUD=Rnd(9);									//	            BUD=Rnd(9)

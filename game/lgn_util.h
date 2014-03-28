@@ -48,7 +48,7 @@ void SKROL(aint A);
 void KLAWSKROL(aint KLAW);
 void ODL(aint X1,aint Y1,aint X2,aint Y2);
 void CENTER(aint X,aint Y,aint FLOOD);
-void ROB_IMIE(void);
+astr ROB_IMIE(void);
 void NAPISZ(aint X,aint Y,aint SZER,aint WYS,astr A_S,aint P,aint K1,aint K2);
 
 

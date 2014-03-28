@@ -1439,7 +1439,7 @@
 	"../engine/Gfx.h"
 	"amos_types.h"
 
-1395343306 /home/voitek/Repositories/legion/game/amos_types.h
+1396036073 /home/voitek/Repositories/legion/game/amos_types.h
 	<string>
 
 1395939259 /home/voitek/Repositories/legion/game/AmosMusic.h
@@ -1463,7 +1463,7 @@
 1395343306 source:/home/voitek/Repositories/legion/game/hq2x.cpp
 	<cstdlib>
 
-1395343306 source:/home/voitek/Repositories/legion/game/legion.cpp
+1396035397 source:/home/voitek/Repositories/legion/game/legion.cpp
 	"../engine/Gfx.h"
 	"Amos.h"
 	"legion.h"
@@ -1483,7 +1483,7 @@
 
 1395343306 /home/voitek/Repositories/legion/game/lgn_armia.h
 
-1395343306 /home/voitek/Repositories/legion/game/lgn_diskacs.h
+1396035856 /home/voitek/Repositories/legion/game/lgn_diskacs.h
 
 1395343306 /home/voitek/Repositories/legion/game/lgn_intro.h
 
@@ -1494,7 +1494,7 @@
 
 1395343306 /home/voitek/Repositories/legion/game/lgn_przygoda.h
 
-1395343306 /home/voitek/Repositories/legion/game/lgn_util.h
+1396035440 /home/voitek/Repositories/legion/game/lgn_util.h
 	"amos_types.h"
 
 1395343306 /home/voitek/Repositories/legion/game/lgn_wczytaj.h
@@ -1504,7 +1504,7 @@
 
 1395343306 /home/voitek/Repositories/legion/game/version.h
 
-1396034320 source:/home/voitek/Repositories/legion/game/lgn_akcja.cpp
+1396035538 source:/home/voitek/Repositories/legion/game/lgn_akcja.cpp
 	<cmath>
 	"Amos.h"
 	"legion.h"
@@ -1577,7 +1577,7 @@
 
 1395343306 /home/voitek/Repositories/legion/game/lgn_opcje.h
 
-1395343306 source:/home/voitek/Repositories/legion/game/lgn_miasto.cpp
+1396035523 source:/home/voitek/Repositories/legion/game/lgn_miasto.cpp
 	"Amos.h"
 	"legion.h"
 	"lgn_akcja.h"
@@ -1599,7 +1599,7 @@
 	"lgn_util.h"
 	"utl_locale.h"
 
-1395343306 source:/home/voitek/Repositories/legion/game/lgn_przygoda.cpp
+1396035517 source:/home/voitek/Repositories/legion/game/lgn_przygoda.cpp
 	"Amos.h"
 	"legion.h"
 	"lgn_przygoda.h"
@@ -1625,7 +1625,7 @@
 	"lgn_util.h"
 	"utl_locale.h"
 
-1396034135 source:/home/voitek/Repositories/legion/game/lgn_util.cpp
+1396035451 source:/home/voitek/Repositories/legion/game/lgn_util.cpp
 	<cmath>
 	"Amos.h"
 	"legion.h"

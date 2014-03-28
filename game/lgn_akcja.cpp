@@ -3370,8 +3370,8 @@ void NOWA_POSTAC(aint A,aint NR,aint RASA) {
 		ARMIA[A][NR][TMAGMA]=ARMIA[A][NR][TMAG];		//	      ARMIA(A,NR,TMAGMA)=ARMIA(A,NR,TMAG)
 	}																							//	   End If
 	if( PREFS[1]==1 ) {														//	   If PREFS(1)=1
-		ROB_IMIE();																	//	      ROB_IMIE
-		ARMIA_S[A][NR]=Param_S;											//	      ARMIA$(A,NR)=Param$
+																			//	      ROB_IMIE
+		ARMIA_S[A][NR]=ROB_IMIE();											//	      ARMIA$(A,NR)=Param$
 	} else {																			//	   Else
 		ARMIA_S[A][NR]=GS("040")+Str_S(NR);					//	      ARMIA$(A,NR)="worrior"+Str$(NR)
 	}																							//	   End If

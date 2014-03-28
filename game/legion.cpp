@@ -275,8 +275,7 @@ void main_code(void) {
 				if( WPI_S != "" ) {			//	         If WPI$<>""
 					IMIONA_S[1] = WPI_S;	//	            IMIONA$(1)=WPI$
 				} else {								//	         Else
-					ROB_IMIE();
-					IMIONA_S[1]=Param_S;	//	            ROB_IMIE : IMIONA$(1)=Param$
+					IMIONA_S[1]=ROB_IMIE();	//	            ROB_IMIE : IMIONA$(1)=Param$
 				}												//	         End If
 
 				rysuj_ekran_ptr = _main_code_rysuj_oponent_name;
@@ -305,8 +304,7 @@ void main_code(void) {
 					if( WPI_S != "" )	{					//	            If WPI$<>""
 						IMIONA_S[I+1] = WPI_S;		//	               IMIONA$(I+1)=WPI$
 					} else {										//	            Else
-						ROB_IMIE();
-						IMIONA_S[I+1] = Param_S;	//	               ROB_IMIE : IMIONA$(I+1)=Param$
+						IMIONA_S[I+1] = ROB_IMIE();	//	               ROB_IMIE : IMIONA$(I+1)=Param$
 					}														//	            End If
 				}	//	         Next I
 

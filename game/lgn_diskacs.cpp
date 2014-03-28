@@ -281,9 +281,8 @@ void _LOAD_GAME(void) {
 	astr PAT_S="";
 
 	rysuj();
-	SDIR(GS("225"),17,16);													//	   SDIR["Archives - Load Game",17,16]
+	PAT_S=SDIR(GS("225"),17,16);													//	   SDIR["Archives - Load Game",17,16]
 	WaitVbl();
-	PAT_S=Param_S;																							//	   PAT$=Param$
 	do {																												//	   Repeat
 		ProcessEvents();
 		if( MouseClick()==1 ) {																		//	      If Mouse Click=1
@@ -306,7 +305,7 @@ void _LOAD_GAME(void) {
 																															//	End Proc[JEST]
 	Param = JEST;
 }
-void _READ_STRING(unsigned char* &MEM) {
+astr _READ_STRING(unsigned char* &MEM) {
 	aint DLUG=0;
 	astr DAT_S="";
 
@@ -314,7 +313,7 @@ void _READ_STRING(unsigned char* &MEM) {
 	DAT_S=Peek_S(MEM,DLUG);															//	   DAT$=Peek$(MEM,DLUG)
 	MEM+=DLUG;																					//	   Add MEM,DLUG
 																											//	   Return
-	Param_S=DAT_S;																			//
+	return DAT_S;
 }
 void ODCZYT(unsigned char *MEM) {
 																											//	Procedure ODCZYT[MEM]
@@ -348,14 +347,14 @@ void ODCZYT(unsigned char *MEM) {
 																											//	   'armia$(40,10)
 	for( I=0; I<=40; ++I ) {														//	   For I=0 To 40
 		for( J=0; J<=10; ++J ) {													//	      For J=0 To 10
-			_READ_STRING(MEM);															//	         Gosub _READ_STRING
-			ARMIA_S[I][J]=Param_S;													//	         ARMIA$(I,J)=DAT$
+																		//	         Gosub _READ_STRING
+			ARMIA_S[I][J]=_READ_STRING(MEM);													//	         ARMIA$(I,J)=DAT$
 		}																									//	      Next
 	}																										//	   Next
 																											//	   'imiona$(4)
 	for( I=0; I<=4; ++I ) {															//	   For I=0 To 4
-		_READ_STRING(MEM);																//	      Gosub _READ_STRING
-		IMIONA_S[I]=Param_S;															//	      IMIONA$(I)=DAT$
+																		//	      Gosub _READ_STRING
+		IMIONA_S[I]=_READ_STRING(MEM);															//	      IMIONA$(I)=DAT$
 	}																										//	   Next
 																											//	   'prefs(10)
 	for( I=0; I<=10; ++I ) {														//	   For I=0 To 10
@@ -375,8 +374,8 @@ void ODCZYT(unsigned char *MEM) {
 	}																										//	   Next I
 																											//	   'miasta$(50)
 	for( I=0; I<=50; ++I ) {														//	   For I=0 To 50
-		_READ_STRING(MEM);																//	      Gosub _READ_STRING
-		MIASTA_S[I]=Param_S;															//	      MIASTA$(I)=DAT$
+																		//	      Gosub _READ_STRING
+		MIASTA_S[I]=_READ_STRING(MEM);															//	      MIASTA$(I)=DAT$
 	}																										//	   Next
 	DZIEN=Deek(MEM); MEM+=2;														//	   DZIEN=Deek(MEM) : Add MEM,2
 	POWER=Deek(MEM); MEM+=2;														//	   POWER=Deek(MEM) : Add MEM,2
@@ -390,8 +389,8 @@ void ODCZYT(unsigned char *MEM) {
 	}																										//	   Next I
 																											//	   'im_przygody$(3)
 	for( I=0; I<=3; ++I ) {															//	   For I=0 To 3
-		_READ_STRING(MEM);																//	      Gosub _READ_STRING
-		IM_PRZYGODY_S[I]=Param_S;													//	      IM_PRZYGODY$(I)=DAT$
+																		//	      Gosub _READ_STRING
+		IM_PRZYGODY_S[I]=_READ_STRING(MEM);													//	      IM_PRZYGODY$(I)=DAT$
 	}																										//	   Next I
 	;																										//	   Erase 10
 																											//
@@ -463,7 +462,7 @@ void CLEAR_TABLES(void) {
 																	//	   OVER:
 																	//	End Proc
 }
-void SDIR(astr A_S,aint K1,aint K2) {
+astr SDIR(astr A_S,aint K1,aint K2) {
 																								//	Procedure SDIR[A$,K1,K2]
 	aint I;
 	astr PAT_S="", NAME_S="";
@@ -484,7 +483,7 @@ void SDIR(astr A_S,aint K1,aint K2) {
 		GADGET(OKX+10,OKY+28+(I*20),120,15,NAME_S,8,1,6,31,I+1);//	      GADGET[OKX+10,OKY+28+(I*20),120,15,NAME$,8,1,6,31,I+1]
 	}																							//	   Next
 	GADGET(OKX+10,OKY+128,120,15,GS("226"),8,1,6,31,6);//	   GADGET[OKX+10,OKY+128,120,15,"Exit",8,1,6,31,6]
-	Param_S=PAT_S;																							//	End Proc[PAT$]
+	return PAT_S;
 }
 void REQUEST(astr A_S,astr NAPI_S) {
 	//NONEEDTODO

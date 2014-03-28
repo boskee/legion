@@ -841,7 +841,7 @@ void ODL(aint X1,aint Y1,aint X2,aint Y2) {
 										//	End Proc
 }
 
-void ROB_IMIE(void) {
+astr ROB_IMIE(void) {
 		//	Procedure ROB_IMIE
 		//	   IM$=""
 		//	   Dim SAMOGL$(10)
@@ -898,7 +898,8 @@ void ROB_IMIE(void) {
 	L_S=Upper_S(Left_S(IM_S,1));				//	   L$=Left$(IM$,1) : L$=Upper$(L$)
 	R_S=Right_S(IM_S,Len(IM_S)-1);			//	   R$=Right$(IM$,Len(IM$)-1)
 	F_S=L_S+R_S;												//	   F$=L$+R$
-	Param_S = F_S;											//	End Proc[F$]
+
+	return F_S;
 }
 
 void NAPISZ(aint X,aint Y,aint SZER,aint WYS,astr A_S,aint P,aint K1,aint K2) {
@@ -927,7 +928,7 @@ void NAPISZ(aint X,aint Y,aint SZER,aint WYS,astr A_S,aint P,aint K1,aint K2) {
 		}																							//	      End If
 
 																									//
-		if(Z_S=="*") {ROB_IMIE(); Z_S=Param_S;}				//	      If Z$="*" : ROB_IMIE : Z$=Param$ : End If
+		if(Z_S=="*") {Z_S=ROB_IMIE();}				//	      If Z$="*" : ROB_IMIE : Z$=Param$ : End If
 		if(Z_S=="§") {Z_S=MIASTA_S[PRZYGODY[P][P_X]];}//	      If Z$="#" : Z$=MIASTA$(PRZYGODY(P,P_X)) : End If
 		if(Z_S=="&") {Z_S=MIASTA_S[PRZYGODY[P][P_NAGRODA]];}//	      If Z$="&" : Z$=MIASTA$(PRZYGODY(P,P_NAGRODA)) : End If
 		if(Z_S=="$") {Z_S=IM_PRZYGODY_S[P];}					//	      If Z$="$" : Z$=IM_PRZYGODY$(P) : End If

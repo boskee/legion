@@ -3,7 +3,7 @@
 
 void ODCZYT(unsigned char *MEM);
 void CLEAR_TABLES(void);
-void SDIR(astr A_S,aint K1,aint K2);
+astr SDIR(astr A_S,aint K1,aint K2);
 void REQUEST(astr A_S,astr NAPI_S);
 void _LOAD( astr A_S, astr B_S, astr NAPI_S, aint TRYB);
 void _SAVE_GAME(void);
