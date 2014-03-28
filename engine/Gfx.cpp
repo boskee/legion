@@ -6,7 +6,7 @@
 #include <SDL/SDL.h>
 
 #ifdef _WIN32
-    // Windows (x64 and x86)
+    #include <SDL/SDL_image.h>
 #elif __linux__
     #include <SDL/SDL_image.h>
 #elif __APPLE__

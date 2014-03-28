@@ -2,7 +2,7 @@
 #define D_COLLISION_H_D
 
 #ifdef _WIN32
-    // Windows (x64 and x86)
+    #include <GL/gl.h>
 #elif __linux__
     #include <GL/gl.h>
 #elif __APPLE__

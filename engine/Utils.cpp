@@ -1,4 +1,3 @@
-
 #include <cstdio>
 
 #include "Utils.h"
@@ -81,4 +80,3 @@ void _Error(const string& msg) {
 	cerr << msg << endl; cerr.flush();
 //	exit(0);
 }
-

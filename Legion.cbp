@@ -6,7 +6,8 @@
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
-			<Target title="Debug">
+			<Target title="Debug - Linux">
+				<Option platforms="Unix;" />
 				<Option output="bin/Debug/Legion" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="../Legion" />
 				<Option object_output="obj/Debug/" />
@@ -15,6 +16,55 @@
 				<Compiler>
 					<Add option="-g" />
 				</Compiler>
+				<Linker>
+					<Add library="SDLmain" />
+					<Add library="SDL" />
+					<Add library="SDL_image" />
+					<Add library="SDL_mixer" />
+					<Add library="SDL_ttf" />
+					<Add library="GL" />
+					<Add library="GLU" />
+					<Add library="png" />
+					<Add library="jpeg" />
+				</Linker>
+			</Target>
+			<Target title="Debug - OSX">
+				<Option platforms="Mac;" />
+				<Option output="bin/Debug/Legion" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="../Legion" />
+				<Option object_output="obj/Debug/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+				<Linker>
+					<Add option="-I/Library/Frameworks/SDL.framework/Headers -framework SDL SDLmain.m -framework SDL_image -framework SDL_mixer -framework SDL_ttf -framework Cocoa -framework OpenGL -framework GLUT -framework libpng12 -framework AppKit" />
+					<Add library="jpeg" />
+				</Linker>
+			</Target>
+			<Target title="Debug - Windows">
+				<Option platforms="Windows;" />
+				<Option output="bin/Debug/Legion" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="../Legion" />
+				<Option object_output="obj/Debug/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+				<Linker>
+					<Add library="mingw32" />
+					<Add library="SDLmain" />
+					<Add library="SDL" />
+					<Add library="SDL_image" />
+					<Add library="SDL_mixer" />
+					<Add library="SDL_ttf" />
+					<Add library="opengl32" />
+					<Add library="glu32" />
+					<Add library="png" />
+					<Add library="jpeg" />
+				</Linker>
 			</Target>
 			<Target title="Release">
 				<Option output="bin/Release/Legion" prefix_auto="1" extension_auto="1" />
@@ -26,6 +76,15 @@
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
+					<Add library="SDLmain" />
+					<Add library="SDL" />
+					<Add library="SDL_image" />
+					<Add library="SDL_mixer" />
+					<Add library="SDL_ttf" />
+					<Add library="GL" />
+					<Add library="GLU" />
+					<Add library="png" />
+					<Add library="jpeg" />
 				</Linker>
 			</Target>
 		</Build>
@@ -33,17 +92,6 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Linker>
-			<Add library="SDLmain" />
-			<Add library="SDL" />
-			<Add library="SDL_image" />
-			<Add library="SDL_mixer" />
-			<Add library="SDL_ttf" />
-			<Add library="GL" />
-			<Add library="GLU" />
-			<Add library="png" />
-			<Add library="jpeg" />
-		</Linker>
 		<Unit filename="engine/Alan.cpp" />
 		<Unit filename="engine/Alan.h" />
 		<Unit filename="engine/Basic.cpp" />

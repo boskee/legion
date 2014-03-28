@@ -76,13 +76,13 @@ int Settings :: ReadFile(const string& file_name) {
 		last_errc = -3;
 		goto blad;
 	} catch(...) {
-		last_errm = "Nieznany wyjłtek";
+		last_errm = "Uknown exception";
 		last_errc = -5;
 		goto blad;
 	}
 
 	if( 0 == sym ) {
-		last_errm = "Pusty plik";
+		last_errm = "Empty file";
 		last_errc = -4;
 		goto blad;
 	}
@@ -136,7 +136,7 @@ int Settings :: ReadBuf(const string& buf) {
 	}
 
 	if( 0 == sym ) {
-		last_errm = "Pusty plik";
+		last_errm = "Empty file";
 		last_errc = -4;
 		goto blad;
 	}

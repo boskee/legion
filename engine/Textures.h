@@ -5,7 +5,8 @@
 #include <map>
 
 #ifdef _WIN32
-    // Windows (x64 and x86)
+    #include <GL/gl.h>
+    #include <SDL/SDL_image.h>
 #elif __linux__
     #include <GL/gl.h>
     #include <SDL/SDL_image.h>

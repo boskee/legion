@@ -1133,3 +1133,563 @@
 	<new>
 	<exception>
 
+1395343306 source:/home/voitek/Repositories/legion/engine/_alan_interials.cpp
+	"_alan_interials.h"
+
+1395343306 /home/voitek/Repositories/legion/engine/_alan_interials.h
+	<string>
+	<vector>
+	<map>
+	<stack>
+	<cmath>
+	"Textures.h"
+	"Utils.h"
+	"Rand.h"
+
+1395939248 /home/voitek/Repositories/legion/engine/Textures.h
+	<string>
+	<map>
+	<GL/gl.h>
+	<SDL/SDL_image.h>
+	<GL/gl.h>
+	<SDL/SDL_image.h>
+	<OpenGL/gl.h>
+	<SDL_image/SDL_image.h>
+	"Utils.h"
+
+1395343306 /home/voitek/Repositories/legion/engine/Utils.h
+	<string>
+	<iostream>
+
+1395343306 /home/voitek/Repositories/legion/engine/Rand.h
+
+1395343306 source:/home/voitek/Repositories/legion/engine/Alan.cpp
+	<iostream>
+	<fstream>
+	<sstream>
+	"Alan.h"
+	"Bob.h"
+	"alan_parser.hh"
+
+1395343306 /home/voitek/Repositories/legion/engine/Alan.h
+	<map>
+	<string>
+
+1395343306 /home/voitek/Repositories/legion/engine/Bob.h
+	"Grid.h"
+	"Utils.h"
+	"Alan.h"
+
+1395939224 /home/voitek/Repositories/legion/engine/Grid.h
+	<list>
+	<GL/gl.h>
+	<GL/gl.h>
+	<OpenGL/gl.h>
+	"Types.h"
+
+1395343306 /home/voitek/Repositories/legion/engine/Types.h
+
+1395343306 /home/voitek/Repositories/legion/engine/alan_parser.hh
+	<iostream>
+	<string>
+	<exception>
+	"alan_token.hh"
+	"alan_scanner.hh"
+
+1395343306 /home/voitek/Repositories/legion/engine/alan_token.hh
+	<string>
+	<sstream>
+
+1395343306 /home/voitek/Repositories/legion/engine/alan_scanner.hh
+	<string>
+	<fstream>
+	<iostream>
+	<exception>
+	<stack>
+	"alan_token.hh"
+	<vector>
+	"_alan_interials.h"
+
+1395343306 source:/home/voitek/Repositories/legion/engine/alan_parser.cc
+	"alan_parser.hh"
+
+1395343306 source:/home/voitek/Repositories/legion/engine/alan_scanner.cc
+	"alan_scanner.hh"
+
+1395343306 source:/home/voitek/Repositories/legion/engine/alan_token.cc
+	"alan_token.hh"
+
+1395343306 source:/home/voitek/Repositories/legion/engine/Basic.cpp
+	<math.h>
+	"Basic.h"
+	"Bob.h"
+	"Types.h"
+	"Pictures.h"
+
+1395939135 /home/voitek/Repositories/legion/engine/Basic.h
+	<GL/gl.h>
+	<GL/gl.h>
+	<OpenGL/gl.h>
+
+1395343306 /home/voitek/Repositories/legion/engine/Pictures.h
+	<string>
+
+1395343306 source:/home/voitek/Repositories/legion/engine/Bob.cpp
+	"Bob.h"
+	"Textures.h"
+
+1395343306 source:/home/voitek/Repositories/legion/engine/Collision.cpp
+	"Collision.h"
+	"Basic.h"
+
+1395939147 /home/voitek/Repositories/legion/engine/Collision.h
+	<GL/gl.h>
+	<GL/gl.h>
+	<OpenGL/gl.h>
+
+1395343306 source:/home/voitek/Repositories/legion/engine/Core.cpp
+	<iostream>
+	"Core.h"
+	"Utils.h"
+	"Bob.h"
+	"Collision.h"
+
+1395939174 /home/voitek/Repositories/legion/engine/Core.h
+	<string>
+	<SDL/SDL.h>
+	<SDL/SDL_mixer.h>
+	<SDL/SDL_mixer.h>
+	<SDL_mixer/SDL_mixer.h>
+	"Settings.h"
+	"Grid.h"
+	"Rand.h"
+	"Types.h"
+	"Events.h"
+
+1395343306 /home/voitek/Repositories/legion/engine/Settings.h
+	<string>
+
+1395343306 /home/voitek/Repositories/legion/engine/Events.h
+
+1395343306 source:/home/voitek/Repositories/legion/engine/Events.cpp
+	<SDL/SDL.h>
+	"Events.h"
+
+1395939194 source:/home/voitek/Repositories/legion/engine/Font.cpp
+	<cstdio>
+	<SDL/SDL.h>
+	<SDL/SDL_image.h>
+	<SDL/SDL_ttf.h>
+	<GL/gl.h>
+	<SDL/SDL_image.h>
+	<SDL/SDL_ttf.h>
+	<GL/gl.h>
+	<SDL_image/SDL_image.h>
+	<SDL_ttf/SDL_ttf.h>
+	<OpenGL/gl.h>
+	"Font.h"
+	"Utils.h"
+	"Textures.h"
+	"Bob.h"
+	"Basic.h"
+	"Settings.h"
+
+1395343306 /home/voitek/Repositories/legion/engine/Font.h
+	<string>
+	<map>
+
+1395939218 source:/home/voitek/Repositories/legion/engine/Gfx.cpp
+	<iostream>
+	"Gfx.h"
+	"Utils.h"
+	<SDL/SDL.h>
+	<SDL/SDL_image.h>
+	<SDL/SDL_image.h>
+	<SDL_image/SDL_image.h>
+
+1395343306 /home/voitek/Repositories/legion/engine/Gfx.h
+	"Alan.h"
+	"Basic.h"
+	"Bob.h"
+	"Font.h"
+	"Textures.h"
+	"Pictures.h"
+	"PicDraw.h"
+
+1395343306 /home/voitek/Repositories/legion/engine/PicDraw.h
+
+1395343306 source:/home/voitek/Repositories/legion/engine/Grid.cpp
+	"Grid.h"
+	"Collision.h"
+	"Types.h"
+	"Bob.h"
+	"Basic.h"
+
+1395343306 source:/home/voitek/Repositories/legion/engine/Locale.cpp
+	"Locale.h"
+
+1395343306 /home/voitek/Repositories/legion/engine/Locale.h
+	<string>
+	<map>
+
+1395343306 source:/home/voitek/Repositories/legion/engine/PicDraw.cpp
+	"PicDraw.h"
+	"Pictures.h"
+	"Utils.h"
+
+1395939230 source:/home/voitek/Repositories/legion/engine/Pictures.cpp
+	<string>
+	<cstdio>
+	<libpng12/png.h>
+	<jpeglib.h>
+	<SDL/SDL_image.h>
+	<SDL/SDL_image.h>
+	<SDL_image/SDL_image.h>
+	"Pictures.h"
+	"Utils.h"
+
+1395343306 source:/home/voitek/Repositories/legion/engine/Rand.cpp
+	<ctime>
+	"Rand.h"
+
+1395343306 source:/home/voitek/Repositories/legion/engine/Samples.cpp
+	"Samples.h"
+	"Settings.h"
+	"Utils.h"
+
+1395939234 /home/voitek/Repositories/legion/engine/Samples.h
+	<string>
+	<map>
+	<SDL/SDL.h>
+	<SDL/SDL_mixer.h>
+	<SDL/SDL_mixer.h>
+	<SDL_mixer/SDL_mixer.h>
+
+1395343306 source:/home/voitek/Repositories/legion/engine/settings_parser.cc
+	"settings_parser.hh"
+
+1395343306 /home/voitek/Repositories/legion/engine/settings_parser.hh
+	<iostream>
+	<string>
+	<exception>
+	"settings_token.hh"
+	"settings_scanner.hh"
+
+1395343306 /home/voitek/Repositories/legion/engine/settings_token.hh
+	<string>
+	<sstream>
+
+1395343306 /home/voitek/Repositories/legion/engine/settings_scanner.hh
+	<string>
+	<fstream>
+	<iostream>
+	<exception>
+	<stack>
+	"settings_token.hh"
+	<cstdlib>
+	<cstring>
+	"_settings_symbols.h"
+
+1395343306 /home/voitek/Repositories/legion/engine/_settings_symbols.h
+	<string>
+	<vector>
+	<map>
+	<cstdio>
+
+1395343306 source:/home/voitek/Repositories/legion/engine/settings_scanner.cc
+	"settings_scanner.hh"
+
+1395343306 source:/home/voitek/Repositories/legion/engine/settings_token.cc
+	"settings_token.hh"
+
+1395939254 source:/home/voitek/Repositories/legion/game/Amos.cpp
+	<string>
+	<cstdio>
+	<vector>
+	<queue>
+	<cmath>
+	<algorithm>
+	<SDL/SDL.h>
+	<SDL/SDL_image.h>
+	<SDL/SDL_mixer.h>
+	<GL/gl.h>
+	<SDL/SDL_image.h>
+	<SDL/SDL_mixer.h>
+	<GL/gl.h>
+	<SDL_image/SDL_image.h>
+	<SDL_mixer/SDL_mixer.h>
+	<OpenGL/gl.h>
+	"../engine/Core.h"
+	"../engine/Gfx.h"
+	"../engine/Sfx.h"
+	"main.h"
+	"Amos.h"
+	"AmosMusic.h"
+	"AmosImage.h"
+
+1395343306 /home/voitek/Repositories/legion/engine/Sfx.h
+	"Samples.h"
+
+1395343306 /home/voitek/Repositories/legion/game/main.h
+	"../engine/Core.h"
+
+1395343306 /home/voitek/Repositories/legion/game/Amos.h
+	<vector>
+	"../engine/Core.h"
+	"../engine/Gfx.h"
+	"amos_types.h"
+
+1395343306 /home/voitek/Repositories/legion/game/amos_types.h
+	<string>
+
+1395939259 /home/voitek/Repositories/legion/game/AmosMusic.h
+	<SDL/SDL_mixer.h>
+	<SDL/SDL_mixer.h>
+	<SDL_mixer/SDL_mixer.h>
+
+1395343306 /home/voitek/Repositories/legion/game/AmosImage.h
+
+1395343306 source:/home/voitek/Repositories/legion/game/AmosImage.cpp
+	"AmosImage.h"
+
+1395343306 source:/home/voitek/Repositories/legion/game/AmosMusic.cpp
+	<iostream>
+	<cstdio>
+	<string>
+	<vector>
+	"AmosMusic.h"
+	"../engine/Utils.h"
+
+1395343306 source:/home/voitek/Repositories/legion/game/hq2x.cpp
+	<cstdlib>
+
+1395343306 source:/home/voitek/Repositories/legion/game/legion.cpp
+	"../engine/Gfx.h"
+	"Amos.h"
+	"legion.h"
+	"lgn_armia.h"
+	"lgn_diskacs.h"
+	"lgn_intro.h"
+	"lgn_mapa.h"
+	"lgn_miasto.h"
+	"lgn_przygoda.h"
+	"lgn_util.h"
+	"lgn_wczytaj.h"
+	"utl_locale.h"
+	"version.h"
+
+1395343306 /home/voitek/Repositories/legion/game/legion.h
+	"amos_types.h"
+
+1395343306 /home/voitek/Repositories/legion/game/lgn_armia.h
+
+1395343306 /home/voitek/Repositories/legion/game/lgn_diskacs.h
+
+1395343306 /home/voitek/Repositories/legion/game/lgn_intro.h
+
+1395343306 /home/voitek/Repositories/legion/game/lgn_mapa.h
+
+1395343306 /home/voitek/Repositories/legion/game/lgn_miasto.h
+	"amos_types.h"
+
+1395343306 /home/voitek/Repositories/legion/game/lgn_przygoda.h
+
+1395343306 /home/voitek/Repositories/legion/game/lgn_util.h
+	"amos_types.h"
+
+1395343306 /home/voitek/Repositories/legion/game/lgn_wczytaj.h
+
+1395343306 /home/voitek/Repositories/legion/game/utl_locale.h
+	<string>
+
+1395343306 /home/voitek/Repositories/legion/game/version.h
+
+1395343306 source:/home/voitek/Repositories/legion/game/lgn_akcja.cpp
+	<cmath>
+	"Amos.h"
+	"legion.h"
+	"lgn_akcja.h"
+	"lgn_diskacs.h"
+	"lgn_ekran1.h"
+	"lgn_przygoda.h"
+	"lgn_sceneria.h"
+	"lgn_sklep.h"
+	"lgn_util.h"
+	"main.h"
+	"utl_locale.h"
+
+1395343306 /home/voitek/Repositories/legion/game/lgn_akcja.h
+
+1395343306 /home/voitek/Repositories/legion/game/lgn_ekran1.h
+
+1395343306 /home/voitek/Repositories/legion/game/lgn_sceneria.h
+
+1395343306 /home/voitek/Repositories/legion/game/lgn_sklep.h
+
+1395343306 source:/home/voitek/Repositories/legion/game/lgn_armia.cpp
+	"Amos.h"
+	"legion.h"
+	"lgn_akcja.h"
+	"lgn_armia.h"
+	"lgn_miasto.h"
+	"lgn_diskacs.h"
+	"lgn_mapa.h"
+	"lgn_sceneria.h"
+	"lgn_util.h"
+	"utl_locale.h"
+
+1395343306 source:/home/voitek/Repositories/legion/game/lgn_diskacs.cpp
+	"Amos.h"
+	"legion.h"
+	"lgn_diskacs.h"
+	"lgn_util.h"
+	"utl_locale.h"
+
+1395343306 source:/home/voitek/Repositories/legion/game/lgn_ekran1.cpp
+	"Amos.h"
+	"legion.h"
+	"lgn_ekran1.h"
+	"lgn_util.h"
+
+1395957954 source:/home/voitek/Repositories/legion/game/lgn_intro.cpp
+	"Amos.h"
+	"legion.h"
+	"lgn_diskacs.h"
+	"lgn_intro.h"
+	"lgn_util.h"
+	"utl_locale.h"
+
+1395343306 source:/home/voitek/Repositories/legion/game/lgn_mapa.cpp
+	"Amos.h"
+	"legion.h"
+	"lgn_akcja.h"
+	"lgn_armia.h"
+	"lgn_diskacs.h"
+	"lgn_intro.h"
+	"lgn_mapa.h"
+	"lgn_miasto.h"
+	"lgn_opcje.h"
+	"lgn_przygoda.h"
+	"lgn_sceneria.h"
+	"lgn_util.h"
+	"utl_locale.h"
+	<cmath>
+
+1395343306 /home/voitek/Repositories/legion/game/lgn_opcje.h
+
+1395343306 source:/home/voitek/Repositories/legion/game/lgn_miasto.cpp
+	"Amos.h"
+	"legion.h"
+	"lgn_akcja.h"
+	"lgn_diskacs.h"
+	"lgn_ekran1.h"
+	"lgn_mapa.h"
+	"lgn_miasto.h"
+	"lgn_przygoda.h"
+	"lgn_sceneria.h"
+	"lgn_util.h"
+	"utl_locale.h"
+
+1395343306 source:/home/voitek/Repositories/legion/game/lgn_opcje.cpp
+	"Amos.h"
+	"legion.h"
+	"lgn_opcje.h"
+	"lgn_diskacs.h"
+	"lgn_mapa.h"
+	"lgn_util.h"
+	"utl_locale.h"
+
+1395343306 source:/home/voitek/Repositories/legion/game/lgn_przygoda.cpp
+	"Amos.h"
+	"legion.h"
+	"lgn_przygoda.h"
+	"lgn_util.h"
+	"locale.h"
+
+1395343306 source:/home/voitek/Repositories/legion/game/lgn_sceneria.cpp
+	"Amos.h"
+	"legion.h"
+	"lgn_sceneria.h"
+	"lgn_akcja.h"
+	"lgn_diskacs.h"
+	"lgn_ekran1.h"
+	"lgn_util.h"
+
+1395343306 source:/home/voitek/Repositories/legion/game/lgn_sklep.cpp
+	"Amos.h"
+	"legion.h"
+	"lgn_diskacs.h"
+	"lgn_ekran1.h"
+	"lgn_akcja.h"
+	"lgn_sklep.h"
+	"lgn_util.h"
+	"utl_locale.h"
+
+1395343306 source:/home/voitek/Repositories/legion/game/lgn_util.cpp
+	<cmath>
+	"Amos.h"
+	"legion.h"
+	"lgn_util.h"
+	"lgn_intro.h"
+	"utl_locale.h"
+
+1395343306 source:/home/voitek/Repositories/legion/game/lgn_wczytaj.cpp
+	<fstream>
+	<vector>
+	"Amos.h"
+	"legion.h"
+	"lgn_wczytaj.h"
+	"utl_locale.h"
+	"../lib/rapidxml-1.13/rapidxml.hpp"
+
+1395343306 /home/voitek/Repositories/legion/lib/rapidxml-1.13/rapidxml.hpp
+	<cstdlib>
+	<cassert>
+	<new>
+	<exception>
+
+1395343306 source:/home/voitek/Repositories/legion/game/main.cpp
+	"../engine/Core.h"
+	"../engine/Gfx.h"
+	"main.h"
+	"Amos.h"
+	"AmosImage.h"
+	"legion.h"
+	"utl_locale.h"
+
+1395343306 source:/home/voitek/Repositories/legion/game/utl_locale.cpp
+	"../engine/Extras.h"
+	"utl_locale.h"
+
+1395343306 /home/voitek/Repositories/legion/engine/Extras.h
+	"Locale.h"
+
+1395937096 source:/home/voitek/Repositories/legion/engine/Settings.cpp
+	<iostream>
+	<fstream>
+	<sstream>
+	<string>
+	"settings_parser.hh"
+	"Settings.h"
+
+1395939101 source:/home/voitek/Repositories/legion/engine/Textures.cpp
+	<iostream>
+	<SDL/SDL.h>
+	<SDL/SDL_image.h>
+	<GL/glu.h>
+	<GL/glext.h>
+	<SDL/SDL_image.h>
+	<GL/glu.h>
+	<GL/glext.h>
+	<SDL_image/SDL_image.h>
+	<OpenGL/glu.h>
+	<OpenGL/glext.h>
+	"Textures.h"
+	"Utils.h"
+	"Settings.h"
+	"Pictures.h"
+
+1395937551 source:/home/voitek/Repositories/legion/engine/Utils.cpp
+	<cstdio>
+	"Utils.h"
+

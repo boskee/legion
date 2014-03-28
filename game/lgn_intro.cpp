@@ -77,11 +77,6 @@ void _INTRO(void) {
 
 	//	   _LOAD[KAT$+"miecz","legion:miecz","Legion",0]
 	_LOAD(KAT_S+"miecz",KAT_S+"miecz.abk_sp","Legion",0);
-	//	   _LOAD[KAT$+"mod.intro","legion:mod.intro","Legion",6]
-	_LOAD(KAT_S+"mod.intro",KAT_S+"mod.intro.mod","Legion",6);
-
-	//	   Track Loop On : Led Off
-	TrackLoop(true);
 
 
 	USTAW_FONT("bodacious",FONT_BODACIOUS,42,1);			//	   USTAW_FONT["bodacious",42]
@@ -350,6 +345,18 @@ void _pcintro_rysuj_logo(void) {
   _DrawIff(-1,0,0);
   Fade(_fade_factor);
 }
+
+void AFTER_SKIP_INTRO(void) {
+	//	   _LOAD[KAT$+"mod.intro","legion:mod.intro","Legion",6]
+	_LOAD(KAT_S+"mod.intro",KAT_S+"mod.intro.mod","Legion",6);
+
+	//	   Track Loop On : Led Off
+	TrackLoop(true);
+
+	//	   Track Play 3
+	TrackPlay(3);
+}
+
 void pc_intro(void) {
 
   ib_skip_intro = false;
@@ -406,5 +413,6 @@ void pc_intro(void) {
 
 koniec:
 	rysuj_ekran_ptr = 0;
+	AFTER_SKIP_INTRO();
 }
 

@@ -2,7 +2,10 @@
 
 #include <SDL/SDL.h>
 #ifdef _WIN32
-    // Windows (x64 and x86)
+    #include <SDL/SDL_image.h>
+
+    #include <GL/glu.h>
+    #include <GL/glext.h>
 #elif __linux__
     #include <SDL/SDL_image.h>
 
@@ -569,7 +572,7 @@ int TextureManager :: Load(const Settings& sets,const string& root) {
 	n = 1;
 	s1 = s.Extract("Phisical["+toString(n)+"]");
 	while( s1.isValid() ) {
-		INFO("tekstura<" + toString(n) + ">");
+		INFO("texture<" + toString(n) + ">");
 		INFO(s1.Dump());
 
 		id = s1.GetValS("Phisical.ID");
@@ -590,7 +593,7 @@ int TextureManager :: Load(const Settings& sets,const string& root) {
 		n++;
 		s1 = s.Extract("Phisical["+toString(n)+"]");
 	}
-	INFO("Blad: " + s1.ErrorMsg() );
+	INFO("Error: " + s1.ErrorMsg() );
 
 	//ladujemy tekstury logiczne
 	if( root != "" )
@@ -607,7 +610,7 @@ int TextureManager :: Load(const Settings& sets,const string& root) {
 	n = 1;
 	s1 = s.Extract("Logical["+toString(n)+"]");
 	while( s1.isValid() ) {
-		INFO( "tekstura<" + toString(n) + ">" );
+		INFO( "texture<" + toString(n) + ">" );
 		INFO( s1.Dump() );
 
 		id = s1.GetValS("Logical.ID");
@@ -644,10 +647,9 @@ int TextureManager :: Load(const Settings& sets,const string& root) {
 		n++;
 		s1 = s.Extract("Logical["+toString(n)+"]");
 	}
-	INFO("Blad: " + s1.ErrorMsg());
+	INFO("Error: " + s1.ErrorMsg());
 
-
-	INFO("Koniec textur");
+	INFO("End of textures");
 
 	return 1;
 }
