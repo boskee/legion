@@ -2902,7 +2902,6 @@ void GADKA(aint NR,aint B) {
 		}																													//	      End If
 	}																														//	   End If
 	ARMIA[WRG][B][TGLOWA]=1;																		//	   ARMIA(WRG,B,TGLOWA)=1
-																															//	   'BOMBA1=False
 	GODP=4-(AGRESJA/30);																				//	   GODP=4-(AGRESJA/30)
 	if( GODP<0 ) GODP=0;																				//	   If GODP<0 Then GODP=0
 	if( ARMIA[ARM][0][TNOGI]>69 && GODP>=3 && CODP>-1 && Rnd(7)==1 ) {//	   If ARMIA(ARM,0,TNOGI)>69 and GODP>=3 and CODP>-1 and Rnd(7)=1
@@ -2975,52 +2974,7 @@ void GADKA(aint NR,aint B) {
 		if( MouseClick()==1 ) {																		//	      If Mouse Click=1
 			STREFA=MouseZone();																			//	         STREFA=Mouse Zone
 			if( STREFA==1 ) {																				//	         If STREFA=1
-																															//	            'BOMBA1#=BOMBA1#-Rnd(2)
 				if( JP==0 ) {																					//	            If JP=0
-																															//	               'If BOMBA1#<=2
-																															//	               '   BOMBA1=True
-																															//	               '   GADGET[150,20,150,90,"",26,24,25,30,-1]
-																															//	               '   Gosub LOSOWANIE
-																															//	               '   If STRONA=WIERSZ and WIERSZ=WYRAZ : Edit : End If
-																															//	               '
-																															//	               '   For Y=0 To 2
-																															//	               '      For X=0 To 7
-																															//	               '         GADGET[XP+(X*15),YP+(Y*15),13,13,Upper$(ZNAKI$(1+X+Y*8)),24,22,23,30,21+X+Y*8]
-																															//	               '      Next X
-																															//	               '   Next Y
-																															//	               '   GADGET[XP+40,YP+46,36,13,"   OK",24,22,23,30,45]
-																															//	               '   X=0 : Y=0
-																															//	               '   Repeat
-																															//	               '      If Mouse Click=1
-																															//	               '         If Mouse Zone>20 and Mouse Zone<45
-																															//	               '            OLX=X : OLY=Y
-																															//	               '            GADGET[XP+(OLX*15),YP+(OLY*15),13,13,Upper$(ZNAKI$(1+OLX+OLY*8)),24,22,23,30,-1]
-																															//	               '            I=Mouse Zone-20
-																															//	               '            X=(I mod 8)-1
-																															//	               '            If X=-1 : X=7 : End If
-																															//	               '            Y=(I-1)/8
-																															//	               '            GADGET[XP+(X*15),YP+(Y*15),13,13,Upper$(ZNAKI$(1+X+Y*8)),21,23,22,13,0]
-																															//	               '         End If
-																															//	               '         If Mouse Zone=45
-																															//	               '            OLX=X : OLY=Y
-																															//	               '            GADGET[XP+(OLX*15),YP+(OLY*15),13,13,Upper$(ZNAKI$(1+OLX+OLY*8)),24,22,23,30,-1]
-																															//	               '            If I<>L# or OLDL=L#
-																															//	               '               OLDL=L#
-																															//	               '               BOMBA3=True
-																															//	               '               Gosub LOSOWANIE
-																															//	               '            Else
-																															//	               '               BOMBA1#=80+Rnd(30)
-																															//	               '               BOMBA3=False
-																															//	               '               BOMBA2#=0
-																															//	               '               KONIEC_ZAB=True
-																															//	               '            End If
-																															//	               '         End If
-																															//	               '      End If
-																															//	               '   Until KONIEC_ZAB
-																															//	               '   ERR#=0 : KONIEC_ZAB=False
-																															//	               '   X=10 : Y=20
-																															//	               '   For S=20 To 45 : Reset Zone S : Next
-																															//	               'End If
 					if( CODP==-1 ) {																		//	               If CODP=-1
 						A_S=PRZYGODY_S[PRZYGODY[TRWA_PRZYGODA][P_TYP]][8];//	                  A$=PRZYGODY$(PRZYGODY(TRWA_PRZYGODA,P_TYP),8)
 					} else {																						//	               Else
@@ -3038,7 +2992,6 @@ void GADKA(aint NR,aint B) {
 						LOSUJ2:																						//	                  LOSUJ2:
 						TYP2=Rnd(11)+1;																		//	                  TYP2=Rnd(11)+1
 					}																										//	               End If
-																															//	               'If BOMBA1#<=2 : ZAB : End If
 					for( I=0; I<=3; ++I ) {															//	               For I=0 To 3
 						if( PRZYGODY[I][P_TYP]==TYP2 ) {									//	                  If PRZYGODY(I,P_TYP)=TYP2
 							goto LOSUJ2;																		//	                     Goto LOSUJ2
@@ -3075,9 +3028,7 @@ void GADKA(aint NR,aint B) {
 			}																												//	         End If
 			if( STREFA==2 ) {																				//	         If STREFA=2
 				ODP=GODP;																							//	            ODP=GODP
-																															//	            'BOMBA1#=BOMBA1#-Rnd(2)
 				A_S=ROZMOWA_S[1][ODP];																//	            A$=ROZMOWA$(1,ODP)
-																															//	            'If BOMBA1#<=2 : ZAB : End If
 				rysuj();
 				gad_text(1.0); NAPISZ(X+144,Y+15,140,70,A_S,0,30,25);	//	            Ink 30 : NAPISZ[X+144,Y+15,140,70,A$,0,30,25]
 				_store_ekran1_gadka();
@@ -3148,9 +3099,7 @@ void GADKA(aint NR,aint B) {
 				Add(AGRESJA,GUL,AGRESJA,190);													//	            Add AGRESJA,GUL,AGRESJA To 190
 				ARMIA[WRG][B][TKORP]=AGRESJA;													//	            ARMIA(WRG,B,TKORP)=AGRESJA
 				GODP=4-(AGRESJA/40);																	//	            GODP=4-(AGRESJA/40)
-																															//	            'BOMBA2#=BOMBA2#+Rnd(1)
 				A_S=ROZMOWA_S[2][ODP];																//	            A$=ROZMOWA$(2,ODP)
-																															//	            'If BOMBA2#>125 : ZAB : End If
 				rysuj();
 				gad_text(1.0); NAPISZ(X+144,Y+15,140,70,A_S,0,30,25);	//	            Ink 30 : NAPISZ[X+144,Y+15,140,70,A$,0,30,25]
 				if( ODP==4 ) {																				//	            If ODP=4
@@ -3166,9 +3115,7 @@ void GADKA(aint NR,aint B) {
 				PX=PRZYGODY[NR][P_X];																	//	            PX=PRZYGODY(NR,P_X)
 				PY=PRZYGODY[NR][P_Y];																	//	            PY=PRZYGODY(NR,P_Y)
 				LEVEL=PRZYGODY[NR][P_LEVEL];													//	            LEVEL=PRZYGODY(NR,P_LEVEL)
-																															//	            'BOMBA2#=BOMBA2#+1.3
 				TYP=PRZYGODY[NR][P_TYP];															//	            TYP=PRZYGODY(NR,P_TYP)
-																															//	            'If BOMBA2#>131 : ZAB : End If
 				CENA=PRZYGODY[NR][P_CENA];														//	            CENA=PRZYGODY(NR,P_CENA)
 				if( AGRESJA<50 ) {																		//	            If AGRESJA<50
 					if( PX==_MIASTO ) {																	//	               If PX=MIASTO
@@ -3250,7 +3197,6 @@ void GADKA(aint NR,aint B) {
 																															//	   _POINTER=(A#*10000+1) mod 100
 																															//	   STRONA=Int(A#)
 																															//	   WIERSZ=((A#-STRONA)*10)+1
-																															//	   'BOMBA1=False
 																															//	   WYRAZ=(Int(((A#*10)-Int(A#*10))*10))+1
 																															//	   'Print _POINTER
 																															//	   L#=LITERY#(_POINTER)
@@ -3268,10 +3214,8 @@ void GADKA(aint NR,aint B) {
 																															//	   End If
 																															//	   'Print ERR#,OLDL,L#
 																															//	   Ink 30,25
-																															//	   'BOMBA4=False
 																															//	   Text XP,YP-15,"Enter a first letter of the word."
 																															//	   'zamiast edit jakiś poke niszczący system'
-																															//	   'If ERR#>0.04 : Set Zone 300,0,0 To 100,100 : BOMBA3=True : End If
 																															//	   Text XP,YP-5,"Page:"+Str$(STRONA)+", Line:"+Str$(WIERSZ)+", Word:"+Str$(WYRAZ)
 																															//	   Return
 																															//	   '---------------
@@ -3284,7 +3228,6 @@ void GADKA(aint NR,aint B) {
 	Screen(1); ResetZone(-1); ScreenDisplay(1,130,275,320,25);	//	   Screen 1 : Reset Zone : Screen Display 1,130,275,320,25 : View
 	EKRAN1();																										//	   EKRAN1
 	Screen(0);																									//	   Screen 0
-																															//	   '   If BOMBA1 : BOMBA1=2/ZERO : End If
 																															//	End Proc
 }
 

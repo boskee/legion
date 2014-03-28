@@ -630,7 +630,6 @@ void _M_FADE(aint SPEED) {
 
 	SPEED2=SPEED;					//	   SPEED2=SPEED
 	I=43;									//	   I=43
-												//	'   If BOMBA3 : A=ARMIA(50,1,1) : End If
 	do {									//	   Repeat
 		I--;								//	      Dec I
 		Mvolume(I);					//	      Mvolume I

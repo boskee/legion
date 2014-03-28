@@ -1478,7 +1478,7 @@
 	"utl_locale.h"
 	"version.h"
 
-1395343306 /home/voitek/Repositories/legion/game/legion.h
+1396034267 /home/voitek/Repositories/legion/game/legion.h
 	"amos_types.h"
 
 1395343306 /home/voitek/Repositories/legion/game/lgn_armia.h
@@ -1504,7 +1504,7 @@
 
 1395343306 /home/voitek/Repositories/legion/game/version.h
 
-1395343306 source:/home/voitek/Repositories/legion/game/lgn_akcja.cpp
+1396034320 source:/home/voitek/Repositories/legion/game/lgn_akcja.cpp
 	<cmath>
 	"Amos.h"
 	"legion.h"
@@ -1551,7 +1551,7 @@
 	"lgn_ekran1.h"
 	"lgn_util.h"
 
-1395957954 source:/home/voitek/Repositories/legion/game/lgn_intro.cpp
+1396034145 source:/home/voitek/Repositories/legion/game/lgn_intro.cpp
 	"Amos.h"
 	"legion.h"
 	"lgn_diskacs.h"
@@ -1559,7 +1559,7 @@
 	"lgn_util.h"
 	"utl_locale.h"
 
-1395343306 source:/home/voitek/Repositories/legion/game/lgn_mapa.cpp
+1396034141 source:/home/voitek/Repositories/legion/game/lgn_mapa.cpp
 	"Amos.h"
 	"legion.h"
 	"lgn_akcja.h"
@@ -1625,7 +1625,7 @@
 	"lgn_util.h"
 	"utl_locale.h"
 
-1395343306 source:/home/voitek/Repositories/legion/game/lgn_util.cpp
+1396034135 source:/home/voitek/Repositories/legion/game/lgn_util.cpp
 	<cmath>
 	"Amos.h"
 	"legion.h"

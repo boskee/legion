@@ -98,7 +98,6 @@ void _INTRO(void) {
 
 	//	   For I=16 To 31 : Screen 0 : KOL=Colour(I) : Screen 1 : Colour I,KOL : Next I
 	//	   Screen 3 : Get Palette 1
-	//	   'BOMBA4=True
 
 	//	   Screen 0 : _LOAD[KAT$+"gobilog.16","legion:gobilog.16","Legion",2] : Screen Show 0 : View
 	Screen(0);

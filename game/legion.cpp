@@ -91,9 +91,8 @@ aflt WPI_F;
 aint CENTER_V=100,SCENERIA,LAST_GAD,KANAL,POWER,REZULTAT,GOBY,MUZYKA,KONIEC_INTRA;
 
 			//	'--
-			//	Global BOMBA1#,BOMBA3,BOMBA4,BSIBY
-aflt BOMBA1_F;
-aint BOMBA3,BOMBA4,BSIBY;
+			//	Global BSIBY
+aint BSIBY;
 
 /* przeniesione do main_code() */			//	SPEED_CHECK
 
@@ -139,9 +138,8 @@ aint B_SI=1, B_PAN=2, B_SZ=3, B_EN=4, B_TYP=5, B_WAGA=6
 			//	Global OKX,OKY,SPX,SPY,REAL_KONIEC,KONIEC_AKCJI,WYNIK_AKCJI,KTO_ATAKUJE,TESTING,CELOWNIK
 aint OKX,OKY,SPX,SPY,REAL_KONIEC,KONIEC_AKCJI,WYNIK_AKCJI,KTO_ATAKUJE,TESTING,CELOWNIK;
 
-			//	Global GAME_OVER,_MODULO,BOMBA2#,SUPERVISOR,MX_WEAPON
+			//	Global GAME_OVER,_MODULO,SUPERVISOR,MX_WEAPON
 aint GAME_OVER,_MODULO,SUPERVISOR,MX_WEAPON;
-aflt BOMBA2_F;
 
 			//	TEM=0 : TX=1 : TY=2 : TSI=3 : TSZ=4 : TCELX=5 : TCELY=6 : TTRYB=7 : TE=8 : TP=9
 			//	TBOB=10 : TKLAT=11 : TAMO=12 : TLEWA=16 : TPRAWA=17 : TNOGI=15 : TGLOWA=13
@@ -533,7 +531,6 @@ void EKRAN_WYBOR(void) {
 		//	   Set Rainbow 1,6,256,"(3,-1,1)","(2,-1,1)",""
 		//	   Double Buffer
 		//	   Autoback 1
-		//	   'BOMBA1#=20+Rnd(30)
 
 	_DrawIff(-1,0,0); SwapBuffers(); _DrawIff(-1,0,0);
 
@@ -548,7 +545,6 @@ void EKRAN_WYBOR(void) {
 				 MOVE -1,(4,0,4*S)(4,0,3*S)(4,0,2*S)(16,0,6*S)(4,0,2*S)(4,0,3*S)(4,0,4*S)					\n\
 				 				 (-4,0,4*S)(-4,0,3*S)(-4,0,2*S)(-16,0,6*S)(-4,0,2*S)(-4,0,3*S)(-4,0,4*S)	\n\
 				 PAUSE IS MOVING ";
-	//	   'BOMBA2#=0
 	//	   Channel 1 To Bob 1
 	//	   Amal 1,A$
 	//	   Amal On 1
@@ -560,7 +556,6 @@ void EKRAN_WYBOR(void) {
 	LimitMouse(150,140,150,205);
 	//	   View : Wait Vbl
 	WaitVbl();
-	//	   'BOMBA3=False
 
 	while( MouseKey()!=0 ) {
 		WaitVbl();
@@ -595,7 +590,6 @@ void ZAB2(void) {
 		//	   Next Y
 		//	   X=0 : Y=0
 		//	   GADGET[XP+40,YP+46,36,13,"   OK",24,22,23,30,45]
-		//	   If STRONA=WIERSZ and WIERSZ=WYRAZ : STRONA=STRONA/0 : End If
 		//	   Repeat
 		//	      If Mouse Click=1
 		//	         If Mouse Zone>20 and Mouse Zone<45
@@ -612,17 +606,13 @@ void ZAB2(void) {
 		//	            GADGET[XP+(OLX*15),YP+(OLY*15),13,13,Upper$(ZNAKI$(1+OLX+OLY*8)),24,22,23,30,-1]
 		//	            If I<>L# or OLDL=L#
 		//	               OLDL=L#
-		//	               'BOMBA3=True
 		//	               GAME_OVER=True
 		//	               OIUEYPOY=3*RTUE
 		//	               Gosub LOSOWANIE
 		//	            Else
-		//	               BOMBA1#=82+Rnd(30)
 		//	               Add WTTITP,10
 		//	               GAME_OVER=False
-		//	               BOMBA2#=0
 		//	               XCBNCB=False
-		//	               BOMBA3=False
 		//	               KONIEC=True
 		//	               WERWRT=True
 		//	            End If
@@ -648,8 +638,6 @@ void ZAB2(void) {
 		//	   MNSVKJN=WERWR*23424
 		//	   WIERSZ=((A#-STRONA)*10)+1
 		//	   Inc XCCB
-		//	   BOMBA1=False
-		//	   WYRAZ=(Int(((A#*10)-Int(A#*10))*10))+1
 		//	   'Print _POINTER
 		//	   L#=LITERY#(_POINTER)
 		//	   L1=Abs(L#*100)
@@ -659,7 +647,6 @@ void ZAB2(void) {
 		//	   L2=L2*100
 		//	   L#=L1-L2
 		//	   XP=163 : YP=46
-		//	   BOMBA4=False
 		//	   Ink 25 : Bar XP,YP-24 To XP+120,YP
 		//	   If OLDL=L#
 		//	      'Bell
@@ -730,19 +717,15 @@ void ZAB(void) {
 		//	            If I<>L# or OLDL=L#
 		//	               OLDL=L#
 		//	               GAME_OVER=True
-		//	               BOMBA3=True
 		//	               Gosub LOSOWANIE
 		//	               'mydło
 		//	               CXZ=WER-2
 		//	               CNVB=CNVB+SERF
 		//	            Else
-		//	               BOMBA1#=83+Rnd(30)
-		//	               BOMBA3=False
 		//	               GAME_OVER=False
 		//	               'mydło
 		//	               CXZ=WER-4
 		//	               CNVB=CXZ
-		//	               BOMBA2#=0
 		//	               KONIEC=True
 		//	            End If
 		//	            QERWT=WER
@@ -750,7 +733,6 @@ void ZAB(void) {
 		//	            If I<>L#
 		//	               CNX=CNB
 		//	               FGJK=DJFKD*ETURE
-		//	               BOMBA3=True
 		//	            End If
 		//	         End If
 		//	      End If
@@ -764,10 +746,6 @@ void ZAB(void) {
 		//
 		//	   'Print At(1,1);A#
 		//	   _POINTER=(A#*10000+1) mod 100
-		//	   STRONA=Int(A#)
-		//	   WIERSZ=((A#-STRONA)*10)+1
-		//	   BOMBA1=False
-		//	   WYRAZ=(Int(((A#*10)-Int(A#*10))*10))+1
 		//	   'Print _POINTER
 		//	   L#=LITERY#(_POINTER)
 		//	   L1=Abs(L#*100)
@@ -775,7 +753,6 @@ void ZAB(void) {
 		//	   L2=L2*100
 		//	   L#=L1-L2
 		//	   XP=163 : YP=46
-		//	   BOMBA4=False
 		//	   Ink 25 : Bar XP,YP-24 To XP+120,YP
 		//	   If OLDL=L#
 		//	      'Bell

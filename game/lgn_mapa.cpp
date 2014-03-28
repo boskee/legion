@@ -71,7 +71,6 @@ void MAIN(void) {
 		if( KLAW>75 && KLAW<80 ) {				//	   If KLAW>75 and KLAW<80
 			KLAWSKROL(KLAW);								//	      KLAWSKROL[KLAW]
 		}																	//	   End If
-																			//	   '   If BOMBA1#<=0 : BOMBA1#=MIASTA(52,0,0) : End If
 		ClearKey();												//	   Clear Key
 		X=XMouse(); Y=YMouse();						//	   X=X Mouse : Y=Y Mouse
 		rysuj();
@@ -453,7 +452,6 @@ void MAPA_AKCJA(void) {
 			//clipu(MIASTA[M][1][M_LUDZIE],SPI*200);
 		}
 																								//
-																								//	'      If BOMBA2#>175 : C=2/ZERO : End If
 		if( CZYJE>1 ) {															//	      If CZYJE>1
 			MIASTA[M][0][M_LUDZIE] += Rnd(10)-2;			//	         Add MIASTA(M,0,M_LUDZIE),Rnd(10)-2
 			if( GRACZE[CZYJE][1]>10000 && Rnd(3)==1 && MIASTA[M][1][M_PODATEK]==0 ) {//	         If GRACZE(CZYJE,1)>10000 and Rnd(3)=1 and MIASTA(M,1,M_PODATEK)=0
