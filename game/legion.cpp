@@ -56,13 +56,12 @@ aint PREFS[10+1];								//	Dim PREFS(10)
 
 			//	Dim MIASTA(50,20,6),MIASTA$(50),MUR(10),SKLEP(20,21),STRZALY(10),ZNAKI$(30)
 aint MIASTA[50+1][20+1][6+1+1], MUR[10+1], SKLEP[20+1][21+1], STRZALY[10+1];
-astr MIASTA_S[50+1], ZNAKI_S[30+1];
+astr MIASTA_S[50+1];
 
-			//	Dim BOARD#(125),LITERY#(100)
-aflt BOARD_F[125+1],LITERY_F[100+1];
+			//	Dim BOARD#(125)
 
 			//	Global ARMIA(),ARMIA$(),VEKTOR#(),AN(),PREFS(),MIASTA(),MIASTA$(),MUR()
-			//	Global GRACZE(),WOJNA(),SKLEP(),IMIONA$(),STRZALY(),ZNAKI$(),BOARD#(),LITERY#()
+			//	Global GRACZE(),WOJNA(),SKLEP(),IMIONA$(),STRZALY(),ZNAKI$(),BOARD#()
 			//	'--
 
 			//	Global TEM,TX,TY,TSI,TSZ,TCELX,TCELY,TTRYB,TE,TKLAT,TP,TBOB,TAMO
@@ -637,7 +636,6 @@ void ZAB2(void) {
 		//	   WIERSZ=((A#-STRONA)*10)+1
 		//	   Inc XCCB
 		//	   'Print _POINTER
-		//	   L#=LITERY#(_POINTER)
 		//	   L1=Abs(L#*100)
 		//	   CXZXC=Abs(RTET*WER)
 		//	   L2=Abs((L#*100)/100)
@@ -745,7 +743,6 @@ void ZAB(void) {
 		//	   'Print At(1,1);A#
 		//	   _POINTER=(A#*10000+1) mod 100
 		//	   'Print _POINTER
-		//	   L#=LITERY#(_POINTER)
 		//	   L1=Abs(L#*100)
 		//	   L2=Abs((L#*100)/100)
 		//	   L2=L2*100

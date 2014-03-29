@@ -3199,7 +3199,6 @@ void GADKA(aint NR,aint B) {
 																															//	   WIERSZ=((A#-STRONA)*10)+1
 																															//	   WYRAZ=(Int(((A#*10)-Int(A#*10))*10))+1
 																															//	   'Print _POINTER
-																															//	   L#=LITERY#(_POINTER)
 																															//	   L1=Abs(L#*100)
 																															//	   L2=Abs((L#*100)/100)
 																															//	   L2=L2*100
@@ -3370,7 +3369,6 @@ void NOWA_POSTAC(aint A,aint NR,aint RASA) {
 		ARMIA[A][NR][TMAGMA]=ARMIA[A][NR][TMAG];		//	      ARMIA(A,NR,TMAGMA)=ARMIA(A,NR,TMAG)
 	}																							//	   End If
 	if( PREFS[1]==1 ) {														//	   If PREFS(1)=1
-																			//	      ROB_IMIE
 		ARMIA_S[A][NR]=ROB_IMIE();											//	      ARMIA$(A,NR)=Param$
 	} else {																			//	   Else
 		ARMIA_S[A][NR]=GS("040")+Str_S(NR);					//	      ARMIA$(A,NR)="worrior"+Str$(NR)
@@ -3404,8 +3402,8 @@ void POTWOR(aint A, astr A_S, aint ILU, aint RASA) {
 		//!!! BUG ? cos tu chyba nie gra, nie powinno byc POTWORY+I ?
 		DelBob(POTWORY+1);		//	      Del Bob POTWORY+1
 	}												//	   Next I
-	_LOAD(KAT_S+"dane/potwory/"+A_S,"dane:potwory/"+A_S,"Dane",1);//	   _LOAD[KAT$+"dane/potwory/"+A$,"dane:potwory/"+A$,"Dane",1]
-	_LOAD(KAT_S+"dane/potwory/"+A_S+".snd","dane:potwory/"+A_S+".snd","Dane",9);//	   _LOAD[KAT$+"dane/potwory/"+A$+".snd","dane:potwory/"+A$+".snd","Dane",9]
+	_LOAD(KAT_S + "dane/potwory/" + A_S, "dane:potwory/" + A_S, "Dane", 1);//	   _LOAD[KAT$+"dane/potwory/"+A$,"dane:potwory/"+A$,"Dane",1]
+	_LOAD(KAT_S + "dane/potwory/" + A_S + ".snd", "dane:potwory/" + A_S + ".snd", "Dane", 9);//	   _LOAD[KAT$+"dane/potwory/"+A$+".snd","dane:potwory/"+A$+".snd","Dane",9]
 	ARMIA[A][0][TE]=ILU;		//	   ARMIA(A,0,TE)=ILU
 	ARMIA[A][0][TKORP]=RASY[RASA][5];//	   ARMIA(A,0,TKORP)=RASY(RASA,5)
 	for(I=1;I<=ILU;++I) {		//	   For I=1 To ILU
