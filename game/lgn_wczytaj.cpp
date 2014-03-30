@@ -6,7 +6,7 @@
 #include "legion.h"
 #include "lgn_wczytaj.h"
 #include "utl_locale.h"
-#include "../lib/rapidxml-1.13/rapidxml.hpp"
+#include "../lib/rapidjson/document.h"
 
 void WCZYTAJ_BRON(void) {
 		//	Procedure WCZYTAJ_BRON
@@ -613,51 +613,32 @@ void WCZYTAJ_ROZMOWE(void) {
 		//	   Data "That's all I have Sir."
 		//
 
-		aint r=0;
-
-        rapidxml::xml_document<> doc;
-        rapidxml::xml_node<> * root_node;
-
         // Read the xml file into a vector
-        astr xml_path = KAT_S + "data/xml/dialogues.xml";
+        astr json_path = KAT_S + "data/json/dialogues.json";
 
-        ifstream theFile(xml_path.c_str());
+        ifstream jsonFile(json_path.c_str());
 
-        if (!theFile) {
+        if (!jsonFile) {
             return;
         }
 
-        vector<char> buffer((istreambuf_iterator<char>(theFile)), istreambuf_iterator<char>());
-        buffer.push_back('\0');
-        // Parse the buffer using the xml file parsing library into doc
-        doc.parse<0>(&buffer[0]);
-        // Find our root node
-        root_node = doc.first_node("Dialogues");
+        vector<char> json_buffer((istreambuf_iterator<char>(jsonFile)), istreambuf_iterator<char>());
+        json_buffer.push_back('\0');
+
+        rapidjson::Document d;
+        d.Parse<0>(&json_buffer[0]);
+        const rapidjson::Value& a = d["dialogues"];
+
+		aint r=0;
+
         // Iterate over the brewerys
         aint I = 0;
 
         astr currentLang = GetLang();
 
-        for (rapidxml::xml_node<> * dialogue_node = root_node->first_node("Dialogue"); dialogue_node; dialogue_node = dialogue_node->next_sibling())
+        for (rapidjson::SizeType i = 0; i < a.Size(); i++)
         {
-            astr Tmp = "";
-            for (rapidxml::xml_node<> * text_node = dialogue_node->first_node("Text"); text_node; text_node = text_node->next_sibling())
-            {
-                if (text_node->value())
-                {
-                    rapidxml::xml_node<> const* CData = text_node->first_node();
-                    if (CData && CData->type() == rapidxml::node_cdata) {
-                        Tmp = CData->value();
-                    } else {
-                        Tmp = text_node->value();
-                    }
-
-                    if (text_node->first_attribute("lang")->value() == currentLang) {
-                        break;
-                    }
-                }
-            }
-            ROZMOWA2_S[I] = Tmp;
+            ROZMOWA2_S[I] = a[i][currentLang.c_str()].GetString();
             r++;
             ++I;
         }
