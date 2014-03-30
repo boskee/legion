@@ -622,14 +622,14 @@ void WCZYTAJ_ROZMOWE(void) {
             return;
         }
 
-        vector<char> json_buffer((istreambuf_iterator<char>(jsonFile)), istreambuf_iterator<char>());
-        json_buffer.push_back('\0');
+        vector<char> buffer((istreambuf_iterator<char>(jsonFile)), istreambuf_iterator<char>());
+        buffer.push_back('\0');
 
         rapidjson::Document d;
-        d.Parse<0>(&json_buffer[0]);
+        d.Parse<0>(&buffer[0]);
         const rapidjson::Value& a = d["dialogues"];
-
-		aint r=0;
+        const rapidjson::Value& b = d["join_us"];
+        const rapidjson::Value& c = d["give_money"];
 
         // Iterate over the brewerys
         aint I = 0;
@@ -643,12 +643,17 @@ void WCZYTAJ_ROZMOWE(void) {
             ++I;
         }
 
-		for(aint I=1; I<=2; ++I ) {
-		  for(aint J=0; J<=4; ++J ) {
-		     ROZMOWA_S[I][J]=GS("R"+toString(r,"%3.3d"));
-		     r++;
-			}
-		}
+        for (rapidjson::SizeType i = 0; i < b.Size(); i++)
+        {
+            ROZMOWA_S[1][i] = b[i][currentLang.c_str()].GetString();
+        }
+
+        for (rapidjson::SizeType i = 0; i < c.Size(); i++)
+        {
+            printf("hello = %s\n", c[i][currentLang.c_str()].GetString());
+            ROZMOWA_S[2][i] = c[i][currentLang.c_str()].GetString();
+        }
+
 		/*
 
 		for(aint I=0; I<=33; ++I ) {

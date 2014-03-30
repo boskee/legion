@@ -136,5 +136,49 @@
             "EN": "It's useful to have about three villagers in the squad to find a way through swaps.",
             "PL": "Warto mieć w drużynie ze trzech wieśniaków do odnajdywania drogi przez bagna."
         }
+    ],
+    "join_us": [
+        {
+            "EN": "Never!",
+            "PL": "Robie naszyjniki z ludzkich uszu..."
+        },
+        {
+            "EN": "No way!",
+            "PL": "Nie ma mowy!"
+        },
+        {
+            "EN": "I don't speak to greenhorns.",
+            "PL": "Nie gadam z lamerami.(F10)"
+        },
+        {
+            "EN": "I'll do that but you have to pay me.",
+            "PL": "Ok,ale musisz mi zapłacić"
+        },
+        {
+            "EN": "It's a great honour to serve under your command, my Lord.",
+            "PL": "Zaszczyt to dla mnie wielki, służyć pod twoją komendą Panie."
+        }
+    ],
+    "give_money": [
+        {
+            "EN": "You will die slowly.",
+            "PL": "Będziesz umierał powoli."
+        },
+        {
+            "EN": "What about a crack on the sconce?",
+            "PL": "Chcesz w baniak?"
+        },
+        {
+            "EN": "And what else?",
+            "PL": "Nie wkurwiaj mnie kozi synu!!!"
+        },
+        {
+            "EN": "I've got no gold.",
+            "PL": "Nie mam pieniędzy"
+        },
+        {
+            "EN": "That's all I have Sir.",
+            "PL": "To wszysto co mam panie."
+        }
     ]
 }
