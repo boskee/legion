@@ -499,7 +499,7 @@ void EKRAN_WYBOR(void) {
 		//	   _LOAD[KAT$+"intro","legion:intro","Legion",1]
 	_LOAD(KAT_S+GS("FILE000"),KAT_S+"kam_eng.pic.iff","Legion",3);
 	_LOAD(KAT_S+"mieczyk",KAT_S+"mieczyk.abk_sp","Legion",0);
-  _LOAD(KAT_S+"intro",KAT_S+"intro.abk_sp","Legion",1);
+    _LOAD(KAT_S+"intro",KAT_S+"intro.abk_sp","Legion",1);
 
 	ScreenOpen(0,640,512,16,HIRES|LACED);
 

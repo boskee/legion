@@ -3400,7 +3400,7 @@ void POTWOR(aint A, astr A_S, aint ILU, aint RASA) {
 
 	for(I=1;I<=16;++I) {		//	   For I=1 To 16
 		//!!! BUG ? cos tu chyba nie gra, nie powinno byc POTWORY+I ?
-		DelBob(POTWORY+1);		//	      Del Bob POTWORY+1
+		DelBob(POTWORY+I);		//	      Del Bob POTWORY+1
 	}												//	   Next I
 	_LOAD(KAT_S + "dane/potwory/" + A_S, "dane:potwory/" + A_S, "Dane", 1);//	   _LOAD[KAT$+"dane/potwory/"+A$,"dane:potwory/"+A$,"Dane",1]
 	_LOAD(KAT_S + "dane/potwory/" + A_S + ".snd", "dane:potwory/" + A_S + ".snd", "Dane", 9);//	   _LOAD[KAT$+"dane/potwory/"+A$+".snd","dane:potwory/"+A$+".snd","Dane",9]

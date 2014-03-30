@@ -361,12 +361,8 @@ void MAPA_AKCJA(void) {
 						RASA=ARMIA[A][I][TRASA];						// !!! BUG ? tego orginalnie nie bylo
 						MUNDRY=RASY[RASA][6];								//	                  MUNDRY=RASY(RASA,6)
 
-						//!!! BLAD
-						Add(ARMIA[A][I][TDOSW],Rnd(MUNDRY),ARMIA[A][I][TDOSW],95);//	                  Add ARMIA(A,I,TDOSW),Rnd(MUNDRY),ARMIA(A,I,TDOSW) To 95
-						//!!! powinno byc
-						//ARMIA[A][I][TDOSW] += Rnd(MUNDRY);
-						//clipu(ARMIA[A][I][TDOSW],95);
-
+						ARMIA[A][I][TDOSW] += Rnd(MUNDRY);//	                  Add ARMIA(A,I,TDOSW),Rnd(MUNDRY),ARMIA(A,I,TDOSW) To 95
+						clipu(ARMIA[A][I][TDOSW],95);
 					}																			//	               End If
 				}																				//	            Next I
 			}																					//	         End If
@@ -445,11 +441,8 @@ void MAPA_AKCJA(void) {
 			if( MIASTA[M][I][M_LUDZIE]==9 ) SPI++;		//	         If MIASTA(M,I,M_LUDZIE)=9 : Inc SPI : End If
 		}																						//	      Next I
 		if( SPI>0 ) {																//	      If SPI>0 : Add MIASTA(M,1,M_LUDZIE),LUDZIE/15,MIASTA(M,1,M_LUDZIE) To SPI*200 : End If
-			//!!! BLAD
-			Add(MIASTA[M][1][M_LUDZIE],LUDZIE/15,MIASTA[M][1][M_LUDZIE],SPI*200);
-			//!!! powinno byc
-			//MIASTA[M][1][M_LUDZIE] += LUDZIE/15;
-			//clipu(MIASTA[M][1][M_LUDZIE],SPI*200);
+			MIASTA[M][1][M_LUDZIE] += LUDZIE/15;
+			clipu(MIASTA[M][1][M_LUDZIE],SPI*200);
 		}
 																								//
 		if( CZYJE>1 ) {															//	      If CZYJE>1
@@ -1059,7 +1052,7 @@ void MA_PRZYGODA(aint A,aint NR) {
 																																		//	Procedure MA_PRZYGODA[A,NR]
   aint _TEREN=0, TYP=0, M=0, POT=0, ILE=0, I=0, IMAX=0, X=0, Y=0,
 			 BB=0, CO=0, XB=0, YB=0, B=0, POS=0, MAGIA=0, ENERGIA=0,
-			 SILA=0, SZYBKOSC=0, _DOS=0, SZBKOSC=0;
+			 SILA=0, SZYBKOSC=0, _DOS=0;
   astr A_S="", PO_S="";
 
 	AmalOnOff(0,false);																								//	   Amal Off 0
@@ -1198,8 +1191,7 @@ void MA_PRZYGODA(aint A,aint NR) {
 		ARMIA[WRG][10][TKORP]=40;																				//	      ARMIA(WRG,10,TKORP)=40
 		ARMIA[WRG][10][TEM]+=ENERGIA;																		//	      Add ARMIA(WRG,10,TEM),ENERGIA
 		ARMIA[WRG][10][TSI]+=SILA;																			//	      Add ARMIA(WRG,10,TSI),SILA
-		//!!! blad - literowka w nazwie zmiennej
-		ARMIA[WRG][10][TSZ]+=SZBKOSC;																		//	      Add ARMIA(WRG,10,TSZ),SZBKOSC
+		ARMIA[WRG][10][TSZ]+=SZYBKOSC;																		//	      Add ARMIA(WRG,10,TSZ),SZYBKOSC
 		ARMIA[WRG][10][TMAGMA]+=MAGIA;																	//	      Add ARMIA(WRG,10,TMAGMA),MAGIA
 		ARMIA[WRG][10][TDOSW]+=_DOS;																		//	      Add ARMIA(WRG,10,TDOSW),_DOS
 																																		//	      'będzie gadał
@@ -1219,8 +1211,7 @@ void MA_PRZYGODA(aint A,aint NR) {
 		ARMIA_S[WRG][10]=IM_PRZYGODY_S[NR];															//	      ARMIA$(WRG,10)=IM_PRZYGODY$(NR)
 		ARMIA[WRG][10][TEM]+=ENERGIA;																		//	      Add ARMIA(WRG,10,TEM),ENERGIA
 		ARMIA[WRG][10][TSI]+=SILA;																			//	      Add ARMIA(WRG,10,TSI),SILA
-		//!!! blad - literowka w nazwie zmiennej
-		ARMIA[WRG][10][TSZ]+=SZBKOSC;																		//	      Add ARMIA(WRG,10,TSZ),SZBKOSC
+		ARMIA[WRG][10][TSZ]+=SZYBKOSC;																		//	      Add ARMIA(WRG,10,TSZ),SZYBKOSC
 		ARMIA[WRG][10][TMAGMA]+=MAGIA;																	//	      Add ARMIA(WRG,10,TMAGMA),MAGIA
 		ARMIA[WRG][10][TDOSW]+=_DOS;																		//	      Add ARMIA(WRG,10,TDOSW),_DOS
 		ARMIA[WRG][10][TPRAWA]=-1;																			//	      ARMIA(WRG,10,TPRAWA)=-1
@@ -1265,8 +1256,7 @@ void MA_PRZYGODA(aint A,aint NR) {
 		ARMIA[WRG][10][TKORP]=40;																				//	      ARMIA(WRG,10,TKORP)=40
 		ARMIA[WRG][10][TEM]+=ENERGIA;																		//	      Add ARMIA(WRG,10,TEM),ENERGIA
 		ARMIA[WRG][10][TSI]+=SILA;																			//	      Add ARMIA(WRG,10,TSI),SILA
-		//!!! blad - literowka w nazwie zmiennej
-		ARMIA[WRG][10][TSZ]+=SZBKOSC;																		//	      Add ARMIA(WRG,10,TSZ),SZBKOSC
+		ARMIA[WRG][10][TSZ]+=SZYBKOSC;																		//	      Add ARMIA(WRG,10,TSZ),SZYBKOSC
 		ARMIA[WRG][10][TMAGMA]+=MAGIA;																	//	      Add ARMIA(WRG,10,TMAGMA),MAGIA
 		ARMIA[WRG][10][TDOSW]+=_DOS;																		//	      Add ARMIA(WRG,10,TDOSW),_DOS
 																																		//	      'będzie gadał
@@ -1306,8 +1296,7 @@ void MA_PRZYGODA(aint A,aint NR) {
 		ARMIA[WRG][10][TEM]+=ENERGIA;																		//	      Add ARMIA(WRG,10,TEM),ENERGIA
 		ARMIA[WRG][10][TE]+=ENERGIA;																		//	      Add ARMIA(WRG,10,TE),ENERGIA
 		ARMIA[WRG][10][TSI]+=SILA;																			//	      Add ARMIA(WRG,10,TSI),SILA
-		//!!! blad - literowka w nazwie zmiennej
-		ARMIA[WRG][10][TSZ]+=SZBKOSC;																		//	      Add ARMIA(WRG,10,TSZ),SZBKOSC
+		ARMIA[WRG][10][TSZ]+=SZYBKOSC;																		//	      Add ARMIA(WRG,10,TSZ),SZYBKOSC
 		ARMIA[WRG][10][TMAG]+=MAGIA;																		//	      Add ARMIA(WRG,10,TMAG),MAGIA
 		ARMIA[WRG][10][TDOSW]+=_DOS;																		//	      Add ARMIA(WRG,10,TDOSW),_DOS
 																																		//	      'będzie gadał
@@ -1557,7 +1546,7 @@ void MA_WYDAJ_ROZKAZ(aint PL,aint A) {
 	//	Procedure MA_WYDAJ_ROZKAZ[PL,A]
 
 	aint XA=0,YA=0,RODZAJ=0,STARAODL=0,WIDAC=0,I=0,LUDZIE=0,PL2=0,SZAJBA=0,
-	     XB=0,YB=0,TARGET=0,CX=0,CY=0,M=0;
+	     XB=0,YB=0,TARGET=0,CX=0,CY=0,M=0,RAND=0;
 
 	XA=ARMIA[A][0][TX];								//	   XA=ARMIA(A,0,TX)
 	YA=ARMIA[A][0][TY];								//	   YA=ARMIA(A,0,TY)
@@ -1577,9 +1566,9 @@ void MA_WYDAJ_ROZKAZ(aint PL,aint A) {
 			}															//	         End If
 			if( PL==5 ) SZAJBA=1;					//	         If PL=5 : SZAJBA=1 : End If
 			if( Rnd(SZAJBA)==1 ) {				//	         If Rnd(SZAJBA)=1
-				//!!! BUG ? CZY NIE POWINNO BYC TYLE SAMO, A NIE DWA RAZY LOSOWANE
-				WOJNA[PL][PL2]=Rnd(20)+8;		//	            WOJNA(PL,PL2)=Rnd(20)+8
-				WOJNA[PL2][PL]=Rnd(20)+8;		//	            WOJNA(PL2,PL)=Rnd(20)+8
+				RAND = Rnd(20)+8;
+				WOJNA[PL][PL2]=RAND;	//	            WOJNA(PL,PL2)=Rnd(20)+8
+				WOJNA[PL2][PL]=RAND;		//	            WOJNA(PL2,PL)=Rnd(20)+8
 			}															//	         End If
 			if( WOJNA[PL][PL2]>0 && PL2!=PL ) {//	         If WOJNA(PL,PL2)>0 and PL2<>PL
 																		//	            'litości !!!
@@ -1774,15 +1763,13 @@ void SZPIEGUJ(aint NR,aint CO) {
 					ZN=-1;
 				}
 
-				//!!! BLAD
-				Add(CENA,ZN*50,0,1000);					//	            Add CENA,ZN*50,0 To 1000
-				//!!! powinno raczej byc
-				//CENA+=ZN*50; clip(CENA,0,1000);
+				//	            Add CENA,ZN*50,0 To 1000
+				CENA += ZN*50;
+				clip(CENA, 0, 1000);
 
-				//!!! BLAD
-				Add(DNI,-ZN,2,22);							//	            Add DNI,-ZN,2 To 22
-				//!!! powinno raczej byc
-				//DNI+=-ZN;	clip(DNI,2,22);
+				//	            Add DNI,-ZN,2 To 22
+				DNI += -ZN;
+				clip(DNI,2,22);
 
 				//gad_back(1.0);									//	            Ink 30 : Bar OKX+113,OKY+25 To OKX+150,OKY+38
 				//_Bar(OKX+113,OKY+25,OKX+150,OKY+38);
@@ -1913,7 +1900,7 @@ void BITWA(aint A,aint B,aint X1,aint Y1,aint T1,aint X2,aint Y2,aint T2,aint SC
 	SETUP("",GS("007"),"");					//	   SETUP["","Battle",""]
 	if( ARMIA[B][0][TMAG]==5 ) {		//	   If ARMIA(B,0,TMAG)=5
 		for(I=1;I<=16;++I) {					//	      For I=1 To 16
-			DelBob(POTWORY+1);					//	         Del Bob POTWORY+1
+			DelBob(POTWORY+I);					//	         Del Bob POTWORY+1
 		}															//	      Next I
 		_LOAD(KAT_S+"dane/potwory/szkielet","dane:potwory/szkielet","Dane",1);//	      _LOAD[KAT$+"dane/potwory/szkielet","dane:potwory/szkielet","Dane",1]
 		_LOAD(KAT_S+"dane/potwory/szkielet.snd","dane:potwory/szkielet.snd","Dane",9);//	      _LOAD[KAT$+"dane/potwory/szkielet.snd","dane:potwory/szkielet.snd","Dane",9]
@@ -1945,8 +1932,7 @@ void BITWA_SYMULOWANA(aint A,aint B) {
 		S3=S2/15;													//	      S3=S2/15
 	} else {														//	   Else
 		WINNER=B; LOSER=A;								//	      WINNER=B : LOSER=A
-		//!!! BUG tu pewnie powinno byc S3=S1/15;
-		S3=S2/15;													//	      S3=S2/15
+		S3=S1/15;													//	      S3=S2/15
 	}																		//	   End If
 	ZABIJ_ARMIE(LOSER);									//	   ZABIJ_ARMIE[LOSER]
 	if( LOSER<40 ) B_CLEAR(LOSER);			//	   If LOSER<40 : B_CLEAR[LOSER] : End If
