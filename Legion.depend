@@ -1559,7 +1559,7 @@
 	"lgn_util.h"
 	"utl_locale.h"
 
-1396206807 source:/home/voitek/Repositories/legion/game/lgn_mapa.cpp
+1396216063 source:/home/voitek/Repositories/legion/game/lgn_mapa.cpp
 	"Amos.h"
 	"legion.h"
 	"lgn_akcja.h"
@@ -1606,7 +1606,7 @@
 	"lgn_util.h"
 	"locale.h"
 
-1395343306 source:/home/voitek/Repositories/legion/game/lgn_sceneria.cpp
+1396215867 source:/home/voitek/Repositories/legion/game/lgn_sceneria.cpp
 	"Amos.h"
 	"legion.h"
 	"lgn_sceneria.h"

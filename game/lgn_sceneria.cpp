@@ -122,10 +122,8 @@ LOG("Sceneria typ="+toString(TYP));
 			X=Rnd(47); Y=Rnd(3);						//	         X=Rnd(47) : Y=Rnd(3)
 			R=Rnd(10);											//	         R=Rnd(10)
 			if( R<5 ) CO=37;								//	         If R<5 : CO=37 : End If
-			if( R==5 ) CO=36;								//	         If R=5 : CO=36 : End If
-			if( R==6 ) CO=36;								//	         If R=6 : CO=36 : End If
-			if( R==7 ) CO=32;								//	         If R=7 : CO=32 : End If
-			if( R==8 ) CO=32;								//	         If R=8 : CO=32 : End If
+			if( R==5 || R==6 ) CO=36;								//	         If R=5 : CO=36 : End If If R=6 : CO=36 : End If
+			if( R==7 || R==8 ) CO=32;								//	         If R=7 : CO=32 : End If If R=8 : CO=32 : End If
 			if( R==9 ) CO=39;								//	         If R=9 : C0=39 : End If
 			if( R==10 ) CO=0;								//	         If R=10 : CO=0 : End If
 			GLEBA[X][Y]=CO;									//	         GLEBA(X,Y)=CO

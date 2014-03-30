@@ -1073,7 +1073,7 @@ void MA_PRZYGODA(aint A,aint NR) {
 		if( Rnd(1)==0 ) {																								//	      If Rnd(1)=0
 			POT=16; ILE=3; PO_S="skirial";																//	         POT=16 : ILE=3 : PO$="skirial"
 		} else {																												//	      Else
-			POT=18; ILE=5; PO_S="pająk";																	//	         POT=18 : ILE=5 : PO$="pająk"
+			POT=18; ILE=5; PO_S="pajak";																	//	         POT=18 : ILE=5 : PO$="pająk"
 		}																																//	      End If
 		POTWOR(40,PO_S,ILE,POT);																				//	      POTWOR[40,PO$,ILE,POT]
 		for( I=ILE+1; I<=10; ++I ) { NOWA_POSTAC(40,I,3); }							//	      For I=ILE+1 To 10 : NOWA_POSTAC[40,I,3] : Next I
@@ -1106,7 +1106,7 @@ void MA_PRZYGODA(aint A,aint NR) {
 		if( Rnd(1)==0 ) {																								//	      If Rnd(1)=0
 			POT=17; ILE=9; PO_S="humanoid";																//	         POT=17 : ILE=9 : PO$="humanoid"
 		} else {																												//	      Else
-			POT=18; ILE=9; PO_S="pająk";																	//	         POT=18 : ILE=9 : PO$="pająk"
+			POT=18; ILE=9; PO_S="pajak";																	//	         POT=18 : ILE=9 : PO$="pająk"
 		}																																//	      End If
 		POTWOR(40,PO_S,ILE,POT);																				//	      POTWOR[40,PO$,ILE,POT]
 		for( I=1; I<=10; ++I) { ARMIA[WRG][I][TKORP]=180; }							//	      For I=1 To 10 : ARMIA(WRG,I,TKORP)=180 : Next I
@@ -1459,7 +1459,7 @@ void MA_WYPADEK(aint A,aint TYP) {
 	if( TYP==7 ) {																						//	   If TYP=7
 		A_S=GS("098");																					//	      A$="We've found an entrance to cavern."
 		POT=18; ILE=5; XT=1; YT=0;															//	      POT=18 : ILE=5 : XT=1 : YT=0
-		PO_S="pająk";																						//	      PO$="pająk"
+		PO_S="pajak";																						//	      PO$="pająk"
 		_TEREN=8;																								//	      TEREN=8
 		BB=34;																									//	      BB=34
 	}																													//	   End If

@@ -639,7 +639,6 @@ void WCZYTAJ_ROZMOWE(void) {
         for (rapidjson::SizeType i = 0; i < a.Size(); i++)
         {
             ROZMOWA2_S[I] = a[i][currentLang.c_str()].GetString();
-            r++;
             ++I;
         }
 
@@ -650,7 +649,6 @@ void WCZYTAJ_ROZMOWE(void) {
 
         for (rapidjson::SizeType i = 0; i < c.Size(); i++)
         {
-            printf("hello = %s\n", c[i][currentLang.c_str()].GetString());
             ROZMOWA_S[2][i] = c[i][currentLang.c_str()].GetString();
         }
 
