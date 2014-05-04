@@ -158,7 +158,7 @@ int Font :: Load(const string& name,int ptx) {
 	for( int i = 0; i < 256; ++i ) {
 		if( gw[i] > 0 ) {
 
-			glyph = TTF_RenderGlyph_Shaded(font, i, fg, bg);
+			glyph = TTF_RenderGlyph_Blended(font, i, fg);
 
 			if( !glyph ) {
 		    ERROR("TTF_GlyphMetrics: " + TTF_GetError());
@@ -170,7 +170,7 @@ int Font :: Load(const string& name,int ptx) {
 					xo = 0;
 				}
 
-				SDL_SetAlpha(glyph, 0, 0);
+				SDL_SetAlpha(glyph, SDL_SRCALPHA, 0);
 
 				drect.x = xo;
 				drect.y = yo;
