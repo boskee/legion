@@ -6,7 +6,7 @@
 #elif __linux__
     #include <SDL/SDL_mixer.h>
 #elif __APPLE__
-    #include <SDL_mixer/SDL_mixer.h>
+    #include <SDL2_mixer/SDL_mixer.h>
 #endif
 
 unsigned char* convert_abk2mod(unsigned char *abk,long len,long &mod_len);

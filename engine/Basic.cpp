@@ -5,6 +5,7 @@
 #include "Bob.h"
 #include "Types.h"
 #include "Pictures.h"
+#include "Core.h"
 
 namespace Gfx {
 
@@ -230,8 +231,10 @@ void Cls(void) {
 
 void Cls(GLfloat r,GLfloat g,GLfloat b,GLfloat a) {
 	BreakBobBlits();
-	glClearColor(r,g,b,a);
-	glClear(GL_COLOR_BUFFER_BIT);
+	//glClearColor(r,g,b,a);
+	//glClear(GL_COLOR_BUFFER_BIT);
+    SDL_SetRenderDrawColor(Core::renderer, r, g, b, a);
+    SDL_RenderClear(Core::renderer);
 }
 
 void SetDrawBuffer(int buf) {

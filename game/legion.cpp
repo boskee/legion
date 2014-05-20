@@ -1,4 +1,3 @@
-
 #include "../engine/Gfx.h"
 
 #include "Amos.h"
@@ -16,7 +15,7 @@
 
 using namespace std;
 
-astr gs_language = "PL";
+astr gs_language = "EN";
 astr gs_default_language = "PL";
 
 																//	Set Buffer 150

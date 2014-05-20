@@ -1,5 +1,4 @@
-
-#include <SDL/SDL.h>
+#include <SDL2/SDL.h>
 
 #include "Events.h"
 
@@ -73,9 +72,12 @@ bool ProcessEvents(void) {
 				if( ifp_mousemotion ) ifp_mousemotion(event.motion.x,event.motion.y,event.motion.xrel,event.motion.yrel,iud_mousemotion);					//wolamy funkcje obslugi zdarzenia
 				break;
 
-			case SDL_VIDEORESIZE:
-				_CoreResizeEvent(event.resize.w,event.resize.h);
-				if( ifp_resize ) ifp_resize(event.resize.w,event.resize.h,iud_resize);					//wolamy funkcje obslugi zdarzenia
+			case SDL_WINDOWEVENT:
+			    if (event.window.event == SDL_WINDOWEVENT_RESIZED)
+                {
+                    _CoreResizeEvent(event.window.data1,event.window.data2);
+                    if( ifp_resize ) ifp_resize(event.window.data1,event.window.data2,iud_resize);					//wolamy funkcje obslugi zdarzenia
+                }
 				break;
 
 			default:

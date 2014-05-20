@@ -3,14 +3,14 @@
 
 #include <string>
 
-#include <SDL/SDL.h>
+#include <SDL2/SDL.h>
 
 #ifdef _WIN32
     #include <SDL/SDL_mixer.h>
 #elif __linux__
     #include <SDL/SDL_mixer.h>
 #elif __APPLE__
-    #include <SDL_mixer/SDL_mixer.h>
+    #include <SDL2_mixer/SDL_mixer.h>
 #endif
 
 //ponizsze includy po to aby program korzystajacy z biblioteki nie musial bawic sie w szczegolowe
@@ -47,7 +47,9 @@ namespace Core {
 	extern bool ib_resizable;
 
 	/// Główny ekran (okno)
-	extern SDL_Surface *screen;
+	extern SDL_Window *screen;
+
+	extern SDL_Renderer *renderer;
 
 	/// Nazwa głównego okna
 	extern std::string is_screen_title;

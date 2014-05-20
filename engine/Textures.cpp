@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include <SDL/SDL.h>
+#include <SDL2/SDL.h>
 #ifdef _WIN32
     #include <SDL/SDL_image.h>
 
@@ -12,7 +12,7 @@
     #include <GL/glu.h>
     #include <GL/glext.h>
 #elif __APPLE__
-    #include <SDL_image/SDL_image.h>
+    #include <SDL2_image/SDL_image.h>
 
     #include <OpenGL/glu.h>
     #include <OpenGL/glext.h>
@@ -136,6 +136,7 @@ int PTex :: Set(const unsigned char *buf,int width, int height,GLint format) {
 													0,	//mipmap max level
 													image->pixels );
 */
+
 
 	gluBuild2DMipmaps(	GL_TEXTURE_2D,
 								 			format,

@@ -9,7 +9,7 @@ Implementacja czesci funkcjonalnosci Amosa
 #include <cmath>
 #include <algorithm>
 
-#include <SDL/SDL.h>
+#include <SDL2/SDL.h>
 #ifdef _WIN32
     #include <SDL/SDL_image.h>
     #include <SDL/SDL_mixer.h>
@@ -21,8 +21,8 @@ Implementacja czesci funkcjonalnosci Amosa
 
     #include <GL/gl.h>
 #elif __APPLE__
-    #include <SDL_image/SDL_image.h>
-    #include <SDL_mixer/SDL_mixer.h>
+    #include <SDL2_image/SDL_image.h>
+    #include <SDL2_mixer/SDL_mixer.h>
 
     #include <OpenGL/gl.h>
 #endif
@@ -121,7 +121,7 @@ static long il_mouse_min_x, il_mouse_min_y, il_mouse_max_x, il_mouse_max_y;
 
 static queue<int> key_buf;				//kolejka wcisnietych klawiszy (amos moze nie pobierac ich na biezaco)
 static queue<unsigned short> keymod_buf;
-static bool key_state[SDLK_LAST];	//bufor stanow
+static bool key_state[SDL_NUM_SCANCODES];	//bufor stanow
 
 static bool ib_true = true, ib_false = false;
 static bool ib_pblist = false;
@@ -367,10 +367,10 @@ void _key_down(int key,Core::UserData udata) {
 	unsigned short keymod = Core::ModifiersState();
 	key_buf.push(key);
 	keymod_buf.push(keymod);
-	if( key >= 0 && key < SDLK_LAST ) key_state[key]=true;
+	if( key >= 0 && key < SDL_NUM_SCANCODES ) key_state[key]=true;
 }
 void _key_up(int key,Core::UserData udata) {
-	if( key >= 0 && key < SDLK_LAST ) key_state[key]=false;
+	if( key >= 0 && key < SDL_NUM_SCANCODES ) key_state[key]=false;
 }
 void _resize(int w,int h,Core::UserData udata) {
 	glViewport(0,0,w,h);
@@ -387,6 +387,7 @@ void _ProcessEvents(void) {
 		ib_mouse_clicked_read = false;
 	}
 	bool quit = Core::ProcessEvents();	//i na koniec przetwarzamy zdarzenia
+
 	if( quit ) {
 		_AmosFinish();
 		exit(0);
@@ -510,7 +511,7 @@ void _AmosInit(void) {
 		if_hq_scaley = 0.5;
 	}
 
-	for(int i = 0; i < SDLK_LAST; ++i ) {
+	for(int i = 0; i < SDL_NUM_SCANCODES; ++i ) {
 		key_state[i] = false;
 	}
 
@@ -1362,8 +1363,8 @@ int LoadIff(const string& fname,int screen_nr) {
 	SDL_FillRect(rgba_img, NULL, dkey);
 	//na rysunku zrodlowym ustawiamy kolor przezroczysty
 
-	SDL_SetAlpha(image,0,255);
-	SDL_SetAlpha(rgba_img,0,255);
+	SDL_SetSurfaceAlphaMod(image,255);
+	SDL_SetSurfaceAlphaMod(rgba_img,255);
 
 	//kopiujemy zrodlo do celu (przezroczystosc bedzie uwzgledniona)
 	SDL_BlitSurface(image, 0, rgba_img, 0);

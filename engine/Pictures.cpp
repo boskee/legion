@@ -13,7 +13,7 @@ extern "C" {
 #elif __linux__
     #include <SDL/SDL_image.h>
 #elif __APPLE__
-    #include <SDL_image/SDL_image.h>
+    #include <SDL2_image/SDL_image.h>
 #endif
 
 #include "Pictures.h"
@@ -632,8 +632,8 @@ int Pic::Load(const std::string& filename) {
 	SDL_FillRect(rgba_img, NULL, dkey);
 
 	//na rysunku zrodlowym ustawiamy kolor przezroczysty
-	SDL_SetAlpha(image,0,255);
-	SDL_SetAlpha(rgba_img,0,255);
+	SDL_SetSurfaceAlphaMod(image,255);
+	SDL_SetSurfaceAlphaMod(rgba_img,255);
 
 	//kopiujemy zrodlo do celu (przezroczystosc bedzie uwzgledniona)
 	SDL_BlitSurface(image, 0, rgba_img, 0);

@@ -12,7 +12,7 @@
     #include <SDL/SDL_image.h>
 #elif __APPLE__
     #include <OpenGL/gl.h>
-    #include <SDL_image/SDL_image.h>
+    #include <SDL2_image/SDL_image.h>
 #endif
 
 #include "Utils.h"

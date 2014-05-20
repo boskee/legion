@@ -1,4 +1,4 @@
-
+#include <SDL2/SDL.h>
 #include <iostream>
 
 #include "Core.h"
@@ -22,7 +22,8 @@ bool ib_full_screen = false;
 bool ib_resizable = false;
 
 string is_screen_title = "Engine2d";
-SDL_Surface *screen = 0;
+SDL_Window *screen = 0;
+SDL_Renderer *renderer = 0;
 Mix_Music *sound = 0;
 
 Uint32 _ii_video_flags = 0;
@@ -41,49 +42,72 @@ int Init(void) {
 		exit(-1);
 	}
 
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 2);
+
 	atexit(SDL_Quit);
 
 
 	  ///////////////////
 	 // Grafika, okno //
 	///////////////////
-	const SDL_VideoInfo* info = 0;
+	//const SDL_VideoInfo* info = 0;
 	int width = il_screen_width;
 	int height = il_screen_height;
-	int bpp = 0;
+	int bpp = 32;
 	Uint32 flags = 0;
 
-	info = SDL_GetVideoInfo();
-	bpp = info->vfmt->BitsPerPixel;
+	//info = SDL_GetVideoInfo();
+	//bpp = info->vfmt->BitsPerPixel;
 
-	SDL_GL_SetAttribute(SDL_GL_RED_SIZE, 8);
-	SDL_GL_SetAttribute(SDL_GL_GREEN_SIZE, 8);
-	SDL_GL_SetAttribute(SDL_GL_BLUE_SIZE, 8);
+	//SDL_GL_SetAttribute(SDL_GL_RED_SIZE, 8);
+	//SDL_GL_SetAttribute(SDL_GL_GREEN_SIZE, 8);
+	//SDL_GL_SetAttribute(SDL_GL_BLUE_SIZE, 8);
 
 	if( ib_zbuffer )
 		SDL_GL_SetAttribute( SDL_GL_DEPTH_SIZE, ii_zbuffer_depth );
 
-	if( ib_double_buffer )
-		SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
-	else
-		SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 0);
-
-	flags = SDL_OPENGL;
+	flags = SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN;
 	if( ib_full_screen )
-		flags |= SDL_FULLSCREEN;
+		flags |= SDL_WINDOW_FULLSCREEN;
 	if( ib_resizable )
-		flags |= SDL_RESIZABLE;
+		flags |= SDL_WINDOW_RESIZABLE;
 
 	//zapamietujemy parametry na potrzeby zdarzenia RESIZE
 	_ii_video_bpp = bpp;
 	_ii_video_flags = flags;
 
-	if((screen = SDL_SetVideoMode(width, height, bpp, flags)) == 0) {
+	if((screen = SDL_CreateWindow(is_screen_title.c_str(),
+                          SDL_WINDOWPOS_CENTERED,
+                          SDL_WINDOWPOS_CENTERED,
+                          width, height,
+                          flags)) == 0) {
 		ERROR("Video mode set failed: " + SDL_GetError());
     exit(-1);
 	}
 
-	SDL_WM_SetCaption(is_screen_title.c_str(), NULL);
+	SDL_GLContext glcontext = SDL_GL_CreateContext(screen);
+
+    int oglIdx = -1;
+    int nRD = SDL_GetNumRenderDrivers();
+    for(int i=0; i<nRD; i++)
+    {
+        SDL_RendererInfo info;
+        if(!SDL_GetRenderDriverInfo(i, &info))
+        {
+            if(!strcmp(info.name, "opengl"))
+            {
+                oglIdx = i;
+            }
+        }
+    }
+
+    renderer = SDL_CreateRenderer(screen, oglIdx, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+
+	if( ib_double_buffer )
+		SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
+	else
+		SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 0);
 
 	if( ib_zbuffer )
 		glEnable(GL_DEPTH);
@@ -112,13 +136,15 @@ int Init(void) {
 	  ////////////////
 	 // Klawiatura //
 	////////////////
-	SDL_EnableKeyRepeat(0,0);
+	//SDL_EnableKeyRepeat(0,0);
 
 	return 1;
 }
 
 int Finish(void) {
-	SDL_Quit();
+    SDL_DestroyRenderer(renderer);
+    SDL_DestroyWindow(screen);
+    SDL_Quit();
 	return 1;
 }
 
@@ -200,7 +226,8 @@ void Wait(long pl_milisec) {
 void SwapBuffers(void) {
 	BreakBobBlits();
 	glFlush();							//oprozniamy kolejki OpenGL (czekamy az sie wszystko narysuje)
-	SDL_GL_SwapBuffers();
+	//SDL_GL_SwapWindow(screen);
+        SDL_RenderPresent(renderer);
 }
 
 void ProjectionOrtho(GLfloat minx,GLfloat maxx,GLfloat miny,GLfloat maxy,GLfloat minz,GLfloat maxz) {

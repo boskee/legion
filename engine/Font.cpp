@@ -1,6 +1,6 @@
 #include <cstdio>
 
-#include <SDL/SDL.h>
+#include <SDL2/SDL.h>
 
 #ifdef _WIN32
     #include <SDL/SDL_image.h>
@@ -13,8 +13,8 @@
 
     #include <GL/gl.h>
 #elif __APPLE__
-    #include <SDL_image/SDL_image.h>
-    #include <SDL_ttf/SDL_ttf.h>
+    #include <SDL2_image/SDL_image.h>
+    #include <SDL2_ttf/SDL_ttf.h>
 
     #include <OpenGL/gl.h>
 #endif
@@ -130,16 +130,17 @@ int Font :: Load(const string& name,int ptx) {
 	tx_w = tx_h;
 
 	//tworzymy teksture
-	SDL_Surface *rgba_img;
+	SDL_Surface *rgba_img = 0;
 	Uint32 rmask, gmask, bmask, amask;
 #if SDL_BYTEORDER == SDL_BIG_ENDIAN
 	rmask = 0xff000000; gmask = 0x00ff0000; bmask = 0x0000ff00;	amask = 0x000000ff;
 #else
 	rmask = 0x000000ff;	gmask = 0x0000ff00;	bmask = 0x00ff0000;	amask = 0xff000000;
 #endif
-	rgba_img = SDL_CreateRGBSurface(SDL_SWSURFACE, tx_w, tx_h, 8, rmask, gmask, bmask, amask);
+
+	rgba_img = SDL_CreateRGBSurface(SDL_SWSURFACE, tx_w, tx_h, 32, rmask, gmask, bmask, amask);
 	if( ! rgba_img ) {
-		ERROR("SDL_CreateRGBSurface:");
+		ERROR("SDL_CreateRGBSurface: " + SDL_GetError());
 		return -4;
 	}
 
@@ -157,7 +158,6 @@ int Font :: Load(const string& name,int ptx) {
 	bg.r = 0;	bg.g = 0;	bg.b = 0;
 	for( int i = 0; i < 256; ++i ) {
 		if( gw[i] > 0 ) {
-
 			glyph = TTF_RenderGlyph_Blended(font, i, fg);
 
 			if( !glyph ) {
@@ -170,14 +170,14 @@ int Font :: Load(const string& name,int ptx) {
 					xo = 0;
 				}
 
-				SDL_SetAlpha(glyph, SDL_SRCALPHA, 0);
+				SDL_SetSurfaceAlphaMod(glyph, 255);
 
 				drect.x = xo;
 				drect.y = yo;
 				drect.w = gw[i];
 				drect.h = maxh;
 
-				SDL_BlitSurface(glyph,0,rgba_img,&drect);
+				SDL_BlitSurface(glyph,NULL,rgba_img,&drect);
 				SDL_FreeSurface(glyph);
 
 				xo += gw[i] + 1;
@@ -186,12 +186,19 @@ int Font :: Load(const string& name,int ptx) {
 	}
 
 	if( ib_antialiasing )
+    {
 		ptex->SetFiltering(ptex->FM_LINEAR);
+    }
 	else
+    {
 		ptex->SetFiltering(ptex->FM_NEAREST);
+    }
 	ptex->Set(rgba_img,GL_ALPHA);
 	INFO("FONT_IMG_SIZE: " +  toString(ptex->GetImgWidth()) + "," + toString(ptex->GetImgHeight()) );
 	INFO("FONT_TEXT_SIZE: " + toString(ptex->GetWidth()) + "," + toString(ptex->GetHeight()) );
+
+    // Uncomment to save generated texture
+	//SDL_SaveBMP(rgba_img, "font.bmp");
 
 	SDL_FreeSurface(rgba_img);
 
@@ -445,7 +452,6 @@ void Text(Font *font,const string& text, float x, float y, float sizh, float siz
 				glEnd();
 
 				glTranslatef(font->glyphs_advance[c],0.0f,0.0f);
-
 			}
 
 

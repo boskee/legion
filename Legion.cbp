@@ -18,7 +18,7 @@
 				</Compiler>
 				<Linker>
 					<Add library="SDLmain" />
-					<Add library="SDL" />
+					<Add library="SDL2" />
 					<Add library="SDL_image" />
 					<Add library="SDL_mixer" />
 					<Add library="SDL_ttf" />
@@ -39,7 +39,16 @@
 					<Add option="-g" />
 				</Compiler>
 				<Linker>
-					<Add option="-I/Library/Frameworks/SDL.framework/Headers -framework SDL SDLmain.m -framework SDL_image -framework SDL_mixer -framework SDL_ttf -framework Cocoa -framework OpenGL -framework GLUT -framework libpng12 -framework AppKit" />
+					<Add option="-I/Library/Frameworks/SDL2.framework/Headers" />
+					<Add option="-framework SDL2" />
+					<Add option="-framework SDL2_image" />
+					<Add option="-framework SDL2_mixer" />
+					<Add option="-framework SDL2_ttf" />
+					<Add option="-framework Cocoa" />
+					<Add option="-framework OpenGL" />
+					<Add option="-framework GLUT" />
+					<Add option="-framework libpng12" />
+					<Add option="-framework AppKit" />
 					<Add library="jpeg" />
 				</Linker>
 			</Target>
