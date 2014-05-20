@@ -85,7 +85,7 @@ void cppcc::SettingsScanner::unGetChars (const char *c, int n)
 void cppcc::SettingsScanner::_scan (SettingsToken *token) throw (ScanException)
 {
   register unsigned char c;
-  
+
   for(;;)
   {
     switch (getState())
@@ -95,15 +95,15 @@ void cppcc::SettingsScanner::_scan (SettingsToken *token) throw (ScanException)
         c = *_ch++;
          /*0*/ if ((c == '\t' /*9*/) || (('\v' /*11*/ <= c) && (c <= '\r' /*13*/)) || (c == ' ' /*32*/))
           goto __START_1_;
-        else  /*0*/ if ((c == '\n' /*10*/))
+        else  /*0*/ if (c == '\n' /*10*/)
           goto __START_2_;
-        else  /*0*/ if ((c == '"' /*34*/))
+        else  /*0*/ if (c == '"' /*34*/)
           goto __START_3_;
-        else  /*0*/ if ((c == '(' /*40*/))
+        else  /*0*/ if (c == '(' /*40*/)
           goto __START_4_;
-        else  /*0*/ if ((c == ')' /*41*/))
+        else  /*0*/ if (c == ')' /*41*/)
           goto __START_5_;
-        else  /*0*/ if ((c == ',' /*44*/))
+        else  /*0*/ if (c == ',' /*44*/)
           goto __START_6_;
         else  /*0*/ if ((c == '-' /*45*/))
           goto __START_7_;
@@ -799,7 +799,7 @@ void cppcc::SettingsScanner::_scan (SettingsToken *token) throw (ScanException)
           throw __ex;
       }
     }
-    
+
     __accept_token_ws_:
       ePos.col += _ch - _bol;
       _bol = _ch;
@@ -812,7 +812,7 @@ void cppcc::SettingsScanner::_scan (SettingsToken *token) throw (ScanException)
       token->_set(SettingsToken::eol, bPos, ePos, _start, _ch - _start);
       {
 #line 30 "settings.cg"
- newLine(); 
+ newLine();
 #line 817 "settings_scanner.cc"
 
       }
@@ -826,7 +826,7 @@ void cppcc::SettingsScanner::_scan (SettingsToken *token) throw (ScanException)
       _more = true;
       {
 #line 35 "settings.cg"
- pushState(LONG_COMMENT); 
+ pushState(LONG_COMMENT);
 #line 831 "settings_scanner.cc"
 
       }
@@ -839,7 +839,7 @@ void cppcc::SettingsScanner::_scan (SettingsToken *token) throw (ScanException)
       _more = true;
       {
 #line 40 "settings.cg"
- newLine(); 
+ newLine();
 #line 844 "settings_scanner.cc"
 
       }
@@ -856,7 +856,7 @@ void cppcc::SettingsScanner::_scan (SettingsToken *token) throw (ScanException)
       _more = true;
       {
 #line 43 "settings.cg"
- newLine(); 
+ newLine();
 #line 861 "settings_scanner.cc"
 
       }
@@ -868,7 +868,7 @@ void cppcc::SettingsScanner::_scan (SettingsToken *token) throw (ScanException)
       token->_set(SettingsToken::LONG_COMMENT, bPos, ePos, _start, _ch - _start);
       {
 #line 48 "settings.cg"
- popState(); 
+ popState();
 #line 873 "settings_scanner.cc"
 
       }
@@ -881,7 +881,7 @@ void cppcc::SettingsScanner::_scan (SettingsToken *token) throw (ScanException)
       token->_set(SettingsToken::EOL_COMMENT, bPos, ePos, _start, _ch - _start);
       {
 #line 53 "settings.cg"
- newLine(); 
+ newLine();
 #line 886 "settings_scanner.cc"
 
       }

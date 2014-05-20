@@ -46,9 +46,9 @@ Symbol* s)
 
   while ((scanner.la()->id == SettingsToken::IDENTIFIER)) {
     if (__la_0_(2147483647)) {
-      
+
 #line 124 "settings.cg"
-w = 
+w =
 #line 53 "settings_parser.cc"
 wezel();
       {
@@ -56,10 +56,10 @@ wezel();
  s->AppendChild(w); w=0; }
 #line 58 "settings_parser.cc"
 
-    } else { 
-      
+    } else {
+
 #line 125 "settings.cg"
-w = 
+w =
 #line 64 "settings_parser.cc"
 lisc();
       {
@@ -83,9 +83,9 @@ SettingsParser::lisc ()
  Symbol* s = 0, *sl = 0; ValueList *v; ;
 #line 85 "settings_parser.cc"
 
-  
+
 #line 132 "settings.cg"
-s = 
+s =
 #line 90 "settings_parser.cc"
 scopedId(
 #line 132 "settings.cg"
@@ -93,9 +93,9 @@ sl);
 #line 94 "settings_parser.cc"
 
   consumeToken(SettingsToken::ASSIGN);
-  
+
 #line 134 "settings.cg"
-v = 
+v =
 #line 100 "settings_parser.cc"
 value();
   {
@@ -117,9 +117,9 @@ SettingsParser::wezel ()
  Symbol *s = 0, *sl = 0; ;
 #line 119 "settings_parser.cc"
 
-  
+
 #line 141 "settings.cg"
-s = 
+s =
 #line 124 "settings_parser.cc"
 scopedId(
 #line 141 "settings.cg"
@@ -153,9 +153,9 @@ SettingsParser::value ()
 #line 154 "settings_parser.cc"
 
   if ((scanner.la()->id == SettingsToken::HEX_CONSTANT) || (scanner.la()->id == SettingsToken::DEC_CONSTANT) || (scanner.la()->id == SettingsToken::FLOAT_CONSTANT) || (scanner.la()->id == SettingsToken::STRING_LITERAL) || (scanner.la()->id == SettingsToken::YES) || (scanner.la()->id == SettingsToken::NO) || (scanner.la()->id == SettingsToken::ON) || (scanner.la()->id == SettingsToken::OFF) || (scanner.la()->id == SettingsToken::TRUE) || (scanner.la()->id == SettingsToken::FALSE)) {
-    
+
 #line 151 "settings.cg"
-v = 
+v =
 #line 160 "settings_parser.cc"
 simpleValue();
     {
@@ -163,10 +163,10 @@ simpleValue();
  return v; }
 #line 165 "settings_parser.cc"
 
-  } else { 
-    
+  } else {
+
 #line 152 "settings.cg"
-v = 
+v =
 #line 171 "settings_parser.cc"
 listValue();
     {
@@ -196,7 +196,7 @@ SettingsParser::simpleValue ()
  return new ValueList( atol(token->image().c_str()) ); }
 #line 198 "settings_parser.cc"
 
-  } else { 
+  } else {
     if ((scanner.la()->id == SettingsToken::DEC_CONSTANT)) {
       consumeToken(SettingsToken::DEC_CONSTANT);
       {
@@ -204,7 +204,7 @@ SettingsParser::simpleValue ()
  return new ValueList( atol(token->image().c_str()) ); }
 #line 206 "settings_parser.cc"
 
-    } else { 
+    } else {
       if ((scanner.la()->id == SettingsToken::FLOAT_CONSTANT)) {
         consumeToken(SettingsToken::FLOAT_CONSTANT);
         {
@@ -212,7 +212,7 @@ SettingsParser::simpleValue ()
  return new ValueList( atof(token->image().c_str()) ); }
 #line 214 "settings_parser.cc"
 
-      } else { 
+      } else {
         if ((scanner.la()->id == SettingsToken::STRING_LITERAL)) {
           consumeToken(SettingsToken::STRING_LITERAL);
           {
@@ -220,10 +220,10 @@ SettingsParser::simpleValue ()
  return new ValueList( token->image().substr(1,token->image().length()-2) ); }
 #line 222 "settings_parser.cc"
 
-        } else { 
-          
+        } else {
+
 #line 161 "settings.cg"
-v = 
+v =
 #line 228 "settings_parser.cc"
 booleanConstant();
           {
@@ -252,7 +252,7 @@ SettingsParser::booleanConstant ()
  return new ValueList(true); }
 #line 254 "settings_parser.cc"
 
-  } else { 
+  } else {
     if ((scanner.la()->id == SettingsToken::NO)) {
       consumeToken(SettingsToken::NO);
       {
@@ -260,7 +260,7 @@ SettingsParser::booleanConstant ()
  return new ValueList(false); }
 #line 262 "settings_parser.cc"
 
-    } else { 
+    } else {
       if ((scanner.la()->id == SettingsToken::ON)) {
         consumeToken(SettingsToken::ON);
         {
@@ -268,7 +268,7 @@ SettingsParser::booleanConstant ()
  return new ValueList(true); }
 #line 270 "settings_parser.cc"
 
-      } else { 
+      } else {
         if ((scanner.la()->id == SettingsToken::OFF)) {
           consumeToken(SettingsToken::OFF);
           {
@@ -276,7 +276,7 @@ SettingsParser::booleanConstant ()
  return new ValueList(false); }
 #line 278 "settings_parser.cc"
 
-        } else { 
+        } else {
           if ((scanner.la()->id == SettingsToken::TRUE)) {
             consumeToken(SettingsToken::TRUE);
             {
@@ -284,7 +284,7 @@ SettingsParser::booleanConstant ()
  return new ValueList(true); }
 #line 286 "settings_parser.cc"
 
-          } else { 
+          } else {
             consumeToken(SettingsToken::FALSE);
             {
 #line 171 "settings.cg"
@@ -311,16 +311,16 @@ SettingsParser::listValue ()
 #line 312 "settings_parser.cc"
 
   consumeToken(SettingsToken::LPAR);
-  
+
 #line 178 "settings.cg"
-v = 
+v =
 #line 318 "settings_parser.cc"
 simpleValue();
   while ((scanner.la()->id == SettingsToken::COMMA)) {
     consumeToken(SettingsToken::COMMA);
-    
+
 #line 180 "settings.cg"
-v2 = 
+v2 =
 #line 325 "settings_parser.cc"
 simpleValue();
     {
@@ -395,9 +395,9 @@ Symbol* src)
 		;
 #line 397 "settings_parser.cc"
 
-  
+
 #line 203 "settings.cg"
-clist = 
+clist =
 #line 402 "settings_parser.cc"
 find(
 #line 203 "settings.cg"
@@ -448,9 +448,9 @@ Symbol* src, int &child_index)
 #line 449 "settings_parser.cc"
 
   if ((scanner.la()->id == SettingsToken::LSQR) || (scanner.la()->id == SettingsToken::IDENTIFIER)) {
-    
+
 #line 231 "settings.cg"
-clist = 
+clist =
 #line 455 "settings_parser.cc"
 oneStepOnPath(
 #line 231 "settings.cg"
@@ -476,9 +476,9 @@ s,cidx);
 																				}
 #line 478 "settings_parser.cc"
 
-      
+
 #line 240 "settings.cg"
-clist = 
+clist =
 #line 483 "settings_parser.cc"
 oneStepOnPath(
 #line 240 "settings.cg"
@@ -499,7 +499,7 @@ s,cidx);
 			}
 #line 501 "settings_parser.cc"
 
-  } else { 
+  } else {
     consumeToken(SettingsToken::DOT);
     {
 #line 248 "settings.cg"
@@ -511,9 +511,9 @@ s,cidx);
 																				}
 #line 513 "settings_parser.cc"
 
-    
+
 #line 254 "settings.cg"
-clist = 
+clist =
 #line 518 "settings_parser.cc"
 oneStepOnPath(
 #line 254 "settings.cg"
@@ -539,9 +539,9 @@ s,cidx);
 																				}
 #line 541 "settings_parser.cc"
 
-      
+
 #line 264 "settings.cg"
-clist = 
+clist =
 #line 546 "settings_parser.cc"
 oneStepOnPath(
 #line 264 "settings.cg"
@@ -607,7 +607,7 @@ Symbol* src,int &idx)
 #line 608 "settings_parser.cc"
 
       consumeToken(SettingsToken::RSQR);
-    } else { 
+    } else {
        /* lambda */
     }
     {
@@ -617,7 +617,7 @@ Symbol* src,int &idx)
 			}
 #line 619 "settings_parser.cc"
 
-  } else { 
+  } else {
     consumeToken(SettingsToken::LSQR);
     {
 #line 298 "settings.cg"
@@ -652,10 +652,10 @@ bool cppcc::SettingsParser::__la_parse_ () throw (ScanException)
 {
   if (!__la_wezel_lub_lisc_()) goto __lookahead_fail_;
   if (_la == 0) goto __lookahead_succeed_;
-  
+
   __lookahead_succeed_:
     return true;
-    
+
   __lookahead_fail_:
     return false;
 }
@@ -667,15 +667,15 @@ bool cppcc::SettingsParser::__la_wezel_lub_lisc_ () throw (ScanException)
     if (__la_0_(2147483647)) {
       if (!__la_wezel_()) goto __lookahead_fail_;
       if (_la == 0) goto __lookahead_succeed_;
-    } else { 
+    } else {
       if (!__la_lisc_()) goto __lookahead_fail_;
       if (_la == 0) goto __lookahead_succeed_;
     }
   }
-  
+
   __lookahead_succeed_:
     return true;
-    
+
   __lookahead_fail_:
     return false;
 }
@@ -686,11 +686,11 @@ bool cppcc::SettingsParser::__la_0_ (int depth) throw (ScanException)
   int _laSave = _la;
   _la = depth;
   scanner.setMarker();
-  
+
   if (!__la_wezel_()) goto __lookahead_fail_;
   if (_la == 0) goto __lookahead_succeed_;
   goto __lookahead_succeed_;
-  
+
 __lookahead_fail_:
   _la = _laSave;
   scanner.rewindToMarker();
@@ -711,10 +711,10 @@ bool cppcc::SettingsParser::__la_lisc_ () throw (ScanException)
   if (_la == 0) goto __lookahead_succeed_;
   if (!__la_value_()) goto __lookahead_fail_;
   if (_la == 0) goto __lookahead_succeed_;
-  
+
   __lookahead_succeed_:
     return true;
-    
+
   __lookahead_fail_:
     return false;
 }
@@ -730,10 +730,10 @@ bool cppcc::SettingsParser::__la_wezel_ () throw (ScanException)
   if (_la == 0) goto __lookahead_succeed_;
   if (!laConsumeToken(SettingsToken::RBRA)) goto __lookahead_fail_;
   if (_la == 0) goto __lookahead_succeed_;
-  
+
   __lookahead_succeed_:
     return true;
-    
+
   __lookahead_fail_:
     return false;
 }
@@ -744,14 +744,14 @@ bool cppcc::SettingsParser::__la_value_ () throw (ScanException)
   if ((scanner.la()->id == SettingsToken::HEX_CONSTANT) || (scanner.la()->id == SettingsToken::DEC_CONSTANT) || (scanner.la()->id == SettingsToken::FLOAT_CONSTANT) || (scanner.la()->id == SettingsToken::STRING_LITERAL) || (scanner.la()->id == SettingsToken::YES) || (scanner.la()->id == SettingsToken::NO) || (scanner.la()->id == SettingsToken::ON) || (scanner.la()->id == SettingsToken::OFF) || (scanner.la()->id == SettingsToken::TRUE) || (scanner.la()->id == SettingsToken::FALSE)) {
     if (!__la_simpleValue_()) goto __lookahead_fail_;
     if (_la == 0) goto __lookahead_succeed_;
-  } else { 
+  } else {
     if (!__la_listValue_()) goto __lookahead_fail_;
     if (_la == 0) goto __lookahead_succeed_;
   }
-  
+
   __lookahead_succeed_:
     return true;
-    
+
   __lookahead_fail_:
     return false;
 }
@@ -762,29 +762,29 @@ bool cppcc::SettingsParser::__la_simpleValue_ () throw (ScanException)
   if ((scanner.la()->id == SettingsToken::HEX_CONSTANT)) {
     if (!laConsumeToken(SettingsToken::HEX_CONSTANT)) goto __lookahead_fail_;
     if (_la == 0) goto __lookahead_succeed_;
-  } else { 
+  } else {
     if ((scanner.la()->id == SettingsToken::DEC_CONSTANT)) {
       if (!laConsumeToken(SettingsToken::DEC_CONSTANT)) goto __lookahead_fail_;
       if (_la == 0) goto __lookahead_succeed_;
-    } else { 
+    } else {
       if ((scanner.la()->id == SettingsToken::FLOAT_CONSTANT)) {
         if (!laConsumeToken(SettingsToken::FLOAT_CONSTANT)) goto __lookahead_fail_;
         if (_la == 0) goto __lookahead_succeed_;
-      } else { 
-        if ((scanner.la()->id == SettingsToken::STRING_LITERAL)) {
+      } else {
+        if (scanner.la()->id == SettingsToken::STRING_LITERAL) {
           if (!laConsumeToken(SettingsToken::STRING_LITERAL)) goto __lookahead_fail_;
           if (_la == 0) goto __lookahead_succeed_;
-        } else { 
+        } else {
           if (!__la_booleanConstant_()) goto __lookahead_fail_;
           if (_la == 0) goto __lookahead_succeed_;
         }
       }
     }
   }
-  
+
   __lookahead_succeed_:
     return true;
-    
+
   __lookahead_fail_:
     return false;
 }
@@ -795,23 +795,23 @@ bool cppcc::SettingsParser::__la_booleanConstant_ () throw (ScanException)
   if ((scanner.la()->id == SettingsToken::YES)) {
     if (!laConsumeToken(SettingsToken::YES)) goto __lookahead_fail_;
     if (_la == 0) goto __lookahead_succeed_;
-  } else { 
+  } else {
     if ((scanner.la()->id == SettingsToken::NO)) {
       if (!laConsumeToken(SettingsToken::NO)) goto __lookahead_fail_;
       if (_la == 0) goto __lookahead_succeed_;
-    } else { 
+    } else {
       if ((scanner.la()->id == SettingsToken::ON)) {
         if (!laConsumeToken(SettingsToken::ON)) goto __lookahead_fail_;
         if (_la == 0) goto __lookahead_succeed_;
-      } else { 
+      } else {
         if ((scanner.la()->id == SettingsToken::OFF)) {
           if (!laConsumeToken(SettingsToken::OFF)) goto __lookahead_fail_;
           if (_la == 0) goto __lookahead_succeed_;
-        } else { 
+        } else {
           if ((scanner.la()->id == SettingsToken::TRUE)) {
             if (!laConsumeToken(SettingsToken::TRUE)) goto __lookahead_fail_;
             if (_la == 0) goto __lookahead_succeed_;
-          } else { 
+          } else {
             if (!laConsumeToken(SettingsToken::FALSE)) goto __lookahead_fail_;
             if (_la == 0) goto __lookahead_succeed_;
           }
@@ -819,10 +819,10 @@ bool cppcc::SettingsParser::__la_booleanConstant_ () throw (ScanException)
       }
     }
   }
-  
+
   __lookahead_succeed_:
     return true;
-    
+
   __lookahead_fail_:
     return false;
 }
@@ -842,10 +842,10 @@ bool cppcc::SettingsParser::__la_listValue_ () throw (ScanException)
   }
   if (!laConsumeToken(SettingsToken::RPAR)) goto __lookahead_fail_;
   if (_la == 0) goto __lookahead_succeed_;
-  
+
   __lookahead_succeed_:
     return true;
-    
+
   __lookahead_fail_:
     return false;
 }
@@ -861,10 +861,10 @@ bool cppcc::SettingsParser::__la_scopedId_ () throw (ScanException)
     if (!laConsumeToken(SettingsToken::IDENTIFIER)) goto __lookahead_fail_;
     if (_la == 0) goto __lookahead_succeed_;
   }
-  
+
   __lookahead_succeed_:
     return true;
-    
+
   __lookahead_fail_:
     return false;
 }
@@ -874,10 +874,10 @@ bool cppcc::SettingsParser::__la_extract_ () throw (ScanException)
 {
   if (!__la_find_()) goto __lookahead_fail_;
   if (_la == 0) goto __lookahead_succeed_;
-  
+
   __lookahead_succeed_:
     return true;
-    
+
   __lookahead_fail_:
     return false;
 }
@@ -894,7 +894,7 @@ bool cppcc::SettingsParser::__la_find_ () throw (ScanException)
       if (!__la_oneStepOnPath_()) goto __lookahead_fail_;
       if (_la == 0) goto __lookahead_succeed_;
     }
-  } else { 
+  } else {
     if (!laConsumeToken(SettingsToken::DOT)) goto __lookahead_fail_;
     if (_la == 0) goto __lookahead_succeed_;
     if (!__la_oneStepOnPath_()) goto __lookahead_fail_;
@@ -906,10 +906,10 @@ bool cppcc::SettingsParser::__la_find_ () throw (ScanException)
       if (_la == 0) goto __lookahead_succeed_;
     }
   }
-  
+
   __lookahead_succeed_:
     return true;
-    
+
   __lookahead_fail_:
     return false;
 }
@@ -927,10 +927,10 @@ bool cppcc::SettingsParser::__la_oneStepOnPath_ () throw (ScanException)
       if (_la == 0) goto __lookahead_succeed_;
       if (!laConsumeToken(SettingsToken::RSQR)) goto __lookahead_fail_;
       if (_la == 0) goto __lookahead_succeed_;
-    } else { 
+    } else {
        /* lambda */
     }
-  } else { 
+  } else {
     if (!laConsumeToken(SettingsToken::LSQR)) goto __lookahead_fail_;
     if (_la == 0) goto __lookahead_succeed_;
     if (!laConsumeToken(SettingsToken::DEC_CONSTANT)) goto __lookahead_fail_;
@@ -938,10 +938,10 @@ bool cppcc::SettingsParser::__la_oneStepOnPath_ () throw (ScanException)
     if (!laConsumeToken(SettingsToken::RSQR)) goto __lookahead_fail_;
     if (_la == 0) goto __lookahead_succeed_;
   }
-  
+
   __lookahead_succeed_:
     return true;
-    
+
   __lookahead_fail_:
     return false;
 }

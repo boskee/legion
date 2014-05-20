@@ -1834,7 +1834,7 @@
 	<GL/gl.h>
 	<OpenGL/gl.h>
 
-1400551820 source:/Users/voitek/Projects/legion-newest/engine/Core.cpp
+1400620193 source:/Users/voitek/Projects/legion-newest/engine/Core.cpp
 	<SDL2/SDL.h>
 	<iostream>
 	"Core.h"
@@ -1863,7 +1863,7 @@
 	<SDL2/SDL.h>
 	"Events.h"
 
-1400551528 source:/Users/voitek/Projects/legion-newest/engine/Font.cpp
+1400623389 source:/Users/voitek/Projects/legion-newest/engine/Font.cpp
 	<cstdio>
 	<SDL2/SDL.h>
 	<SDL/SDL_image.h>
@@ -1989,16 +1989,16 @@
 	<map>
 	<cstdio>
 
-1400240521 source:/Users/voitek/Projects/legion-newest/engine/settings_parser.cc
+1400620462 source:/Users/voitek/Projects/legion-newest/engine/settings_parser.cc
 	"settings_parser.hh"
 
-1400240521 source:/Users/voitek/Projects/legion-newest/engine/settings_scanner.cc
+1400620677 source:/Users/voitek/Projects/legion-newest/engine/settings_scanner.cc
 	"settings_scanner.hh"
 
 1400240521 source:/Users/voitek/Projects/legion-newest/engine/settings_token.cc
 	"settings_token.hh"
 
-1400551091 source:/Users/voitek/Projects/legion-newest/engine/Textures.cpp
+1400621098 source:/Users/voitek/Projects/legion-newest/engine/Textures.cpp
 	<iostream>
 	<SDL2/SDL.h>
 	<SDL/SDL_image.h>

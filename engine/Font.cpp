@@ -90,18 +90,31 @@ int Font :: Load(const string& name,int ptx) {
 	int li_ret;
 	int gw[256], gh[256];
 	float font_height = TTF_FontHeight(font);
-//	float font_ascent = TTF_FontAscent(font);
+	float font_ascent = TTF_FontAscent(font);
 //	float font_descent = TTF_FontDescent(font);
 	maxh = 0; maxw = 0; avgw = 0;
 	for( int i=0; i < 256; ++i ) {
+
+int index=TTF_GlyphIsProvided(font,i);
+if(!index) {
+        printf("There is no '%d' in the loaded font!\n", i);
+        //continue;
+        maxx = 0;
+        minx = 0;
+        maxy = 0;
+        miny = 0;
+        advance = 0;
+} else {
 		li_ret = TTF_GlyphMetrics( font, i, &minx, &maxx, &miny, &maxy, &advance);
 		if( li_ret < 0 ) {
 	    ERROR("TTF_GlyphMetrics: " + TTF_GetError());
 	    return -3;
 		}
+}
 
 		w = maxx - minx;
 		h = maxy - miny;
+		h = font_height;
 		gw[i] = w;
 		gh[i] = h;
 
@@ -110,7 +123,7 @@ int Font :: Load(const string& name,int ptx) {
 		glyphs_width[i]  = w / font_height;
 		glyphs_height[i] = h / font_height;
 		glyphs_xshift[i] =  minx / font_height;
-		glyphs_yshift[i] = -maxy / font_height;
+		glyphs_yshift[i] = -font_ascent / font_height;
 		glyphs_advance[i] = advance / font_height;
 
 		avgw += w;
@@ -154,7 +167,7 @@ int Font :: Load(const string& name,int ptx) {
 	SDL_Surface *glyph;
 	SDL_Rect drect;
 	SDL_Color fg,bg;
-	fg.r = 255;	fg.g = 255;	fg.b = 255;
+	fg.r = 255;	fg.g = 255;	fg.b = 255; fg.a = 255;
 	bg.r = 0;	bg.g = 0;	bg.b = 0;
 	for( int i = 0; i < 256; ++i ) {
 		if( gw[i] > 0 ) {
@@ -193,12 +206,12 @@ int Font :: Load(const string& name,int ptx) {
     {
 		ptex->SetFiltering(ptex->FM_NEAREST);
     }
-	ptex->Set(rgba_img,GL_ALPHA);
+	ptex->Set(rgba_img,GL_RGBA);
 	INFO("FONT_IMG_SIZE: " +  toString(ptex->GetImgWidth()) + "," + toString(ptex->GetImgHeight()) );
 	INFO("FONT_TEXT_SIZE: " + toString(ptex->GetWidth()) + "," + toString(ptex->GetHeight()) );
 
     // Uncomment to save generated texture
-	//SDL_SaveBMP(rgba_img, "font.bmp");
+	SDL_SaveBMP(rgba_img, "font.bmp");
 
 	SDL_FreeSurface(rgba_img);
 

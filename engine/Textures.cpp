@@ -137,13 +137,10 @@ int PTex :: Set(const unsigned char *buf,int width, int height,GLint format) {
 													image->pixels );
 */
 
+    glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, buf);
+    glHint(GL_GENERATE_MIPMAP_HINT, GL_FASTEST);//GL_FASTEST);
 
-	gluBuild2DMipmaps(	GL_TEXTURE_2D,
-								 			format,
-											width, height,
-											format,
-											GL_UNSIGNED_BYTE,
-											buf );
+    glGenerateMipmap(GL_TEXTURE_2D);
 
 	img_w = width;
 	img_h = height;
