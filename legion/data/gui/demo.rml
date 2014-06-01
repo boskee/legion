@@ -1,0 +1,30 @@
+<rml>
+	<head>
+		<title>Demo</title>
+		<link type="text/template" href="window.rml" />
+		<style>
+			body
+			{
+				width: 100%;
+				height: 100%;
+				
+				margin: auto;
+				color: #fff;
+				background: #000;
+			}
+			
+			div#title_bar div#icon
+			{
+				display: none;
+			}
+			
+			div#content
+			{
+				text-align: left;
+			}
+		</style>
+	</head>
+	<body template="window">
+		This is a sample.
+	</body>
+</rml>

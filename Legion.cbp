@@ -37,6 +37,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="/opt/local/include" />
 				</Compiler>
 				<Linker>
 					<Add option="-I/Library/Frameworks/SDL2.framework/Headers" />
@@ -50,6 +51,7 @@
 					<Add option="-framework libpng12" />
 					<Add option="-framework AppKit" />
 					<Add library="jpeg" />
+					<Add directory="/opt/local/lib" />
 				</Linker>
 			</Target>
 			<Target title="Debug - Windows">
@@ -100,7 +102,15 @@
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
+			<Add directory="lib/libRocket/Include" />
+			<Add directory="lib/rapidjson/include" />
 		</Compiler>
+		<Linker>
+			<Add library="RocketCore" />
+			<Add library="RocketDebugger" />
+			<Add library="Glew" />
+			<Add directory="lib/libRocket/Build" />
+		</Linker>
 		<Unit filename="engine/Alan.cpp" />
 		<Unit filename="engine/Alan.h" />
 		<Unit filename="engine/Basic.cpp" />
@@ -129,11 +139,17 @@
 		<Unit filename="engine/Pictures.h" />
 		<Unit filename="engine/Rand.cpp" />
 		<Unit filename="engine/Rand.h" />
+		<Unit filename="engine/RenderInterfaceSDL2.cpp" />
+		<Unit filename="engine/RenderInterfaceSDL2.h" />
 		<Unit filename="engine/Samples.cpp" />
 		<Unit filename="engine/Samples.h" />
 		<Unit filename="engine/Settings.cpp" />
 		<Unit filename="engine/Settings.h" />
 		<Unit filename="engine/Sfx.h" />
+		<Unit filename="engine/ShellFileInterface.cpp" />
+		<Unit filename="engine/ShellFileInterface.h" />
+		<Unit filename="engine/SystemInterfaceSDL2.cpp" />
+		<Unit filename="engine/SystemInterfaceSDL2.h" />
 		<Unit filename="engine/Textures.cpp" />
 		<Unit filename="engine/Textures.h" />
 		<Unit filename="engine/Types.h" />

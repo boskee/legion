@@ -80,6 +80,8 @@ void _INTRO(void) {
 
 
 	USTAW_FONT("bodacious",FONT_BODACIOUS,42,1);			//	   USTAW_FONT["bodacious",42]
+
+
 	//	   Gr Writing 0
 	//	   Flash Off : Get Bob Palette
 	//	   For I=0 To 15 : Colour I+16,Colour(I) : Next I
@@ -354,10 +356,10 @@ void AFTER_SKIP_INTRO(void) {
 
 	//	   Track Play 3
 	TrackPlay(3);
+	cout << "ALL OK" << endl;
 }
 
 void pc_intro(void) {
-
   ib_skip_intro = false;
 
 	ScreenOpen(0,640,512,16,HIRES|LACED);
@@ -371,6 +373,7 @@ void pc_intro(void) {
 		_WAIT(1);
 		if( ib_skip_intro) goto koniec;
 	}
+
 
   //pokazujemy tekst przez pewien czas
   _fade_factor = 0;

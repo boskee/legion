@@ -13,6 +13,8 @@
     #include <SDL2_mixer/SDL_mixer.h>
 #endif
 
+#include <Rocket/Core/Core.h>
+
 //ponizsze includy po to aby program korzystajacy z biblioteki nie musial bawic sie w szczegolowe
 //wyliczanie includow
 #include "Settings.h"
@@ -51,6 +53,10 @@ namespace Core {
 
 	extern SDL_Renderer *renderer;
 
+	extern Rocket::Core::Context *Context;
+
+    //extern RocketSDL2Renderer *Renderer;
+
 	/// Nazwa głównego okna
 	extern std::string is_screen_title;
 
@@ -86,6 +92,9 @@ namespace Core {
 
 	/// Czeka wskazaną ilość milisekund (tysięcznych części sekundy)
 	void Wait(long pl_milisec);
+
+    void updateGuiBuffer();
+	void drawGui();
 
 	/// Przerzuca bufory ekranu (o ile są dwa)
 	void SwapBuffers(void);

@@ -151,7 +151,7 @@ if(!index) {
 	rmask = 0x000000ff;	gmask = 0x0000ff00;	bmask = 0x00ff0000;	amask = 0xff000000;
 #endif
 
-	rgba_img = SDL_CreateRGBSurface(SDL_SWSURFACE, tx_w, tx_h, 32, rmask, gmask, bmask, amask);
+	rgba_img = SDL_CreateRGBSurface(0, tx_w, tx_h, 32, rmask, gmask, bmask, amask);
 	if( ! rgba_img ) {
 		ERROR("SDL_CreateRGBSurface: " + SDL_GetError());
 		return -4;

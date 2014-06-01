@@ -1,6 +1,14 @@
 #include <SDL2/SDL.h>
 #include <iostream>
 
+#include <Rocket/Core/Core.h>
+#include <Rocket/Core/Input.h>
+#include <Rocket/Debugger/Debugger.h>
+#include "ShellFileInterface.h"
+
+#include "SystemInterfaceSDL2.h"
+#include "RenderInterfaceSDL2.h"
+
 #include "Core.h"
 #include "Utils.h"
 #include "Bob.h"
@@ -24,6 +32,10 @@ bool ib_resizable = false;
 string is_screen_title = "Engine2d";
 SDL_Window *screen = 0;
 SDL_Renderer *renderer = 0;
+Rocket::Core::Context *Context = 0;
+RocketSDL2Renderer *Renderer = 0;
+RocketSDL2SystemInterface *SystemInterface = 0;
+ShellFileInterface *FileInterface = 0;
 Mix_Music *sound = 0;
 
 Uint32 _ii_video_flags = 0;
@@ -54,7 +66,7 @@ int Init(void) {
 	//const SDL_VideoInfo* info = 0;
 	int width = il_screen_width;
 	int height = il_screen_height;
-	int bpp = 32;
+	int bpp = 8;
 	Uint32 flags = 0;
 
 	//info = SDL_GetVideoInfo();
@@ -104,6 +116,11 @@ int Init(void) {
 
     renderer = SDL_CreateRenderer(screen, oglIdx, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 
+    GLenum err = glewInit();
+
+    if(err != GLEW_OK)
+        fprintf(stderr, "GLEW ERROR: %s\n", glewGetErrorString(err));
+
 	if( ib_double_buffer )
 		SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 	else
@@ -117,6 +134,45 @@ int Init(void) {
 	//ustawiamy domyslne rzutowanie swiata na ekran
 	ProjectionOrtho();
 
+
+
+
+
+    Renderer = new RocketSDL2Renderer(renderer, screen);
+    SystemInterface = new RocketSDL2SystemInterface();
+    FileInterface = new ShellFileInterface("legion/data/gui/");
+
+    Rocket::Core::SetFileInterface(FileInterface);
+    Rocket::Core::SetRenderInterface(Renderer);
+    Rocket::Core::SetSystemInterface(SystemInterface);
+
+    if(!Rocket::Core::Initialise())
+        return 1;
+
+
+    Rocket::Core::FontDatabase::LoadFontFace("../../../fonts/Bodacious-Normal.ttf");
+    Rocket::Core::FontDatabase::LoadFontFace("Delicious-Bold.otf");
+    Rocket::Core::FontDatabase::LoadFontFace("Delicious-BoldItalic.otf");
+    Rocket::Core::FontDatabase::LoadFontFace("Delicious-Italic.otf");
+    Rocket::Core::FontDatabase::LoadFontFace("Delicious-Roman.otf");
+
+	Context = Rocket::Core::CreateContext("default",
+		Rocket::Core::Vector2i(width, height));
+
+	Rocket::Debugger::Initialise(Context);
+
+	Rocket::Core::ElementDocument *Document = Context->LoadDocument("demo.rml");
+
+	if(Document)
+	{
+		Document->Show();
+		Document->RemoveReference();
+		fprintf(stdout, "\nDocument loaded");
+	}
+	else
+	{
+		fprintf(stdout, "\nDocument is NULL");
+	}
 
 	  /////////////////////
 	 // Dzwięki, muzyka //
@@ -132,7 +188,6 @@ int Init(void) {
     exit(-1);
 	}
 
-
 	  ////////////////
 	 // Klawiatura //
 	////////////////
@@ -142,6 +197,8 @@ int Init(void) {
 }
 
 int Finish(void) {
+    Context->RemoveReference();
+    Rocket::Core::Shutdown();
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(screen);
     SDL_Quit();
@@ -223,11 +280,25 @@ void Wait(long pl_milisec) {
 	SDL_Delay(pl_milisec);
 }
 
+void updateGuiBuffer()
+{
+    Renderer->clearDrawBuffer();
+    Context->Render();
+}
+
+void drawGui()
+{
+    Renderer->drawBuffer();
+}
+
 void SwapBuffers(void) {
 	BreakBobBlits();
 	glFlush();							//oprozniamy kolejki OpenGL (czekamy az sie wszystko narysuje)
+    //SDL_GL_SwapWindow(screen);
+    //SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);
+    //SDL_RenderClear(renderer);
 	//SDL_GL_SwapWindow(screen);
-        SDL_RenderPresent(renderer);
+    //    SDL_RenderPresent(renderer);
 }
 
 void ProjectionOrtho(GLfloat minx,GLfloat maxx,GLfloat miny,GLfloat maxy,GLfloat minz,GLfloat maxz) {

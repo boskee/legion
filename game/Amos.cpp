@@ -407,6 +407,8 @@ void WaitVbl(void) {
 	if( ib_sprite_auto_update )
 		_SpriteUpdate();
 
+    //Core::Context->Update();
+    //Core::Context->Render();
 	//debugowe dane
 	//Gfx::Color(1.0f,1.0f,1.0f);
 	//Text(20,20,"MouseX="+toString(il_mousex));
@@ -418,10 +420,14 @@ void WaitVbl(void) {
 		SDL_Delay(1);
 	}
 
+    Core::updateGuiBuffer();
+    Core::drawGui();
+    SDL_RenderPresent(Core::renderer);
 	//zamieniamy bufory
 	Core::SwapBuffers();
 
 	Core::FrameTiming(Core::FTM_NEW_FRAME);		//i zaczynamy nowa ramke
+
 
 	//!@# - aby zasymulowac swapbuffer mode flip
 //
@@ -1356,7 +1362,12 @@ int LoadIff(const string& fname,int screen_nr) {
 #else
 	rmask = 0x000000ff;	gmask = 0x0000ff00;	bmask = 0x00ff0000;	amask = 0xff000000;
 #endif
-	rgba_img = SDL_CreateRGBSurface(SDL_SWSURFACE, image->w, image->h, 32, rmask, gmask, bmask, amask);
+	rgba_img = SDL_CreateRGBSurface(SDL_SWSURFACE, image->w, image->h, 8, rmask, gmask, bmask, amask);
+
+ 	if( ! rgba_img ) {
+        ERROR("SDL_CreateRGBSurface: " + SDL_GetError());
+  		return -4;
+  	}
 
 	//na rysunku docelowym wszystko jest przezroczyste :-)
 	dkey = SDL_MapRGBA(rgba_img->format,	0, 0, 0, 255);
@@ -1365,6 +1376,8 @@ int LoadIff(const string& fname,int screen_nr) {
 
 	SDL_SetSurfaceAlphaMod(image,255);
 	SDL_SetSurfaceAlphaMod(rgba_img,255);
+
+        cout << " TESTUJEMY " << endl;
 
 	//kopiujemy zrodlo do celu (przezroczystosc bedzie uwzgledniona)
 	SDL_BlitSurface(image, 0, rgba_img, 0);
@@ -1375,6 +1388,7 @@ int LoadIff(const string& fname,int screen_nr) {
 		SDL_FreeSurface(pictures[screen_nr]);
 	}
 	pictures[screen_nr] = image;
+        cout << " TESTUJEMY4 " << endl;
 
   pix[screen_nr].Set(image);
 

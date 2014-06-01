@@ -6,7 +6,7 @@
 #include "legion.h"
 #include "lgn_wczytaj.h"
 #include "utl_locale.h"
-#include "../lib/rapidjson/document.h"
+#include "rapidjson/document.h"
 
 void WCZYTAJ_BRON(void) {
 		//	Procedure WCZYTAJ_BRON

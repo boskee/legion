@@ -1805,7 +1805,7 @@
 1400240521 source:/Users/voitek/Projects/legion-newest/engine/alan_token.cc
 	"alan_token.hh"
 
-1400551989 source:/Users/voitek/Projects/legion-newest/engine/Basic.cpp
+1401592154 source:/Users/voitek/Projects/legion-newest/engine/Basic.cpp
 	<math.h>
 	"Basic.h"
 	"Bob.h"
@@ -1834,20 +1834,27 @@
 	<GL/gl.h>
 	<OpenGL/gl.h>
 
-1400620193 source:/Users/voitek/Projects/legion-newest/engine/Core.cpp
+1401593547 source:/Users/voitek/Projects/legion-newest/engine/Core.cpp
 	<SDL2/SDL.h>
 	<iostream>
+	<Rocket/Core/Core.h>
+	<Rocket/Core/Input.h>
+	<Rocket/Debugger/Debugger.h>
+	"ShellFileInterface.h"
+	"SystemInterfaceSDL2.h"
+	"RenderInterfaceSDL2.h"
 	"Core.h"
 	"Utils.h"
 	"Bob.h"
 	"Collision.h"
 
-1400541764 /Users/voitek/Projects/legion-newest/engine/Core.h
+1401589496 /Users/voitek/Projects/legion-newest/engine/Core.h
 	<string>
 	<SDL2/SDL.h>
 	<SDL/SDL_mixer.h>
 	<SDL/SDL_mixer.h>
 	<SDL2_mixer/SDL_mixer.h>
+	<Rocket/Core/Core.h>
 	"Settings.h"
 	"Grid.h"
 	"Rand.h"
@@ -1863,7 +1870,7 @@
 	<SDL2/SDL.h>
 	"Events.h"
 
-1400623389 source:/Users/voitek/Projects/legion-newest/engine/Font.cpp
+1401592968 source:/Users/voitek/Projects/legion-newest/engine/Font.cpp
 	<cstdio>
 	<SDL2/SDL.h>
 	<SDL/SDL_image.h>
@@ -1992,13 +1999,13 @@
 1400620462 source:/Users/voitek/Projects/legion-newest/engine/settings_parser.cc
 	"settings_parser.hh"
 
-1400620677 source:/Users/voitek/Projects/legion-newest/engine/settings_scanner.cc
+1400634939 source:/Users/voitek/Projects/legion-newest/engine/settings_scanner.cc
 	"settings_scanner.hh"
 
 1400240521 source:/Users/voitek/Projects/legion-newest/engine/settings_token.cc
 	"settings_token.hh"
 
-1400621098 source:/Users/voitek/Projects/legion-newest/engine/Textures.cpp
+1401578909 source:/Users/voitek/Projects/legion-newest/engine/Textures.cpp
 	<iostream>
 	<SDL2/SDL.h>
 	<SDL/SDL_image.h>
@@ -2019,7 +2026,7 @@
 	<cstdio>
 	"Utils.h"
 
-1400547013 source:/Users/voitek/Projects/legion-newest/game/Amos.cpp
+1401590461 source:/Users/voitek/Projects/legion-newest/game/Amos.cpp
 	<string>
 	<cstdio>
 	<vector>
@@ -2080,7 +2087,7 @@
 1400240521 source:/Users/voitek/Projects/legion-newest/game/hq2x.cpp
 	<cstdlib>
 
-1400542286 source:/Users/voitek/Projects/legion-newest/game/legion.cpp
+1401580244 source:/Users/voitek/Projects/legion-newest/game/legion.cpp
 	"../engine/Gfx.h"
 	"Amos.h"
 	"legion.h"
@@ -2094,6 +2101,7 @@
 	"lgn_wczytaj.h"
 	"utl_locale.h"
 	"version.h"
+	"../engine/Core.h"
 
 1400240521 /Users/voitek/Projects/legion-newest/game/legion.h
 	"amos_types.h"
@@ -2137,7 +2145,7 @@
 
 1400240521 /Users/voitek/Projects/legion-newest/game/lgn_sceneria.h
 
-1400240521 source:/Users/voitek/Projects/legion-newest/game/lgn_diskacs.cpp
+1400639609 source:/Users/voitek/Projects/legion-newest/game/lgn_diskacs.cpp
 	"Amos.h"
 	"legion.h"
 	"lgn_diskacs.h"
@@ -2152,7 +2160,7 @@
 
 1400240521 /Users/voitek/Projects/legion-newest/game/lgn_ekran1.h
 
-1400542402 source:/Users/voitek/Projects/legion-newest/game/lgn_intro.cpp
+1401586657 source:/Users/voitek/Projects/legion-newest/game/lgn_intro.cpp
 	"Amos.h"
 	"legion.h"
 	"lgn_diskacs.h"
@@ -2228,7 +2236,7 @@
 
 1400240521 /Users/voitek/Projects/legion-newest/game/lgn_sklep.h
 
-1400542524 source:/Users/voitek/Projects/legion-newest/game/lgn_util.cpp
+1400639067 source:/Users/voitek/Projects/legion-newest/game/lgn_util.cpp
 	<cmath>
 	"Amos.h"
 	"legion.h"
@@ -2236,14 +2244,14 @@
 	"lgn_intro.h"
 	"utl_locale.h"
 
-1400240521 source:/Users/voitek/Projects/legion-newest/game/lgn_wczytaj.cpp
+1400627589 source:/Users/voitek/Projects/legion-newest/game/lgn_wczytaj.cpp
 	<fstream>
 	<vector>
 	"Amos.h"
 	"legion.h"
 	"lgn_wczytaj.h"
 	"utl_locale.h"
-	"../lib/rapidjson/document.h"
+	"rapidjson/document.h"
 
 1400240521 /Users/voitek/Projects/legion-newest/lib/rapidjson/document.h
 	"reader.h"
@@ -2270,7 +2278,7 @@
 
 1400240521 /Users/voitek/Projects/legion-newest/lib/rapidjson/internal/strfunc.h
 
-1400240521 source:/Users/voitek/Projects/legion-newest/game/main.cpp
+1401588242 source:/Users/voitek/Projects/legion-newest/game/main.cpp
 	"../engine/Core.h"
 	"../engine/Gfx.h"
 	"main.h"
@@ -2299,4 +2307,451 @@
 	"lgn_util.h"
 	"main.h"
 	"utl_locale.h"
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core.h
+	<Rocket/Core/Core.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/Core.h
+	<Rocket/Core/Types.h>
+	<Rocket/Core/Math.h>
+	<Rocket/Core/Header.h>
+	<Rocket/Core/Box.h>
+	<Rocket/Core/Context.h>
+	<Rocket/Core/ContextInstancer.h>
+	<Rocket/Core/Decorator.h>
+	<Rocket/Core/DecoratorInstancer.h>
+	<Rocket/Core/Element.h>
+	<Rocket/Core/ElementDocument.h>
+	<Rocket/Core/ElementInstancer.h>
+	<Rocket/Core/ElementInstancerGeneric.h>
+	<Rocket/Core/ElementReference.h>
+	<Rocket/Core/ElementScroll.h>
+	<Rocket/Core/ElementText.h>
+	<Rocket/Core/ElementUtilities.h>
+	<Rocket/Core/Event.h>
+	<Rocket/Core/EventInstancer.h>
+	<Rocket/Core/EventListener.h>
+	<Rocket/Core/EventListenerInstancer.h>
+	<Rocket/Core/Factory.h>
+	<Rocket/Core/FileInterface.h>
+	<Rocket/Core/Font.h>
+	<Rocket/Core/FontDatabase.h>
+	<Rocket/Core/FontEffect.h>
+	<Rocket/Core/FontGlyph.h>
+	<Rocket/Core/Geometry.h>
+	<Rocket/Core/GeometryUtilities.h>
+	<Rocket/Core/Input.h>
+	<Rocket/Core/Log.h>
+	<Rocket/Core/Plugin.h>
+	<Rocket/Core/Property.h>
+	<Rocket/Core/PropertyDefinition.h>
+	<Rocket/Core/PropertyDictionary.h>
+	<Rocket/Core/PropertyParser.h>
+	<Rocket/Core/PropertySpecification.h>
+	<Rocket/Core/RenderInterface.h>
+	<Rocket/Core/String.h>
+	<Rocket/Core/StyleSheet.h>
+	<Rocket/Core/StyleSheetKeywords.h>
+	<Rocket/Core/StyleSheetSpecification.h>
+	<Rocket/Core/SystemInterface.h>
+	<Rocket/Core/Texture.h>
+	<Rocket/Core/Types.h>
+	<Rocket/Core/Vertex.h>
+	<Rocket/Core/XMLNodeHandler.h>
+	<Rocket/Core/XMLParser.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/Types.h
+	<float.h>
+	<limits.h>
+	<string>
+	<map>
+	<set>
+	<vector>
+	<Rocket/Core/Platform.h>
+	<Rocket/Core/Debug.h>
+	<inttypes.h>
+	<Rocket/Core/Colour.h>
+	<Rocket/Core/Vector2.h>
+	<Rocket/Core/String.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/Platform.h
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/Debug.h
+	<Rocket/Core/Header.h>
+	<TargetConditionals.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/Header.h
+	<Rocket/Core/Platform.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/Colour.h
+	<Rocket/Core/Header.h>
+	"Colour.inl"
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/Colour.inl
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/Vector2.h
+	<Rocket/Core/Debug.h>
+	<Rocket/Core/Math.h>
+	<Rocket/Core/Vector2.inl>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/Math.h
+	<Rocket/Core/Header.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/Vector2.inl
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/String.h
+	<Rocket/Core/Header.h>
+	<Rocket/Core/StringBase.h>
+	<stdarg.h>
+	<string.h>
+	<vector>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/StringBase.h
+	<Rocket/Core/Debug.h>
+	<stdlib.h>
+	<Rocket/Core/StringBase.inl>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/StringBase.inl
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/Box.h
+	<Rocket/Core/Types.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/Context.h
+	<Rocket/Core/Header.h>
+	<Rocket/Core/Types.h>
+	<Rocket/Core/ReferenceCountable.h>
+	<Rocket/Core/ElementReference.h>
+	<Rocket/Core/Input.h>
+	<Rocket/Core/String.h>
+	<Rocket/Core/ScriptInterface.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/ReferenceCountable.h
+	<Rocket/Core/Header.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/ElementReference.h
+	<Rocket/Core/Header.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/Input.h
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/ScriptInterface.h
+	<Rocket/Core/Header.h>
+	<Rocket/Core/ReferenceCountable.h>
+	<Rocket/Core/Types.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/ContextInstancer.h
+	<Rocket/Core/ReferenceCountable.h>
+	<Rocket/Core/Header.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/Decorator.h
+	<Rocket/Core/ReferenceCountable.h>
+	<vector>
+	<Rocket/Core/Header.h>
+	<Rocket/Core/Texture.h>
+	<Rocket/Core/Types.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/Texture.h
+	<Rocket/Core/Header.h>
+	<Rocket/Core/Types.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/DecoratorInstancer.h
+	<Rocket/Core/ReferenceCountable.h>
+	<Rocket/Core/Header.h>
+	<Rocket/Core/PropertyDictionary.h>
+	<Rocket/Core/PropertySpecification.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/PropertyDictionary.h
+	<Rocket/Core/Header.h>
+	<Rocket/Core/Property.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/Property.h
+	<Rocket/Core/Variant.h>
+	<Rocket/Core/Header.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/Variant.h
+	<Rocket/Core/Header.h>
+	<Rocket/Core/Types.h>
+	<Rocket/Core/TypeConverter.h>
+	<list>
+	<Rocket/Core/Variant.inl>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/TypeConverter.h
+	<Rocket/Core/Types.h>
+	<Rocket/Core/Log.h>
+	<Rocket/Core/Stream.h>
+	<Rocket/Core/StringUtilities.h>
+	<typeinfo>
+	<stdlib.h>
+	<stdio.h>
+	<Rocket/Core/TypeConverter.inl>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/Log.h
+	<Rocket/Core/Header.h>
+	<Rocket/Core/Types.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/Stream.h
+	<Rocket/Core/Header.h>
+	<Rocket/Core/ReferenceCountable.h>
+	<Rocket/Core/Types.h>
+	<Rocket/Core/URL.h>
+	<list>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/URL.h
+	<Rocket/Core/Header.h>
+	<Rocket/Core/String.h>
+	<map>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/StringUtilities.h
+	<Rocket/Core/Header.h>
+	<Rocket/Core/Types.h>
+	<Rocket/Core/String.h>
+	<stdarg.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/TypeConverter.inl
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/Variant.inl
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/PropertySpecification.h
+	<Rocket/Core/Header.h>
+	<Rocket/Core/Element.h>
+	<Rocket/Core/PropertyDefinition.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/Element.h
+	<Rocket/Core/ReferenceCountable.h>
+	<Rocket/Core/ScriptInterface.h>
+	<Rocket/Core/Header.h>
+	<Rocket/Core/Box.h>
+	<Rocket/Core/Event.h>
+	<Rocket/Core/Property.h>
+	<Rocket/Core/Types.h>
+	<Rocket/Core/Element.inl>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/Event.h
+	<Rocket/Core/Dictionary.h>
+	<Rocket/Core/ScriptInterface.h>
+	<Rocket/Core/Header.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/Dictionary.h
+	<Rocket/Core/Header.h>
+	<Rocket/Core/Variant.h>
+	<Rocket/Core/Dictionary.inl>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/Dictionary.inl
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/Element.inl
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/PropertyDefinition.h
+	<Rocket/Core/Header.h>
+	<Rocket/Core/Property.h>
+	<Rocket/Core/PropertyParser.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/PropertyParser.h
+	<Rocket/Core/Header.h>
+	<Rocket/Core/Property.h>
+	<map>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/ElementDocument.h
+	<Rocket/Core/Element.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/ElementInstancer.h
+	<Rocket/Core/ReferenceCountable.h>
+	<Rocket/Core/XMLParser.h>
+	<Rocket/Core/Header.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/XMLParser.h
+	<stack>
+	<Rocket/Core/Header.h>
+	<Rocket/Core/BaseXMLParser.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/BaseXMLParser.h
+	<Rocket/Core/Header.h>
+	<Rocket/Core/Types.h>
+	<Rocket/Core/Dictionary.h>
+	<set>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/ElementInstancerGeneric.h
+	<Rocket/Core/ElementInstancer.h>
+	<Rocket/Core/ElementInstancerGeneric.inl>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/ElementInstancerGeneric.inl
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/ElementScroll.h
+	<Rocket/Core/Header.h>
+	<Rocket/Core/EventListener.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/EventListener.h
+	<Rocket/Core/Header.h>
+	<Rocket/Core/Event.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/ElementText.h
+	<Rocket/Core/Header.h>
+	<Rocket/Core/Element.h>
+	<Rocket/Core/WString.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/WString.h
+	<Rocket/Core/Types.h>
+	<Rocket/Core/Header.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/ElementUtilities.h
+	<Rocket/Core/Header.h>
+	<Rocket/Core/Box.h>
+	<Rocket/Core/WString.h>
+	<Rocket/Core/Types.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/EventInstancer.h
+	<Rocket/Core/ReferenceCountable.h>
+	<Rocket/Core/Header.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/EventListenerInstancer.h
+	<Rocket/Core/ReferenceCountable.h>
+	<Rocket/Core/String.h>
+	<Rocket/Core/Header.h>
+	<Rocket/Core/Element.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/Factory.h
+	<Rocket/Core/XMLParser.h>
+	<Rocket/Core/Header.h>
+	<map>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/FileInterface.h
+	<Rocket/Core/Header.h>
+	<Rocket/Core/Types.h>
+	<Rocket/Core/ReferenceCountable.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/Font.h
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/FontDatabase.h
+	<Rocket/Core/StringUtilities.h>
+	<Rocket/Core/Header.h>
+	<Rocket/Core/Font.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/FontEffect.h
+	<Rocket/Core/FontGlyph.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/FontGlyph.h
+	<vector>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/Geometry.h
+	<Rocket/Core/Header.h>
+	<Rocket/Core/Vertex.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/Vertex.h
+	<Rocket/Core/Header.h>
+	<Rocket/Core/Types.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/GeometryUtilities.h
+	<Rocket/Core/Header.h>
+	<Rocket/Core/Types.h>
+	<Rocket/Core/Vertex.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/Plugin.h
+	<Rocket/Core/Header.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/RenderInterface.h
+	<Rocket/Core/ReferenceCountable.h>
+	<Rocket/Core/Header.h>
+	<Rocket/Core/Texture.h>
+	<Rocket/Core/Vertex.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/StyleSheet.h
+	<Rocket/Core/Dictionary.h>
+	<Rocket/Core/ReferenceCountable.h>
+	<set>
+	<Rocket/Core/PropertyDictionary.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/StyleSheetKeywords.h
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/StyleSheetSpecification.h
+	<Rocket/Core/Header.h>
+	<Rocket/Core/PropertySpecification.h>
+	<Rocket/Core/Types.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/SystemInterface.h
+	<Rocket/Core/Log.h>
+	<Rocket/Core/ReferenceCountable.h>
+	<Rocket/Core/String.h>
+	<Rocket/Core/Header.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Core/XMLNodeHandler.h
+	<Rocket/Core/ReferenceCountable.h>
+	<Rocket/Core/XMLParser.h>
+	<Rocket/Core/Header.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Debugger/Debugger.h
+	<Rocket/Core/Types.h>
+	<Rocket/Debugger/Header.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Debugger/Header.h
+	<Rocket/Core/Platform.h>
+
+1400628180 /Users/voitek/Projects/legion-newest/engine/SystemInterfaceSDL2.h
+	<Rocket/Core/SystemInterface.h>
+	<Rocket/Core/Input.h>
+	<SDL2/SDL.h>
+
+1401588380 /Users/voitek/Projects/legion-newest/engine/RenderInterfaceSDL2.h
+	<Rocket/Core/RenderInterface.h>
+	<SDL2/SDL.h>
+	<GL/glew.h>
+
+1400628551 /opt/local/include/GL/glew.h
+	<stddef.h>
+	<inttypes.h>
+	<stdint.h>
+	<inttypes.h>
+	<OpenGL/glu.h>
+	<GL/glu.h>
+
+1394642981 /opt/local/include/jpeglib.h
+	"jconfig.h"
+	"jmorecfg.h"
+	"jpegint.h"
+	"jerror.h"
+
+1394642981 /opt/local/include/jconfig.h
+
+1394642981 /opt/local/include/jmorecfg.h
+
+1394642981 /opt/local/include/jerror.h
+
+1401587905 source:/Users/voitek/Projects/legion-newest/engine/RenderInterfaceSDL2.cpp
+	<Rocket/Core/Core.h>
+	<SDL2_image/SDL_image.h>
+	"RenderInterfaceSDL2.h"
+
+1400628117 source:/Users/voitek/Projects/legion-newest/engine/SystemInterfaceSDL2.cpp
+	<Rocket/Core.h>
+	"SystemInterfaceSDL2.h"
+
+1353101044 /Users/voitek/Projects/legion-newest/lib/rapidjson/include/rapidjson/document.h
+	"reader.h"
+	"internal/strfunc.h"
+	<new>
+
+1352823350 /Users/voitek/Projects/legion-newest/lib/rapidjson/include/rapidjson/reader.h
+	"rapidjson.h"
+	"internal/pow10.h"
+	"internal/stack.h"
+	<csetjmp>
+	<nmmintrin.h>
+	<emmintrin.h>
+
+1353093346 /Users/voitek/Projects/legion-newest/lib/rapidjson/include/rapidjson/rapidjson.h
+	<cstdlib>
+	<cstring>
+	<inttypes.h>
+	<cassert>
+
+1330430048 /Users/voitek/Projects/legion-newest/lib/rapidjson/include/rapidjson/internal/pow10.h
+
+1330434888 /Users/voitek/Projects/legion-newest/lib/rapidjson/include/rapidjson/internal/stack.h
+
+1330430048 /Users/voitek/Projects/legion-newest/lib/rapidjson/include/rapidjson/internal/strfunc.h
+
+1400536458 /Users/voitek/Projects/legion-newest/engine/ShellFileInterface.h
+	<Rocket/Core/String.h>
+	<Rocket/Core/FileInterface.h>
+
+1400632143 source:/Users/voitek/Projects/legion-newest/engine/ShellFileInterface.cpp
+	"ShellFileInterface.h"
+	<stdio.h>
 

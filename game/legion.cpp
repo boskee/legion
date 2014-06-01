@@ -13,6 +13,9 @@
 #include "utl_locale.h"
 #include "version.h"
 
+// VOITEK: TEST
+#include "../engine/Core.h"
+
 using namespace std;
 
 astr gs_language = "EN";
@@ -176,7 +179,6 @@ void main_code(void) {
 	else
 		SetLang(gs_default_language);
 
-
 	if( IB_INTRO ) pc_intro();
 
 	SPEED_CHECK();
@@ -208,12 +210,16 @@ void main_code(void) {
 
 
 	do {	//	Repeat
-
 		_DrawIff(-1,0,0); BobUpdate();
 		SetFont(FON3);
 		Gfx::Color(1.f,1.f,1.f,0.8f);
 		Text(560,500,astr("ver ")+AutoVersion::FULLVERSION_STRING,1.2f);
 		SetFont(FON1);
+        cout << " CIPENCJA " << endl;
+	//	Core::Context->Update();
+//    Core::Context->Render();
+
+        cout << "OHAIO" << endl;
 		WaitVbl();
 
 		MZ = MouseZone();
@@ -442,7 +448,7 @@ void main_code(void) {
 			if( MouseClick()==1 ) {			//	      If Mouse Click=1
 				KONIEC=-1;								//	         KONIEC=True
 			}														//	      End If
-		}															//	   End If
+		}									//	   End If
 	} while( ! KONIEC );						//	Until KONIEC
 																	//	Rainbow Del : View
 																	//	Fade 2 : _TRACK_FADE[1]

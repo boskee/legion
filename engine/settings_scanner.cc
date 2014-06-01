@@ -720,9 +720,9 @@ void cppcc::SettingsScanner::_scan (SettingsToken *token) throw (ScanException)
         c = *_ch++;
          /*0*/ if (((c == '\0') && (_ch != _eob)) || (('\1' /*1*/ <= c) && (c <= '\t' /*9*/)) || (('\v' /*11*/ <= c) && (c <= '\f' /*12*/)) || (('\16' /*14*/ <= c) && (c <= ')' /*41*/)) || ('+' /*43*/ <= c))
           goto __LONG_COMMENT_1_;
-        else  /*0*/ if ((c == '\n' /*10*/))
+        else  /*0*/ if (c == '\n' /*10*/)
           goto __LONG_COMMENT_2_;
-        else  /*0*/ if ((c == '*' /*42*/))
+        else  /*0*/ if (c == '*' /*42*/)
           goto __LONG_COMMENT_3_;
         if ((_ch-- == _eob) && (c == '\0')) {
           if (_eof) {
@@ -752,11 +752,11 @@ void cppcc::SettingsScanner::_scan (SettingsToken *token) throw (ScanException)
         c = *_ch++;
          /*0*/ if (((c == '\0') && (_ch != _eob)) || (('\1' /*1*/ <= c) && (c <= '\t' /*9*/)) || (('\v' /*11*/ <= c) && (c <= ')' /*41*/)) || (('+' /*43*/ <= c) && (c <= '.' /*46*/)) || ('0' /*48*/ <= c))
           goto __LONG_COMMENT_4_;
-        else  /*0*/ if ((c == '\n' /*10*/))
+        else  /*0*/ if (c == '\n' /*10*/)
           goto __LONG_COMMENT_5_;
-        else  /*0*/ if ((c == '*' /*42*/))
+        else  /*0*/ if (c == '*' /*42*/)
           goto __LONG_COMMENT_6_;
-        else  /*0*/ if ((c == '/' /*47*/))
+        else  /*0*/ if (c == '/' /*47*/)
           goto __LONG_COMMENT_7_;
         if ((_ch-- == _eob) && (c == '\0')) {
           if (_eof) {
@@ -775,11 +775,11 @@ void cppcc::SettingsScanner::_scan (SettingsToken *token) throw (ScanException)
         c = *_ch++;
          /*0*/ if (((c == '\0') && (_ch != _eob)) || (('\1' /*1*/ <= c) && (c <= '\t' /*9*/)) || (('\v' /*11*/ <= c) && (c <= ')' /*41*/)) || (('+' /*43*/ <= c) && (c <= '.' /*46*/)) || ('0' /*48*/ <= c))
           goto __LONG_COMMENT_4_;
-        else  /*0*/ if ((c == '\n' /*10*/))
+        else  /*0*/ if (c == '\n' /*10*/)
           goto __LONG_COMMENT_5_;
-        else  /*0*/ if ((c == '*' /*42*/))
+        else  /*0*/ if (c == '*' /*42*/)
           goto __LONG_COMMENT_6_;
-        else  /*0*/ if ((c == '/' /*47*/))
+        else  /*0*/ if (c == '/' /*47*/)
           goto __LONG_COMMENT_7_;
         if ((_ch-- == _eob) && (c == '\0')) {
           if (_eof) {
