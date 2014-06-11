@@ -1,0 +1,59 @@
+<rml>
+	<head>
+		<title>Demo</title>
+		<style>
+			body
+			{
+				font-family: Bodacious-Normal;
+				width: 100%;
+				height: 100%;
+			}
+
+			div#container {
+				width: 56px;
+				padding: 2px;
+				border-color: #665544;
+				border-left-width: 2px;
+				border-right-width: 2px;
+				border-top-width: 2px;
+				border-bottom-width: 2px;
+				bottom: 18px;
+				left: 18px;
+				display: block;
+				position: absolute;
+				font-size: 20px;
+			}
+
+			button {
+				width: 52px;
+				margin-bottom: 4px;
+				background: #334411;
+				color: #667744;
+				height: 22px;
+				line-height: 22px;
+				display: block;
+				border-left-width: 2px;
+				border-right-width: 2px;
+				border-top-width: 2px;
+				border-bottom-width: 2px;
+				border-top-color: #556633;
+				border-left-color: #556633;
+				border-right-color: #111100;
+				border-bottom-color: #111100;
+				text-align: center;
+			}
+
+			.options {
+				margin-bottom: 0;
+			}
+		</style>
+	</head>
+	<body class="window">
+		<div id="container">
+			<handle move_target="#document">
+				<button class="start_game" onclick="action">Start</button>
+				<button class="options" onclick="options">Opcje</button>
+			</handle>
+		</div>
+	</body>
+</rml>

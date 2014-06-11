@@ -14,6 +14,11 @@
 #include "lgn_util.h"
 #include "utl_locale.h"
 #include <cmath>
+#include "EventHandlerStartGame.h"
+#include "EventHandlerOptions.h"
+#include "EventHandlerOptionsPreferences.h"
+//#include "../engine/EventInstancer.h"
+#include "../engine/EventManager.h"
 
 void SETUP0(void) {
 	//	Procedure SETUP0
@@ -52,6 +57,26 @@ void SETUP0(void) {
 		TrackPlay(3);
 	}
 
+	EventManager::RegisterEventHandler("map", new EventHandlerStartGame());
+	EventManager::RegisterEventHandler("options", new EventHandlerOptions());
+	EventManager::RegisterEventHandler("options_preferences", new EventHandlerOptionsPreferences());
+    EventManager::LoadWindow("map");
+
+    /*
+	Rocket::Core::ElementDocument *Document = Core::Context->LoadDocument("map.rml");
+
+	if(Document)
+	{
+		Document->Show();
+		Document->RemoveReference();
+		fprintf(stdout, "\nDocument loaded");
+	}
+	else
+	{
+		fprintf(stdout, "\nDocument is NULL");
+	}
+	*/
+
 	rysuj_ekran_ptr = rysuj_mape;
 	//	End Proc
 }
@@ -76,19 +101,7 @@ void MAIN(void) {
 		rysuj();
 		WaitVbl();												//	   Wait Vbl
 		if( MouseKey() == PRAWY ) {				//	   If Mouse Key=PRAWY
-			//	      If X>SPX-16 and Y>SPY-16 and X<SPX+16 and Y<SPY+16
-			if( X>SPX-16 && Y>SPY-16 && X<SPX+16 && Y<SPY+16 ) {
-																			//	         While Mouse Key=PRAWY
-				while( MouseKey() == PRAWY ) {
-					SPX=XMouse();								//	            SPX=X Mouse
-					SPY=YMouse();								//	            SPY=Y Mouse
-					Sprite(2,SPX,SPY,1);				//	            Sprite 2,SPX,SPY,1
-					rysuj();
-					WaitVbl();									//	            Wait Vbl
-				}															//	         Wend
-			} else {												//	      Else
 				SKROL(0);											//	         SKROL[0]
-			}																//	      End If
 		}																	//	   End If
 																			//
 																			//	   '   If A$="p" : For I=1 To 4 : OBLICZ_POWER[I] : Pen GRACZE(I,3)+1 : Print Param : Next : End If
@@ -128,16 +141,6 @@ void MAIN(void) {
 
 		if( MouseClick() ) {							//	   If Mouse Click=1
 			STREFA=MouseZone();							//	      STREFA=Mouse Zone
-			//	      If X>SPX-14 and Y>SPY-14 and X<SPX+14 and Y<SPY-1
-			if( X>SPX-14 && Y>SPY-14 && X<SPX+14 && Y<SPY-1 ) {
-				MAPA_AKCJA();									//	         MAPA_AKCJA
-				STREFA=0;											//	         STREFA=0
-			}																//	      End If
-			//	      If X>SPX-14 and Y>SPY+1 and X<SPX+14 and Y<SPY+15
-			if( X>SPX-14 && Y>SPY+1 && X<SPX+14 && Y<SPY+15 ) {
-				OPCJE();											//	         OPCJE
-				STREFA=0;											//	         STREFA=0
-			}																//	      End If
 			if( STREFA>19 and STREFA<61 ) {	//	      If STREFA>19 and STREFA<61
 				_ARMIA(STREFA-20);						//	         ARMIA[STREFA-20]
 			}																//	      End If

@@ -1,6 +1,7 @@
 #include <SDL2/SDL.h>
 
 #include "Events.h"
+#include "Core.h"
 
 namespace Core {
 
@@ -40,6 +41,54 @@ REG_EVENT(MouseButtonUpEvent,ifp_mousebuttonup,iud_mousebuttonup)
 REG_EVENT(MouseMotionEvent,ifp_mousemotion,iud_mousemotion)
 REG_EVENT(ResizeEvent,ifp_resize,iud_resize)
 
+
+
+    Key getMouseKey(int sdlk)
+    {
+        switch(sdlk)
+        {
+            case SDL_BUTTON_LEFT:
+                return KEY_LEFT_MOUSE;
+            case SDL_BUTTON_RIGHT:
+                return KEY_RIGHT_MOUSE;
+            case SDL_BUTTON_MIDDLE:
+                return KEY_MIDDLE_MOUSE;
+            default:
+                return KEY_UNDEF;
+        }
+    }
+
+    int rocketTranslateMouse(Key key)
+    {
+        switch(key)
+        {
+            case KEY_LEFT_MOUSE:
+                return 0;
+            case KEY_RIGHT_MOUSE:
+                return 1;
+            case KEY_MIDDLE_MOUSE:
+                return 2;
+            default:
+                return 3;
+        }
+    }
+
+    int getRocketModifiers(uint32_t mods)
+    {
+        int retval = 0;
+
+        if(mods & MOD_CTRL)
+            retval |= Rocket::Core::Input::KM_CTRL;
+
+        if(mods & MOD_SHIFT)
+            retval |= Rocket::Core::Input::KM_SHIFT;
+
+        if(mods & MOD_ALT)
+            retval |= Rocket::Core::Input::KM_ALT;
+
+        return retval;
+    }
+
 bool ProcessEvents(void) {
 	SDL_Event event;
 	bool ib_quit = false;
@@ -48,28 +97,112 @@ bool ProcessEvents(void) {
 		switch (event.type) {
 
 			case SDL_QUIT:
+			    {
+
 				ib_quit = true;
 				if( ifp_quit ) ifp_quit(iud_quit);				//wolamy funkcje obslugi zdarzenia
+			    }
 				break;
 
 			case SDL_KEYDOWN:
+			    {
 				if( ifp_keydown) ifp_keydown(event.key.keysym.sym,iud_keydown);		//wolamy funkcje obslugi zdarzenia
+			    }
 				break;
 
-			case SDL_KEYUP:
+			case SDL_KEYUP: {
 				if( ifp_keyup) ifp_keyup(event.key.keysym.sym,iud_keyup);					//wolamy funkcje obslugi zdarzenia
+			}
 				break;
 
-			case SDL_MOUSEBUTTONDOWN:
-				if( ifp_mousebuttondown ) ifp_mousebuttondown(event.button.button,event.button.x,event.button.y,iud_mousebuttondown);					//wolamy funkcje obslugi zdarzenia
+			case SDL_MOUSEBUTTONDOWN: {
+                Key key = getMouseKey(event.button.button);
+
+                if(key != KEY_UNDEF)
+                {
+                    if( ifp_mousebuttondown ) {
+                            ifp_mousebuttondown(event.button.button,event.button.x,event.button.y,iud_mousebuttondown);					//wolamy funkcje obslugi zdarzenia
+                    }
+                    if(Core::Context) {
+
+        uint32_t mods = 0;
+
+        SDL_Keymod sdlMods = SDL_GetModState();
+
+
+        if(sdlMods & KMOD_CTRL)
+            mods |= MOD_CTRL;
+
+        if(sdlMods & KMOD_SHIFT)
+            mods |= MOD_SHIFT;
+
+        if(sdlMods & KMOD_ALT)
+            mods |= MOD_ALT;
+
+
+
+                                Core::Context->ProcessMouseButtonDown(rocketTranslateMouse(key), getRocketModifiers(mods));
+                            }
+                }
+			}
 				break;
 
 			case SDL_MOUSEBUTTONUP:
+			    {
+
+                Key key = getMouseKey(event.button.button);
+
+                if(key != KEY_UNDEF)
+                {
 				if( ifp_mousebuttonup ) ifp_mousebuttonup(event.button.button,event.button.x,event.button.y,iud_mousebuttonup);					//wolamy funkcje obslugi zdarzenia
+
+                    if(Core::Context) {
+
+        uint32_t mods = 0;
+
+        SDL_Keymod sdlMods = SDL_GetModState();
+
+
+        if(sdlMods & KMOD_CTRL)
+            mods |= MOD_CTRL;
+
+        if(sdlMods & KMOD_SHIFT)
+            mods |= MOD_SHIFT;
+
+        if(sdlMods & KMOD_ALT)
+            mods |= MOD_ALT;
+
+
+
+                                Core::Context->ProcessMouseButtonUp(rocketTranslateMouse(key), getRocketModifiers(mods));
+                            }
+                }
+			    }
 				break;
 
 			case SDL_MOUSEMOTION:
 				if( ifp_mousemotion ) ifp_mousemotion(event.motion.x,event.motion.y,event.motion.xrel,event.motion.yrel,iud_mousemotion);					//wolamy funkcje obslugi zdarzenia
+
+                    if(Core::Context) {
+
+        uint32_t mods = 0;
+
+        SDL_Keymod sdlMods = SDL_GetModState();
+
+
+        if(sdlMods & KMOD_CTRL)
+            mods |= MOD_CTRL;
+
+        if(sdlMods & KMOD_SHIFT)
+            mods |= MOD_SHIFT;
+
+        if(sdlMods & KMOD_ALT)
+            mods |= MOD_ALT;
+
+
+
+                                Core::Context->ProcessMouseMove(event.motion.x,event.motion.y, getRocketModifiers(mods));
+                            }
 				break;
 
 			case SDL_WINDOWEVENT:

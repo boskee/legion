@@ -109,6 +109,7 @@
 			<Add library="RocketCore" />
 			<Add library="RocketDebugger" />
 			<Add library="Glew" />
+			<Add library="RocketControls" />
 			<Add directory="lib/libRocket/Build" />
 		</Linker>
 		<Unit filename="engine/Alan.cpp" />
@@ -121,6 +122,14 @@
 		<Unit filename="engine/Collision.h" />
 		<Unit filename="engine/Core.cpp" />
 		<Unit filename="engine/Core.h" />
+		<Unit filename="engine/Event.cpp" />
+		<Unit filename="engine/Event.h" />
+		<Unit filename="engine/EventHandler.cpp" />
+		<Unit filename="engine/EventHandler.h" />
+		<Unit filename="engine/EventInstancer.cpp" />
+		<Unit filename="engine/EventInstancer.h" />
+		<Unit filename="engine/EventManager.cpp" />
+		<Unit filename="engine/EventManager.h" />
 		<Unit filename="engine/Events.cpp" />
 		<Unit filename="engine/Events.h" />
 		<Unit filename="engine/Extras.h" />
@@ -164,6 +173,8 @@
 		<Unit filename="engine/alan_scanner.hh" />
 		<Unit filename="engine/alan_token.cc" />
 		<Unit filename="engine/alan_token.hh" />
+		<Unit filename="engine/render.h" />
+		<Unit filename="engine/sdl2backend.cpp" />
 		<Unit filename="engine/settings_parser.cc" />
 		<Unit filename="engine/settings_parser.hh" />
 		<Unit filename="engine/settings_scanner.cc" />
@@ -177,6 +188,12 @@
 		<Unit filename="game/AmosImage.h" />
 		<Unit filename="game/AmosMusic.cpp" />
 		<Unit filename="game/AmosMusic.h" />
+		<Unit filename="game/EventHandlerOptions.cpp" />
+		<Unit filename="game/EventHandlerOptions.h" />
+		<Unit filename="game/EventHandlerOptionsPreferences.cpp" />
+		<Unit filename="game/EventHandlerOptionsPreferences.h" />
+		<Unit filename="game/EventHandlerStartGame.cpp" />
+		<Unit filename="game/EventHandlerStartGame.h" />
 		<Unit filename="game/amos_types.h" />
 		<Unit filename="game/hq2x.cpp" />
 		<Unit filename="game/legion.cpp" />

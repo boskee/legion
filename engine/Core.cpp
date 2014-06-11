@@ -2,6 +2,7 @@
 #include <iostream>
 
 #include <Rocket/Core/Core.h>
+#include <Rocket/Controls.h>
 #include <Rocket/Core/Input.h>
 #include <Rocket/Debugger/Debugger.h>
 #include "ShellFileInterface.h"
@@ -13,6 +14,9 @@
 #include "Utils.h"
 #include "Bob.h"
 #include "Collision.h"
+
+#include "EventInstancer.h"
+#include "EventManager.h"
 
 namespace Core {
 
@@ -149,6 +153,8 @@ int Init(void) {
     if(!Rocket::Core::Initialise())
         return 1;
 
+	// Initialise the Rocket Controls library.
+	Rocket::Controls::Initialise();
 
     Rocket::Core::FontDatabase::LoadFontFace("../../../fonts/Bodacious-Normal.ttf");
     Rocket::Core::FontDatabase::LoadFontFace("Delicious-Bold.otf");
@@ -161,6 +167,12 @@ int Init(void) {
 
 	Rocket::Debugger::Initialise(Context);
 
+	// Initialise the event instancer and handlers.
+	EventInstancer* event_instancer = new EventInstancer();
+	Rocket::Core::Factory::RegisterEventListenerInstancer(event_instancer);
+	event_instancer->RemoveReference();
+
+    /*
 	Rocket::Core::ElementDocument *Document = Context->LoadDocument("demo.rml");
 
 	if(Document)
@@ -172,7 +184,7 @@ int Init(void) {
 	else
 	{
 		fprintf(stdout, "\nDocument is NULL");
-	}
+	}*/
 
 	  /////////////////////
 	 // Dzwięki, muzyka //

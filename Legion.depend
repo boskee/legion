@@ -1834,10 +1834,11 @@
 	<GL/gl.h>
 	<OpenGL/gl.h>
 
-1401593547 source:/Users/voitek/Projects/legion-newest/engine/Core.cpp
+1402360858 source:/Users/voitek/Projects/legion-newest/engine/Core.cpp
 	<SDL2/SDL.h>
 	<iostream>
 	<Rocket/Core/Core.h>
+	<Rocket/Controls.h>
 	<Rocket/Core/Input.h>
 	<Rocket/Debugger/Debugger.h>
 	"ShellFileInterface.h"
@@ -1847,6 +1848,8 @@
 	"Utils.h"
 	"Bob.h"
 	"Collision.h"
+	"EventInstancer.h"
+	"EventManager.h"
 
 1401589496 /Users/voitek/Projects/legion-newest/engine/Core.h
 	<string>
@@ -1864,13 +1867,14 @@
 1400240521 /Users/voitek/Projects/legion-newest/engine/Settings.h
 	<string>
 
-1400240521 /Users/voitek/Projects/legion-newest/engine/Events.h
+1401670067 /Users/voitek/Projects/legion-newest/engine/Events.h
 
-1400544332 source:/Users/voitek/Projects/legion-newest/engine/Events.cpp
+1401670577 source:/Users/voitek/Projects/legion-newest/engine/Events.cpp
 	<SDL2/SDL.h>
 	"Events.h"
+	"Core.h"
 
-1401592968 source:/Users/voitek/Projects/legion-newest/engine/Font.cpp
+1401667353 source:/Users/voitek/Projects/legion-newest/engine/Font.cpp
 	<cstdio>
 	<SDL2/SDL.h>
 	<SDL/SDL_image.h>
@@ -2005,7 +2009,7 @@
 1400240521 source:/Users/voitek/Projects/legion-newest/engine/settings_token.cc
 	"settings_token.hh"
 
-1401578909 source:/Users/voitek/Projects/legion-newest/engine/Textures.cpp
+1401840652 source:/Users/voitek/Projects/legion-newest/engine/Textures.cpp
 	<iostream>
 	<SDL2/SDL.h>
 	<SDL/SDL_image.h>
@@ -2026,7 +2030,7 @@
 	<cstdio>
 	"Utils.h"
 
-1401590461 source:/Users/voitek/Projects/legion-newest/game/Amos.cpp
+1401824659 source:/Users/voitek/Projects/legion-newest/game/Amos.cpp
 	<string>
 	<cstdio>
 	<vector>
@@ -2087,7 +2091,7 @@
 1400240521 source:/Users/voitek/Projects/legion-newest/game/hq2x.cpp
 	<cstdlib>
 
-1401580244 source:/Users/voitek/Projects/legion-newest/game/legion.cpp
+1401831312 source:/Users/voitek/Projects/legion-newest/game/legion.cpp
 	"../engine/Gfx.h"
 	"Amos.h"
 	"legion.h"
@@ -2103,7 +2107,7 @@
 	"version.h"
 	"../engine/Core.h"
 
-1400240521 /Users/voitek/Projects/legion-newest/game/legion.h
+1401831308 /Users/voitek/Projects/legion-newest/game/legion.h
 	"amos_types.h"
 
 1400240521 /Users/voitek/Projects/legion-newest/game/lgn_armia.h
@@ -2145,7 +2149,7 @@
 
 1400240521 /Users/voitek/Projects/legion-newest/game/lgn_sceneria.h
 
-1400639609 source:/Users/voitek/Projects/legion-newest/game/lgn_diskacs.cpp
+1401825072 source:/Users/voitek/Projects/legion-newest/game/lgn_diskacs.cpp
 	"Amos.h"
 	"legion.h"
 	"lgn_diskacs.h"
@@ -2168,7 +2172,7 @@
 	"lgn_util.h"
 	"utl_locale.h"
 
-1400240521 source:/Users/voitek/Projects/legion-newest/game/lgn_mapa.cpp
+1402348301 source:/Users/voitek/Projects/legion-newest/game/lgn_mapa.cpp
 	"Amos.h"
 	"legion.h"
 	"lgn_akcja.h"
@@ -2183,8 +2187,12 @@
 	"lgn_util.h"
 	"utl_locale.h"
 	<cmath>
+	"EventHandlerStartGame.h"
+	"EventHandlerOptions.h"
+	"EventHandlerOptionsPreferences.h"
+	"../engine/EventManager.h"
 
-1400240521 /Users/voitek/Projects/legion-newest/game/lgn_opcje.h
+1402363634 /Users/voitek/Projects/legion-newest/game/lgn_opcje.h
 
 1400240521 source:/Users/voitek/Projects/legion-newest/game/lgn_miasto.cpp
 	"Amos.h"
@@ -2199,7 +2207,7 @@
 	"lgn_util.h"
 	"utl_locale.h"
 
-1400240521 source:/Users/voitek/Projects/legion-newest/game/lgn_opcje.cpp
+1402518677 source:/Users/voitek/Projects/legion-newest/game/lgn_opcje.cpp
 	"Amos.h"
 	"legion.h"
 	"lgn_opcje.h"
@@ -2754,4 +2762,217 @@
 1400632143 source:/Users/voitek/Projects/legion-newest/engine/ShellFileInterface.cpp
 	"ShellFileInterface.h"
 	<stdio.h>
+
+1401824363 source:/Users/voitek/Projects/legion-newest/engine/sdl2backend.cpp
+	"render.h"
+	<iostream>
+	<complex>
+	<SDL2/SDL.h>
+	<Rocket/Core.h>
+	<Rocket/Core/Input.h>
+	"ShellFileInterface.h"
+	"SystemInterfaceSDL2.h"
+	"RenderInterfaceSDL2.h"
+
+1401665996 /Users/voitek/Projects/legion-newest/engine/render.h
+	<stdint.h>
+	<vector>
+	<string>
+	<utility>
+	<Rocket/Core.h>
+
+1401826792 /Users/voitek/Projects/legion-newest/engine/EventHandlerStartGame.h
+	"EventHandler.h"
+
+1401826831 /Users/voitek/Projects/legion-newest/engine/EventHandler.h
+	<Rocket/Core/String.h>
+
+1401826686 /Users/voitek/Projects/legion-newest/engine/EventInstancer.h
+	<Rocket/Core/EventListenerInstancer.h>
+
+1402348705 /Users/voitek/Projects/legion-newest/engine/EventManager.h
+	<Rocket/Core/Event.h>
+
+1401826841 source:/Users/voitek/Projects/legion-newest/engine/EventHandler.cpp
+	"EventHandler.h"
+
+1401826922 source:/Users/voitek/Projects/legion-newest/engine/Event.cpp
+	"Event.h"
+	"EventManager.h"
+
+1401826933 /Users/voitek/Projects/legion-newest/engine/Event.h
+	<Rocket/Core/EventListener.h>
+
+1401829603 source:/Users/voitek/Projects/legion-newest/engine/EventHandlerStartGame.cpp
+	"EventHandlerStartGame.h"
+	<Rocket/Core/Context.h>
+	<Rocket/Core/ElementDocument.h>
+	<Rocket/Core/ElementUtilities.h>
+	<Rocket/Core/Event.h>
+	"EventManager.h"
+	<iostream>
+
+1401826650 source:/Users/voitek/Projects/legion-newest/engine/EventInstancer.cpp
+	"EventInstancer.h"
+	"Event.h"
+
+1402348682 source:/Users/voitek/Projects/legion-newest/engine/EventManager.cpp
+	"EventManager.h"
+	<Rocket/Core/Context.h>
+	<Rocket/Core/ElementDocument.h>
+	<Rocket/Core/ElementUtilities.h>
+	"EventHandler.h"
+	<map>
+	"Core.h"
+	<iostream>
+
+1401843043 /Users/voitek/Projects/legion-newest/game/EventHandlerStartGame.h
+	"../engine/EventHandler.h"
+
+1402349186 source:/Users/voitek/Projects/legion-newest/game/EventHandlerStartGame.cpp
+	"EventHandlerStartGame.h"
+	<Rocket/Core/Context.h>
+	<Rocket/Core/ElementDocument.h>
+	<Rocket/Core/ElementUtilities.h>
+	<Rocket/Core/Event.h>
+	"../engine/EventManager.h"
+	<iostream>
+	"Amos.h"
+	"lgn_mapa.h"
+	"lgn_opcje.h"
+	"EventHandlerOptions.h"
+
+1401832416 /Users/voitek/Projects/legion-newest/game/EventHandlerOptions.h
+	"../engine/EventHandler.h"
+
+1402518798 source:/Users/voitek/Projects/legion-newest/game/EventHandlerOptions.cpp
+	"EventHandlerOptions.h"
+	<Rocket/Core/Context.h>
+	<Rocket/Core/ElementDocument.h>
+	<Rocket/Core/ElementUtilities.h>
+	<Rocket/Core/Event.h>
+	<Rocket/Controls/ElementFormControlInput.h>
+	"../engine/EventManager.h"
+	<iostream>
+	"Amos.h"
+	"legion.h"
+	"lgn_mapa.h"
+	"lgn_opcje.h"
+	"lgn_diskacs.h"
+	"../engine/Core.h"
+	"lgn_util.h"
+	"utl_locale.h"
+
+1402363887 source:/Users/voitek/Projects/legion-newest/game/EventHandlerOptionsPreferences.cpp
+	"EventHandlerOptionsPreferences.h"
+	<Rocket/Core/Context.h>
+	<Rocket/Core/ElementDocument.h>
+	<Rocket/Core/ElementUtilities.h>
+	<Rocket/Core/Event.h>
+	<Rocket/Controls/ElementFormControlInput.h>
+	"../engine/EventManager.h"
+	<stdlib.h>
+	<iostream>
+	"Amos.h"
+	"legion.h"
+	"lgn_mapa.h"
+	"lgn_util.h"
+	"lgn_opcje.h"
+	"lgn_diskacs.h"
+	"EventHandlerOptions.h"
+	"../engine/Core.h"
+
+1401835339 /Users/voitek/Projects/legion-newest/game/EventHandlerOptionsPreferences.h
+	"../engine/EventHandler.h"
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Controls/ElementFormControlInput.h
+	<Rocket/Controls/Header.h>
+	<Rocket/Controls/ElementFormControl.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Controls/Header.h
+	<Rocket/Core/Platform.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Controls/ElementFormControl.h
+	<Rocket/Core/Element.h>
+	<Rocket/Controls/Header.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Controls.h
+	<Rocket/Controls/Controls.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Controls/Controls.h
+	<Rocket/Controls/DataFormatter.h>
+	<Rocket/Controls/ElementDataGrid.h>
+	<Rocket/Controls/ElementDataGridCell.h>
+	<Rocket/Controls/ElementDataGridExpandButton.h>
+	<Rocket/Controls/ElementDataGridRow.h>
+	<Rocket/Controls/ElementForm.h>
+	<Rocket/Controls/ElementFormControl.h>
+	<Rocket/Controls/ElementFormControlDataSelect.h>
+	<Rocket/Controls/ElementFormControlInput.h>
+	<Rocket/Controls/ElementFormControlSelect.h>
+	<Rocket/Controls/ElementFormControlTextArea.h>
+	<Rocket/Controls/ElementTabSet.h>
+	<Rocket/Controls/SelectOption.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Controls/DataFormatter.h
+	<Rocket/Core/ScriptInterface.h>
+	<Rocket/Core/String.h>
+	<Rocket/Controls/Header.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Controls/ElementDataGrid.h
+	<Rocket/Controls/Header.h>
+	<Rocket/Controls/DataSourceListener.h>
+	<Rocket/Core/Element.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Controls/DataSourceListener.h
+	<Rocket/Controls/Header.h>
+	<Rocket/Core/String.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Controls/ElementDataGridCell.h
+	<Rocket/Core/Element.h>
+	<Rocket/Core/EventListener.h>
+	<Rocket/Controls/Header.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Controls/ElementDataGridExpandButton.h
+	<Rocket/Core/Element.h>
+	<Rocket/Controls/Header.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Controls/ElementDataGridRow.h
+	<Rocket/Controls/Header.h>
+	<Rocket/Controls/DataSourceListener.h>
+	<Rocket/Controls/DataQuery.h>
+	<Rocket/Core/Element.h>
+	<queue>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Controls/DataQuery.h
+	<Rocket/Controls/Header.h>
+	<Rocket/Core/TypeConverter.h>
+	<Rocket/Core/Log.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Controls/ElementForm.h
+	<Rocket/Core/Element.h>
+	<Rocket/Controls/Header.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Controls/ElementFormControlDataSelect.h
+	<Rocket/Controls/Header.h>
+	<Rocket/Controls/ElementFormControlSelect.h>
+	<Rocket/Controls/DataSourceListener.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Controls/ElementFormControlSelect.h
+	<Rocket/Controls/Header.h>
+	<Rocket/Controls/ElementFormControl.h>
+	<Rocket/Controls/SelectOption.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Controls/SelectOption.h
+	<Rocket/Controls/Header.h>
+	<Rocket/Core/String.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Controls/ElementFormControlTextArea.h
+	<Rocket/Controls/Header.h>
+	<Rocket/Controls/ElementFormControl.h>
+
+1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Controls/ElementTabSet.h
+	<Rocket/Core/Element.h>
+	<Rocket/Core/EventListener.h>
+	<Rocket/Controls/Header.h>
 

@@ -49,10 +49,10 @@ void _LOAD( astr A_S, astr B_S, astr NAPI_S, aint TRYB) {
 		default:	ret=-1;
 	}
 	if( ret < 0 ) {
-		ERROR("Błąd ładowania pliku danych: " + A_S + ": " + toString(ret));
+		ERROR("Error loading data file: " + A_S + ": " + toString(ret));
 		BLAD();
 	} else {
-		INFO("Pomyślnie załadowano plik danych: " + A_S);
+		INFO("Successfully loaded data file: " + A_S);
 	}
 	//	End Proc
 }

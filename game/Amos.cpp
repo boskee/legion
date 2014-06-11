@@ -1299,10 +1299,18 @@ void _DemangleHunkIDs(unsigned char *buf,int len) {
 		dalej: ;
 	}
 }
+
+
+namespace Render
+{
+    SDL_Surface* createTransparentSurface(size_t width, size_t height);
+    void clearTransparentSurface(SDL_Surface* s);
+}
+
 int LoadIff(const string& fname,int screen_nr) {
 
 	SDL_Surface *image = 0, *rgba_img = 0;
-	Uint32 dkey;
+	//Uint32 dkey;
 
 	FILE *file;
 	file = fopen(fname.c_str(),"rb");
@@ -1356,13 +1364,17 @@ int LoadIff(const string& fname,int screen_nr) {
 	pictures_pal[screen_nr] = image;
 
 	//konwersja wczytanego obrazka do bytemapy RGBA
+	/*
 	Uint32 rmask, gmask, bmask, amask;
 #if SDL_BYTEORDER == SDL_BIG_ENDIAN
 	rmask = 0xff000000; gmask = 0x00ff0000; bmask = 0x0000ff00;	amask = 0x000000ff;
 #else
 	rmask = 0x000000ff;	gmask = 0x0000ff00;	bmask = 0x00ff0000;	amask = 0xff000000;
 #endif
-	rgba_img = SDL_CreateRGBSurface(SDL_SWSURFACE, image->w, image->h, 8, rmask, gmask, bmask, amask);
+    */
+
+    rgba_img = Render::createTransparentSurface((size_t)image->w, (size_t)image->h);
+	//rgba_img = SDL_CreateRGBSurface(SDL_SWSURFACE, image->w, image->h, 32, rmask, gmask, bmask, amask);
 
  	if( ! rgba_img ) {
         ERROR("SDL_CreateRGBSurface: " + SDL_GetError());
@@ -1370,14 +1382,13 @@ int LoadIff(const string& fname,int screen_nr) {
   	}
 
 	//na rysunku docelowym wszystko jest przezroczyste :-)
-	dkey = SDL_MapRGBA(rgba_img->format,	0, 0, 0, 255);
-	SDL_FillRect(rgba_img, NULL, dkey);
+  	Render::clearTransparentSurface(rgba_img);
+	//dkey = SDL_MapRGBA(rgba_img->format,	0, 0, 0, 255);
+	//SDL_FillRect(rgba_img, NULL, dkey);
 	//na rysunku zrodlowym ustawiamy kolor przezroczysty
 
 	SDL_SetSurfaceAlphaMod(image,255);
 	SDL_SetSurfaceAlphaMod(rgba_img,255);
-
-        cout << " TESTUJEMY " << endl;
 
 	//kopiujemy zrodlo do celu (przezroczystosc bedzie uwzgledniona)
 	SDL_BlitSurface(image, 0, rgba_img, 0);
@@ -1388,9 +1399,8 @@ int LoadIff(const string& fname,int screen_nr) {
 		SDL_FreeSurface(pictures[screen_nr]);
 	}
 	pictures[screen_nr] = image;
-        cout << " TESTUJEMY4 " << endl;
 
-  pix[screen_nr].Set(image);
+    pix[screen_nr].Set(image);
 
 	return 1;
 }

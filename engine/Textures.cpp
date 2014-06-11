@@ -136,15 +136,15 @@ int PTex :: Set(const unsigned char *buf,int width, int height,GLint format) {
 													image->pixels );
 */
 
-        cout << " TESTUJEMY5 " << endl;
-        cout << width << endl;
-        cout << height << endl;
+        //cout << " TESTUJEMY5 " << endl;
+        //cout << width << endl;
+        //cout << height << endl;
 
 
         // gluBuild2DMipmaps(GL_TEXTURE_2D, format, width, height, format, GL_UNSIGNED_BYTE, buf);
 
     glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, buf);
-        cout << " TESTUJEMY6 " << endl;
+        //cout << " TESTUJEMY6 " << endl;
 
     glHint(GL_GENERATE_MIPMAP_HINT, GL_FASTEST);//GL_FASTEST);
 

@@ -1,0 +1,39 @@
+<rml>
+	<head>
+		<title>Game Preferences</title>
+		<link type="text/template" href="frame.rml" />
+		<style>
+			body
+			{
+				width: 400px;
+				height: 200px;
+				
+				margin: auto;
+				color: #fff;
+			}
+			
+			div#title_bar div#icon
+			{
+				display: none;
+			}
+			
+			div#content
+			{
+				text-align: left;
+			}
+
+			button {
+				text-align: left;
+				display: block;
+			}
+		</style>
+	</head>
+	<body template="window" onload="restore">
+		<button onclick="toggle_option 1"><input id="random_names" type="checkbox" class="checkbox" value="1" /> Random names</button>
+		<button onclick="toggle_option 2"><input id="fast_scrolling" type="checkbox" class="checkbox" value="1" /> Fast scrolling</button>
+		<button onclick="toggle_option 3"><input id="music" type="checkbox" class="checkbox" value="1" /> Music</button>
+		<button onclick="toggle_option 4"><input id="dead_bodies" type="checkbox" class="checkbox" value="1" /> Dead bodies</button>
+		<button onclick="toggle_option 5"><input id="windows_97" type="checkbox" class="checkbox" value="1" /> Windows 97</button>
+		<button onclick="cancel">Exit</button>
+	</body>
+</rml>

@@ -1,0 +1,35 @@
+<rml>
+	<head>
+		<title>Demo</title>
+		<link type="text/template" href="frame.rml" />
+		<style>
+			body
+			{
+				width: 200px;
+				height: 200px;
+				
+				margin: auto;
+				color: #fff;
+			}
+			
+			div#title_bar div#icon
+			{
+				display: none;
+			}
+			
+			div#content
+			{
+				text-align: left;
+			}
+		</style>
+	</head>
+	<body template="window" onload="restore">
+		<button id="day_info">Dzien</button>
+		<button onclick="load">Odczyt gry</button>
+		<button onclick="save">Zapis gry</button>
+		<button onclick="stats">Statystyka</button>
+		<button onclick="preferences">Preferencje</button>
+		<button onclick="end_game">Koniec gry</button>
+		<button onclick="cancel">Anuluj</button>
+	</body>
+</rml>

@@ -8,26 +8,6 @@
 #include "lgn_util.h"
 #include "utl_locale.h"
 
-void _OPCJE_RYSUJ(void) {
-	astr SZMAL_S="",DZIEN_S="";
-	OKNO(100,60,140,160);								//	   OKNO[100,60,140,160]
-	SZMAL_S=Str_S(GRACZE[1][1]);				//	   SZMAL$=Str$(GRACZE(1,1))-" "
-	DZIEN_S=Str_S(DZIEN);								//	   DZIEN$=Str$(DZIEN)-" "
-	//	   GADGET[OKX+10,OKY+8,120,15,"Day "+DZIEN$+"  Treasury:"+SZMAL$,7,0,4,31,-1]
-	//	   GADGET[OKX+10,OKY+28,120,15,"Load Game",8,1,6,31,1]
-	//	   GADGET[OKX+10,OKY+48,120,15,"Save Game",8,1,6,31,2]
-	//	   GADGET[OKX+10,OKY+68,120,15,"Statistics",8,1,6,31,3]
-	//	   GADGET[OKX+10,OKY+88,120,15,"Preferences",8,1,6,31,4]
-	//	   GADGET[OKX+10,OKY+108,120,15,"End Game",8,1,6,31,5]
-	//	   GADGET[OKX+10,OKY+128,120,15,"Exit",8,1,6,31,6]
-	GADGET(OKX+10,OKY+8,120,15,GS("122")+DZIEN_S+GS("123")+SZMAL_S,7,0,4,31,-1);
-	GADGET(OKX+10,OKY+28,120,15,GS("124"),8,1,6,31,1);
-	GADGET(OKX+10,OKY+48,120,15,GS("125"),8,1,6,31,2);
-	GADGET(OKX+10,OKY+68,120,15,GS("126"),8,1,6,31,3);
-	GADGET(OKX+10,OKY+88,120,15,GS("127"),8,1,6,31,4);
-	GADGET(OKX+10,OKY+108,120,15,GS("128"),8,1,6,31,5);
-	GADGET(OKX+10,OKY+128,120,15,GS("129"),8,1,6,31,6);
-}
 void OPCJE(void) {
 	//	Procedure OPCJE
 
@@ -35,7 +15,6 @@ void OPCJE(void) {
 	//_OPCJE_RYSUJ();										//	   Gosub RYSUJ
 	do {																//	   Repeat
 		rysuj();						//rysujemy mape
-		_OPCJE_RYSUJ();			//rysujemy opcje
 		WaitVbl();
 		if( MouseClick() ) {							//	      If Mouse Click=1
 			STREFA=MouseZone();							//	         STREFA=Mouse Zone
@@ -56,31 +35,7 @@ void OPCJE(void) {
 				} else {											//	            Else
 					//_OPCJE_RYSUJ();						//	               Gosub RYSUJ
 				}															//	            End If
-			}																//	         End If
-			if( STREFA==2 ) {								//	         If STREFA=2
-				ZOKNO();											//	            ZOKNO
-				_SAVE_GAME();									//	            _SAVE_GAME
-				//_OPCJE_RYSUJ();							//	            Gosub RYSUJ
-			}																//	         End If
-			if( STREFA==3 ) {								//	         If STREFA=3
-				ZOKNO();											//	            ZOKNO
-				STATUS();											//	            STATUS
-				//_OPCJE_RYSUJ();							//	            Gosub RYSUJ
-			}																//	         End If
-			if( STREFA==4 ) {								//	         If STREFA=4
-				ZOKNO();											//	            ZOKNO
-				PREFERENCJE();								//	            PREFERENCJE
-				//_OPCJE_RYSUJ();							//	            Gosub RYSUJ
-			}																//	         End If
-			if( STREFA==5 ) {								//	         If STREFA=5
-				REAL_KONIEC=-1;								//	            REAL_KONIEC=True
-				KONIEC=-1;										//	            KONIEC=True
-				ZOKNO();											//	            ZOKNO
-			}																//	         End If
-			if( STREFA==6 ) {								//	         If STREFA=6
-				KONIEC=-1;										//	            KONIEC=True
-				ZOKNO();											//	            ZOKNO
-			}																//	         End If
+			}													//	         End If
 		}																	//	      End If
 	} while( KONIEC == 0 );							//	   Until KONIEC
 																			//	   Goto OVER
@@ -97,80 +52,7 @@ void OPCJE(void) {
 																			//	   GADGET[OKX+10,OKY+128,120,15,"Exit",8,1,6,31,6]
 																			//	   Return
 																			//	   OVER:
-}	//	End Proc
-void _PREFERENCJE_RYSUJ(void) {
-																																//	   RYSUJ:
-	aint STREFA=0;
-
-	OKNO(100,60,140,160);																					//	   OKNO[100,60,140,160]
-	GADGET(OKX+10,OKY+8,120,15,GS("130"),7,0,4,31,-1);	//	   GADGET[OKX+10,OKY+8,120,15," Game Preferences",7,0,4,31,-1]
-	GADGET(OKX+10,OKY+28,120,15,GS("131"),8,1,6,31,1);				//	   GADGET[OKX+10,OKY+28,120,15,"Random names",8,1,6,31,1]
-	GADGET(OKX+10,OKY+48,120,15,GS("132"),8,1,6,31,2);			//	   GADGET[OKX+10,OKY+48,120,15,"Fast scrolling",8,1,6,31,2]
-	GADGET(OKX+10,OKY+68,120,15,GS("133"),8,1,6,31,3);							//	   GADGET[OKX+10,OKY+68,120,15,"Music",8,1,6,31,3]
-	GADGET(OKX+10,OKY+88,120,15,GS("134"),8,1,6,31,4);				//	   GADGET[OKX+10,OKY+88,120,15,"Dead bodies",8,1,6,31,4]
-	GADGET(OKX+10,OKY+108,120,15,GS("135"),8,1,6,31,5);				//	   GADGET[OKX+10,OKY+108,120,15,"Windows 97",8,1,6,31,5]
-	GADGET(OKX+10,OKY+128,120,15,GS("136"),8,1,6,31,6);							//	   GADGET[OKX+10,OKY+128,120,15,"Exit",8,1,6,31,6]
-																																//	   Gr Writing 1
-	gad_text(1.0);																								//	   Ink 31,6
-	for( STREFA=1; STREFA<=5; ++STREFA ) {												//	   For STREFA=1 To 5
-		if( PREFS[STREFA]==0 ) {																		//	      If PREFS(STREFA)=0
-			Text(OKX+120,OKY+18+(STREFA*20),"  ");										//	         Text OKX+120,OKY+18+(STREFA*20),"  "
-		} else {																										//	      Else
-			Text(OKX+120,OKY+18+(STREFA*20),"@");											//	         Text OKX+120,OKY+18+(STREFA*20),"@"
-		}																														//	      End If
-	}																															//	   Next
-																																//	   Return
 }
-void PREFERENCJE(void) {
-																																//	Procedure PREFERENCJE
-	aint STREFA=0, KONIEC=0;
-	void *sb=0;
-
-	_PREFERENCJE_RYSUJ();																					//	   Gosub RYSUJ
-	sb=StoreBuffer(OKX-1,OKY-1,140+2,160+2);
-	do {																													//	   Repeat
-		rysuj();
-		RestoreBuffer(sb);
-		WaitVbl();
-		if( MouseClick()==1 ) {																			//	      If Mouse Click=1
-			STREFA=MouseZone();																				//	         STREFA=Mouse Zone
-			if( STREFA>0 && STREFA<6 ) {															//	         If STREFA>0 and STREFA<6
-				if( PREFS[STREFA]==1 ) {																//	            If PREFS(STREFA)=1
-					PREFS[STREFA]=0;																			//	               PREFS(STREFA)=0
-					rysuj();
-					RestoreBuffer(sb);
-					//Text(OKX+120,OKY+18+(STREFA*20),"  ");								//	               Text OKX+120,OKY+18+(STREFA*20),"  "
-					gad_back(1.0f);
-					_Bar(OKX+120,OKY+18+(STREFA*20)-TextBase(),OKX+129,OKY+18+(STREFA*20)-TextBase()+10);
-					StoreBuffer(sb,OKX-1,OKY-1,140+2,160+2);
-					if( STREFA==3 ) {																			//	               If STREFA=3
-						_TRACK_FADE(1);																			//	                  _TRACK_FADE[1]
-						Erase(3);																						//	                  Erase 3
-					}																											//	               End If
-				} else {																								//	            Else
-					PREFS[STREFA]=1;																			//	               PREFS(STREFA)=1
-					rysuj();
-					RestoreBuffer(sb);
-					gad_text(1.0f);
-					Text(OKX+120,OKY+18+(STREFA*20),"@");									//	               Text OKX+120,OKY+18+(STREFA*20),"@"
-					StoreBuffer(sb,OKX-1,OKY-1,140+2,160+2);
-					if( STREFA==3 ) {																			//	               If STREFA=3
-						_LOAD(KAT_S+"mod.legion","legion:mod.legion","Legion",6);//	                  _LOAD[KAT$+"mod.legion","legion:mod.legion","Legion",6]
-						TrackLoop(true); TrackPlay(3);											//	                  Track Loop On : Track Play
-					}																											//	               End If
-				}																												//	            End If
-			}																													//	         End If
-			if( STREFA==6 ) {																					//	         If STREFA=6
-					KONIEC=-1;																						//	            KONIEC=True
-					ZOKNO();																							//	            ZOKNO
-			}																													//	         End If
-		}																														//	      End If
-	} while( KONIEC==0 );																					//	   Until KONIEC
-
-	if( sb!=0 ) FreeBuffer(sb);
-																																//	   Goto OVER
-																																//	   OVER:
-}	//	End Proc
 void _STATUS_NAPISZ(astr A_S,astr B_S,astr C_S) {								//	   NAPISZ:
 	gad_text(1.0); Text(OKX+8,OKY+16,GS("137")+Str_S(DZIEN));			//	   Ink 1,30 : Text OKX+8,OKY+16,"Report for day: "+Str$(DZIEN)
 	Text(OKX+8,OKY+16+10,GS("138"));															//	   Text OKX+8,OKY+16+10,"You rule:"

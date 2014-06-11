@@ -215,11 +215,9 @@ void main_code(void) {
 		Gfx::Color(1.f,1.f,1.f,0.8f);
 		Text(560,500,astr("ver ")+AutoVersion::FULLVERSION_STRING,1.2f);
 		SetFont(FON1);
-        cout << " CIPENCJA " << endl;
 	//	Core::Context->Update();
 //    Core::Context->Render();
 
-        cout << "OHAIO" << endl;
 		WaitVbl();
 
 		MZ = MouseZone();
