@@ -121,7 +121,7 @@ static long il_mouse_min_x, il_mouse_min_y, il_mouse_max_x, il_mouse_max_y;
 
 static queue<int> key_buf;				//kolejka wcisnietych klawiszy (amos moze nie pobierac ich na biezaco)
 static queue<unsigned short> keymod_buf;
-static bool key_state[SDL_NUM_SCANCODES];	//bufor stanow
+static std::map<int,bool> key_state;
 
 static bool ib_true = true, ib_false = false;
 static bool ib_pblist = false;
@@ -367,10 +367,10 @@ void _key_down(int key,Core::UserData udata) {
 	unsigned short keymod = Core::ModifiersState();
 	key_buf.push(key);
 	keymod_buf.push(keymod);
-	if( key >= 0 && key < SDL_NUM_SCANCODES ) key_state[key]=true;
+	key_state[key]=true;
 }
 void _key_up(int key,Core::UserData udata) {
-	if( key >= 0 && key < SDL_NUM_SCANCODES ) key_state[key]=false;
+	key_state[key]=false;
 }
 void _resize(int w,int h,Core::UserData udata) {
 	glViewport(0,0,w,h);
@@ -517,9 +517,10 @@ void _AmosInit(void) {
 		if_hq_scaley = 0.5;
 	}
 
-	for(int i = 0; i < SDL_NUM_SCANCODES; ++i ) {
-		key_state[i] = false;
-	}
+    for (std::map<int, bool>::iterator it = key_state.begin(); it != key_state.end(); ++it)
+    {
+        key_state[it->first] = false;
+    }
 
 	if( 0 == (SDL_WasInit(SDL_INIT_TIMER) & SDL_INIT_TIMER) )
 		SDL_InitSubSystem(SDL_INIT_TIMER);
