@@ -120,7 +120,7 @@ void STATUS(void) {
 					KOL=GRACZE[I][3];																			//	               KOL=GRACZE(I,3)
 					if( WYS>100 ) WYS=100;																//	               If WYS>100 : WYS=100 : End If
 					if( WYS<4 ) WYS=4;																		//	               If WYS<4 : WYS=4 : End If
-					gad_text(1.0); Text(OKX+8,OKY+4+I*20,IMIONA_S[I]);		//	               Ink 1,30 : Text OKX+8,OKY+4+I*20,IMIONA$(I)
+					gad_text(1.0); Text(OKX+8,OKY+4+I*20,players[I]->playerName);		//	               Ink 1,30 : Text OKX+8,OKY+4+I*20,IMIONA$(I)
 																																//	               '               Ink KOL+1 : Box OKX+50,OKY-8+I*20 To OKX+50+WYS,OKY-8+I*20+15
 					switch(I) {
 						case 1: Gfx::Color(1.0f, 0.0f, 0.0f); break;

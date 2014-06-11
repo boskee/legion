@@ -15,7 +15,7 @@ body.window
 	min-width: 250px;
 	max-width: 800px;
 	
-	min-height: 135px;
+	min-height: 350px;
 	max-height: 700px;
 }
 

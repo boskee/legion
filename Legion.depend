@@ -2030,7 +2030,7 @@
 	<cstdio>
 	"Utils.h"
 
-1401824659 source:/Users/voitek/Projects/legion-newest/game/Amos.cpp
+1402525224 source:/Users/voitek/Projects/legion-newest/game/Amos.cpp
 	<string>
 	<cstdio>
 	<vector>
@@ -2091,7 +2091,7 @@
 1400240521 source:/Users/voitek/Projects/legion-newest/game/hq2x.cpp
 	<cstdlib>
 
-1402523050 source:/Users/voitek/Projects/legion-newest/game/legion.cpp
+1402528724 source:/Users/voitek/Projects/legion-newest/game/legion.cpp
 	"../engine/Gfx.h"
 	"Amos.h"
 	"legion.h"
@@ -2107,8 +2107,9 @@
 	"version.h"
 	"../engine/Core.h"
 
-1401831308 /Users/voitek/Projects/legion-newest/game/legion.h
+1402529906 /Users/voitek/Projects/legion-newest/game/legion.h
 	"amos_types.h"
+	"player.h"
 
 1400240521 /Users/voitek/Projects/legion-newest/game/lgn_armia.h
 
@@ -2133,7 +2134,7 @@
 
 1400240521 /Users/voitek/Projects/legion-newest/game/version.h
 
-1400240521 source:/Users/voitek/Projects/legion-newest/game/lgn_armia.cpp
+1402529795 source:/Users/voitek/Projects/legion-newest/game/lgn_armia.cpp
 	"Amos.h"
 	"legion.h"
 	"lgn_akcja.h"
@@ -2149,7 +2150,7 @@
 
 1400240521 /Users/voitek/Projects/legion-newest/game/lgn_sceneria.h
 
-1401825072 source:/Users/voitek/Projects/legion-newest/game/lgn_diskacs.cpp
+1402529463 source:/Users/voitek/Projects/legion-newest/game/lgn_diskacs.cpp
 	"Amos.h"
 	"legion.h"
 	"lgn_diskacs.h"
@@ -2172,7 +2173,7 @@
 	"lgn_util.h"
 	"utl_locale.h"
 
-1402522815 source:/Users/voitek/Projects/legion-newest/game/lgn_mapa.cpp
+1402529748 source:/Users/voitek/Projects/legion-newest/game/lgn_mapa.cpp
 	"Amos.h"
 	"legion.h"
 	"lgn_akcja.h"
@@ -2194,7 +2195,7 @@
 
 1402363634 /Users/voitek/Projects/legion-newest/game/lgn_opcje.h
 
-1400240521 source:/Users/voitek/Projects/legion-newest/game/lgn_miasto.cpp
+1402529681 source:/Users/voitek/Projects/legion-newest/game/lgn_miasto.cpp
 	"Amos.h"
 	"legion.h"
 	"lgn_akcja.h"
@@ -2207,7 +2208,7 @@
 	"lgn_util.h"
 	"utl_locale.h"
 
-1402518677 source:/Users/voitek/Projects/legion-newest/game/lgn_opcje.cpp
+1402529557 source:/Users/voitek/Projects/legion-newest/game/lgn_opcje.cpp
 	"Amos.h"
 	"legion.h"
 	"lgn_opcje.h"
@@ -2302,7 +2303,7 @@
 1400240521 /Users/voitek/Projects/legion-newest/engine/Extras.h
 	"Locale.h"
 
-1400248035 source:/Users/voitek/Projects/legion-newest/game/lgn_akcja.cpp
+1402528866 source:/Users/voitek/Projects/legion-newest/game/lgn_akcja.cpp
 	<cmath>
 	"Amos.h"
 	"legion.h"
@@ -2975,4 +2976,10 @@
 	<Rocket/Core/Element.h>
 	<Rocket/Core/EventListener.h>
 	<Rocket/Controls/Header.h>
+
+1402528172 source:/Users/voitek/Projects/legion-newest/game/player.cpp
+	"player.h"
+
+1402528417 /Users/voitek/Projects/legion-newest/game/player.h
+	<iostream>
 

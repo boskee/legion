@@ -47,8 +47,9 @@ aint ARMIA[40+1][10+1][30+1]
 	 , WOJNA[5+1][5+1]
 	 , GRACZE[4+1][3+1];					//	Dim ARMIA(40,10,30),WOJNA(5,5),GRACZE(4,3)
 
-astr ARMIA_S[40+1][10+1]
-		,IMIONA_S[4+1];							//	Dim ARMIA$(40,10),IMIONA$(4)
+World::Player *players[4+1];                        // Dim IMIONA$(4)
+
+astr ARMIA_S[40+1][10+1];							//	Dim ARMIA$(40,10)
 
 aint AN[4+1];										//	Dim AN(4)
 
@@ -275,9 +276,9 @@ void main_code(void) {
 				WPISZ_PC(OKX+30,OKY+30,50,20,12,WPI_S,3);
 
 				if( WPI_S != "" ) {			//	         If WPI$<>""
-					IMIONA_S[1] = WPI_S;	//	            IMIONA$(1)=WPI$
+					players[1] = new World::Player(WPI_S);	//	            IMIONA$(1)=WPI$
 				} else {								//	         Else
-					IMIONA_S[1]=ROB_IMIE();	//	            ROB_IMIE : IMIONA$(1)=Param$
+					players[1] = new World::Player(ROB_IMIE());	//	            ROB_IMIE : IMIONA$(1)=Param$
 				}												//	         End If
 
 				rysuj_ekran_ptr = _main_code_rysuj_oponent_name;
@@ -304,9 +305,9 @@ void main_code(void) {
 					WPISZ_PC(OKX+30,OKY+30,50,20,12,WPI_S,3);
 
 					if( WPI_S != "" )	{					//	            If WPI$<>""
-						IMIONA_S[I+1] = WPI_S;		//	               IMIONA$(I+1)=WPI$
+                        players[I+1] = new World::Player(WPI_S);		//	               IMIONA$(I+1)=WPI$
 					} else {										//	            Else
-						IMIONA_S[I+1] = ROB_IMIE();	//	               ROB_IMIE : IMIONA$(I+1)=Param$
+                        players[I+1] = new World::Player(ROB_IMIE());	//	               ROB_IMIE : IMIONA$(I+1)=Param$
 					}														//	            End If
 				}	//	         Next I
 

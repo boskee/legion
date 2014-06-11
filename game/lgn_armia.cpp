@@ -17,7 +17,14 @@ void ZROB_ARMIE(void) {
 	aint L=0,XG=0,YG=0,B1=0,K=0,AR=0,X=0,Y=0;
 	astr KON_S="";
 
-	IMIONA_S[0]="ufo";			//	   IMIONA$(0)="ufo"
+	if (players[0] == NULL)
+    {
+        players[0] = new World::Player("ufo");			//	   IMIONA$(0)="ufo"
+    }
+    else
+    {
+        players[0]->playerName="ufo";			//	   IMIONA$(0)="ufo"
+    }
 	for(L=0;L<=2;++L) {			//	   For L=0 To 2
 		XG=Rnd(410)+100;			//	      XG=Rnd(410)+100
 		YG=Rnd(300)+100;			//	      YG=Rnd(300)+100
@@ -26,12 +33,12 @@ void ZROB_ARMIE(void) {
 			AR=(L*5)+20+K;			//	         AR=(L*5)+20+K
 			X=XG+Rnd(200)-100;	//	         X=XG+Rnd(200)-100
 			Y=YG+Rnd(200)-100;	//	         Y=YG+Rnd(200)-100
-			if( Upper_S(Right_S(IMIONA_S[L+2],1))=="I" ) {//					 If Upper$(Right$(IMIONA$(L+2),1))="I"
+			if( Upper_S(Right_S(players[L+2]->playerName,1))=="I" ) {//					 If Upper$(Right$(IMIONA$(L+2),1))="I"
 				KON_S=GS("120");	//							KON$="ego"
 			} else {						//					 Else
 				KON_S=GS("121");	//							KON$="a"
 			}										//					 End If
-			ARMIA_S[AR][0]=Str_S(K+1)+GS("119")+IMIONA_S[L+2]+KON_S;			//	         ARMIA$(AR,0)=Str$(K+1)+" Legion of "+IMIONA$(L+2)
+			ARMIA_S[AR][0]=Str_S(K+1)+GS("119")+players[L+2]->playerName+KON_S;			//	         ARMIA$(AR,0)=Str$(K+1)+" Legion of "+IMIONA$(L+2)
 			ARMIA[AR][0][TX]=X;	//	         ARMIA(AR,0,TX)=X
 			ARMIA[AR][0][TY]=Y;	//	         ARMIA(AR,0,TY)=Y
 			ARMIA[AR][0][TBOB]=B1;//	         ARMIA(AR,0,TBOB)=B1

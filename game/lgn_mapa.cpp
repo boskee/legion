@@ -463,12 +463,12 @@ void MAPA_AKCJA(void) {
 						ARMIA[I][0][TY]=Y;									//	                  ARMIA(I,0,TY)=Y
 						ARMIA[I][0][TBOB]=2+CZYJE;					//	                  ARMIA(I,0,TBOB)=2+CZYJE
 						ARMIA[I][0][TNOGI]=MIASTA[M][1][M_X];//	                  ARMIA(I,0,TNOGI)=MIASTA(M,1,M_X)
-						if( Upper_S(Right_S(IMIONA_S[CZYJE],1))=="I") {																		//										If Upper$(Right$(IMIONA$(CZYJE),1))="I"
+						if( Upper_S(Right_S(players[CZYJE]->playerName,1))=="I") {																		//										If Upper$(Right$(IMIONA$(CZYJE),1))="I"
 							KON_S=GS("046");									//											 KON$="ego"
 						} else {														//										Else
 							KON_S=GS("047");									//											 KON$="a"
 						}																		//										End If
-						ARMIA_S[I][0]=Str_S(I)+GS("045")+IMIONA_S[CZYJE]+KON_S;//	                  ARMIA$(I,0)=Str$(I)+" Legion of "+IMIONA$(CZYJE)
+						ARMIA_S[I][0]=Str_S(I)+GS("045")+players[CZYJE]->playerName+KON_S;//	                  ARMIA$(I,0)=Str$(I)+" Legion of "+IMIONA$(CZYJE)
 						B_DRAW(I,X,Y,2+CZYJE);							//	                  B_DRAW[I,X,Y,2+CZYJE]
 						I=39;																//	                  I=39
 					}																			//	               End If
@@ -1341,7 +1341,7 @@ void MA_PRZYGODA(aint A,aint NR) {
 		USTAW_WOJSKO(ARM,0,2,2);																				//	      USTAW_WOJSKO[ARM,0,2,2]
 		USTAW_WOJSKO(WRG,0,0,2);																				//	      USTAW_WOJSKO[WRG,0,0,2]
 		MAIN_ACTION();																									//	      MAIN_ACTION
-		if( WYNIK_AKCJI==1 || IMIONA_S[1]=="Marcin ®" ) {								//	      If WYNIK_AKCJI=1 or IMIONA$(1)="Marcin ®"
+		if( WYNIK_AKCJI==1 || players[1]->playerName=="Marcin ®" ) {								//	      If WYNIK_AKCJI=1 or IMIONA$(1)="Marcin ®"
 			for( I=0; I<=10; ++I ) { ARMIA[40][I][TE]=0; }								//	         For I=0 To 10 : ARMIA(40,I,TE)=0 : Next I
 																																		//	         Hide On
 			_LOAD(KAT_S+"grob.hb","legion:grob.hb","Legion",3);						//	         _LOAD[KAT$+"grob.hb","legion:grob.hb","Legion",3]
@@ -1371,7 +1371,7 @@ void MA_PRZYGODA(aint A,aint NR) {
 			USTAW_WOJSKO(ARM,1,1,0);																			//	         USTAW_WOJSKO[ARM,1,1,0]
 			USTAW_WOJSKO(WRG,1,1,0);																			//	         USTAW_WOJSKO[WRG,1,1,0]
 			MAIN_ACTION();																								//	         MAIN_ACTION
-			if( WYNIK_AKCJI==1 || IMIONA_S[1]=="Marcin ®" ) {							//	         If WYNIK_AKCJI=1 or IMIONA$(1)="Marcin ®"
+			if( WYNIK_AKCJI==1 || players[1]->playerName=="Marcin ®" ) {							//	         If WYNIK_AKCJI=1 or IMIONA$(1)="Marcin ®"
 				//SKIP2:																											//	            SKIP2:
 				PRZYGODY[NR][P_TYP]=0;																			//	            PRZYGODY(NR,P_TYP)=0
 				GAME_OVER=-1;																								//	            GAME_OVER=True

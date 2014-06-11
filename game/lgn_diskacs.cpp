@@ -112,7 +112,7 @@ void _ZAPIS(astr NAME_S,aint NSAVE) {
 	}																														//	   Next
 																															//	   'imiona$(4)
 	for( I=0; I<=4; ++I ) {																			//	   For I=0 To 4
-		DAT_S=IMIONA_S[I];																				//	      DAT$=IMIONA$(I)
+		DAT_S=players[I]->playerName;																				//	      DAT$=IMIONA$(I)
 		_WRITE_STRING(MEM,DAT_S);																	//	      Gosub WRITE_STRING
 	}																														//	   Next
 																															//	   'prefs(10)
@@ -354,7 +354,14 @@ void ODCZYT(unsigned char *MEM) {
 																											//	   'imiona$(4)
 	for( I=0; I<=4; ++I ) {															//	   For I=0 To 4
 																		//	      Gosub _READ_STRING
-		IMIONA_S[I]=_READ_STRING(MEM);															//	      IMIONA$(I)=DAT$
+        if (players[I] == NULL)
+        {
+            players[I] = new World::Player(_READ_STRING(MEM));				//	      IMIONA$(I)=DAT$
+        }
+        else
+        {
+            players[I]->playerName = _READ_STRING(MEM);				//	      IMIONA$(I)=DAT$
+        }
 	}																										//	   Next
 																											//	   'prefs(10)
 	for( I=0; I<=10; ++I ) {														//	   For I=0 To 10
@@ -430,7 +437,14 @@ void CLEAR_TABLES(void) {
 	}																//	   Next
 																	//	   'imiona$(4)
 	for(I=0;I<=4;++I) {							//	   For I=0 To 4
-		IMIONA_S[I]="";								//	      IMIONA$(I)=""
+        if (players[I] == NULL)
+        {
+            players[I] = new World::Player("");				//	      IMIONA$(I)=""
+        }
+        else
+        {
+            players[I]->playerName = "";				//	      IMIONA$(I)=""
+        }
 	}																//	   Next
 																	//	   'prefs(10)
 	for(I=0;I<=10;++I) {						//	   For I=0 To 10

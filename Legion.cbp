@@ -226,6 +226,8 @@
 		<Unit filename="game/lgn_wczytaj.h" />
 		<Unit filename="game/main.cpp" />
 		<Unit filename="game/main.h" />
+		<Unit filename="game/player.cpp" />
+		<Unit filename="game/player.h" />
 		<Unit filename="game/utl_locale.cpp" />
 		<Unit filename="game/utl_locale.h" />
 		<Unit filename="game/version.h" />

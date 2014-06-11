@@ -2,6 +2,7 @@
 #define D_LEGION_H_D
 
 #include "amos_types.h"
+#include "player.h"
 
 //const astr DATA_DIR = "Data/";
 const astr DATA_DIR = "legion/";
@@ -19,8 +20,8 @@ extern aint LEWY,PRAWY;
 extern aint ARMIA[40+1][10+1][30+1]
 		 , WOJNA[5+1][5+1]
 		 , GRACZE[4+1][3+1];
-extern astr ARMIA_S[40+1][10+1]
-			,IMIONA_S[4+1];
+extern astr ARMIA_S[40+1][10+1];
+extern World::Player *players[4+1];
 extern aint AN[4+1];
 extern aflt VEKTOR_F[20+1][5+1];
 extern aint PREFS[10+1];

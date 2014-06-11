@@ -169,7 +169,7 @@ void MAIN_ACTION(void) {
 					Screen(scr);
 				}
 
-				if( (KeyState(69)!=0 && IMIONA_S[1]=="Marcin ®") || ARMIA[ARM][0][TE]==0 || KONIEC_AKCJI!=0 )							//	            If(Key State(69) and IMIONA$(1)="Marcin ®") or ARMIA(ARM,0,TE)=0 or KONIEC_AKCJI : Exit 2 : End If
+				if( (KeyState(69)!=0 && players[1]->playerName=="Marcin ®") || ARMIA[ARM][0][TE]==0 || KONIEC_AKCJI!=0 )							//	            If(Key State(69) and IMIONA$(1)="Marcin ®") or ARMIA(ARM,0,TE)=0 or KONIEC_AKCJI : Exit 2 : End If
 					goto SKIP;
 
 				if( STREFA==20 || STREFA==21 ) {	//	            If STREFA=20 or STREFA=21 : BRON_INFO[STREFA] : End If

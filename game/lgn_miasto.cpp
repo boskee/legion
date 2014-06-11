@@ -268,7 +268,7 @@ void ZROB_MIASTA() {
 				case 45: case 46:	CZYJE=3; break;
 				case 47: case 48:	CZYJE=4; break;
 			}
-			if( IMIONA_S[1]=="Lechu" ) {	//	         If IMIONA$(1)="Lechu"
+			if( players[1]->playerName=="Lechu" ) {	//	         If IMIONA$(1)="Lechu"
 				CZYJE=1;										//	            CZYJE=1
 				GRACZE[1][1]=100000;				//	            GRACZE(1,1)=100000
 			}															//	         End If
