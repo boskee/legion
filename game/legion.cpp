@@ -328,7 +328,7 @@ void main_code(void) {
 				AmalOnOff(-1,false);
 				DZIEN=1;																	//	         DZIEN=1
 				POWER=5; SX=0; SY=0;											//	         POWER=5 : SX=0 : SY=0
-				for(I=1;I<=4;++I) GRACZE[I][1]=5000;			//	         For I=1 To 4 : GRACZE(I,1)=5000 : Next I
+				for(I=1;I<=4;++I) players[I]->gold = 5000;			//	         For I=1 To 4 : GRACZE(I,1)=5000 : Next I
 				GRACZE[1][3]=20; GRACZE[2][3]=16; GRACZE[3][3]=18; GRACZE[4][3]=22;	//	         GRACZE(1,3)=20 : GRACZE(2,3)=16 : GRACZE(3,3)=18 : GRACZE(4,3)=22
 				PREFS[1]=1; PREFS[2]=1; PREFS[4]=1;				//	         PREFS(1)=1 : PREFS(2)=1 : PREFS(4)=1
 				ScreenClose(0);														//	         Screen Close 0

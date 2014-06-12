@@ -270,7 +270,7 @@ void ZROB_MIASTA() {
 			}
 			if( players[1]->playerName=="Lechu" ) {	//	         If IMIONA$(1)="Lechu"
 				CZYJE=1;										//	            CZYJE=1
-				GRACZE[1][1]=100000;				//	            GRACZE(1,1)=100000
+				players[1]->gold=100000;				//	            GRACZE(1,1)=100000
 			}															//	         End If
 			B1=8+CZYJE*2;									//	         B1=8+CZYJE*2
 			if( LUD>700 ) {								//	         If LUD>700
@@ -380,9 +380,9 @@ void BUDOWA_MURU(aint MIASTO) {
 			if( STREFA==10 ) {												//	         If STREFA=10
 				KONIEC=-1;															//	            KONIEC=True
 			}																					//	         End If
-			if( STREFA>0 && STREFA<4 &&	GRACZE[1][1]-(4000+(STREFA-1)*3000)>=0 ) {//	         If STREFA>0 and STREFA<4 and GRACZE(1,1)-(4000+(STREFA-1)*3000)>=0
+			if( STREFA>0 && STREFA<4 &&	players[1]->gold-(4000+(STREFA-1)*3000)>=0 ) {//	         If STREFA>0 and STREFA<4 and GRACZE(1,1)-(4000+(STREFA-1)*3000)>=0
 				KONIEC=-1;															//	            KONIEC=True
-				GRACZE[1][1]-=(4000+(STREFA-1)*3000);		//	            Add GRACZE(1,1),-(4000+(STREFA-1)*3000)
+				players[1]->gold-=(4000+(STREFA-1)*3000);		//	            Add GRACZE(1,1),-(4000+(STREFA-1)*3000)
 				MIASTA[MIASTO][0][M_MUR]=STREFA;				//	            MIASTA(MIASTO,0,M_MUR)=STREFA
 			}																					//	         End If
 		}																						//	      End If
@@ -409,7 +409,7 @@ void _ROZBUDOWA_WYPISZ(astr A_S,aint CENA) {
 	Text(182,25,GS("167")+Str_S(CENA));					//	   Text 172,25,"cost :"+Str$(CENA)
 																							//	   '   Text 167,30,"budowa:"+Str$(CZAS)+" dni"
 	//SetFont(FON2);															//	   Set Font FON2 : Text 210,12,Str$(GRACZE(1,1)) : Set Font FON1
-	Text(240,15,Str_S(GRACZE[1][1]));
+	Text(240,15,Str_S(players[1]->gold));
 	SetFont(FON1);
 
 	return;																			//	   Return
@@ -555,7 +555,7 @@ void ROZBUDOWA(aint MIASTO) {
 					_Box(X,Y,X+SZER,Y+WYS);								//	            Box X,Y To X+SZER,Y+WYS
 				}
 			}																				//	         End If
-			if( MouseClick()==1 && SZER>0 && GRACZE[1][1]-CENA>=0 ) {//	         If Mouse Click=1 and SZER>0 and GRACZE(1,1)-CENA>=0
+			if( MouseClick()==1 && SZER>0 && players[1]->gold-CENA>=0 ) {//	         If Mouse Click=1 and SZER>0 and GRACZE(1,1)-CENA>=0
 				MOZNA=_ROZBUDOWA_CHECK(X,Y,SZER,WYS,SZER2,WYS2);//	            Gosub CHECK
 				for(I=2;I<=20;++I) {									//	            For I=2 To 20
 					if( MIASTA[MIASTO][I][M_LUDZIE]==0 && MOZNA!=0 ) {//	               If MIASTA(MIASTO,I,M_LUDZIE)=0 and MOZNA
@@ -569,7 +569,7 @@ void ROZBUDOWA(aint MIASTO) {
 						MIASTA[MIASTO][1][M_MORALE]+=2;		//	                  Add MIASTA(MIASTO,1,M_MORALE),2
 						MIASTA[MIASTO][0][M_MORALE]+=20;	//	                  Add MIASTA(MIASTO,0,M_MORALE),20
 						SetZone(120+I,X,Y,X+SZER,Y+WYS);	//	                  Set Zone 120+I,X,Y To X+SZER,Y+WYS
-						GRACZE[1][1]-=CENA;								//	                  Add GRACZE(1,1),-CENA
+						players[1]->gold-=CENA;								//	                  Add GRACZE(1,1),-CENA
 						Screen(1); _ROZBUDOWA_WYPISZ(A_S,CENA);
 						_store_ekran1_rozbudowa();
 						Screen(0);//	                  Screen 1 : Gosub WYPISZ : Screen 0
@@ -715,8 +715,8 @@ void REKRUTACJA(aint ILU,aint MIASTO,aint A1) {
 						StoreBuffer(sb,OKX-1,OKY-1,162+2,210+2);
 						ARMIA_S[A2][0]=WPI_S;																							//	                  ARMIA$(A2,0)=WPI$
 					}																																		//	               End If
-					if( STREFA==13 && WOJ>0 && GRACZE[1][1]-CENA>=0 ) {									//	               If STREFA=13 and WOJ>0 and GRACZE(1,1)-CENA>=0
-						GRACZE[1][1]-=CENA;																								//	                  Add GRACZE(1,1),-CENA
+					if( STREFA==13 && WOJ>0 && players[1]->gold-CENA>=0 ) {									//	               If STREFA=13 and WOJ>0 and GRACZE(1,1)-CENA>=0
+						players[1]->gold-=CENA;																								//	                  Add GRACZE(1,1),-CENA
 						ARMIA[A2][0][TE]=WOJ;																							//	                  ARMIA(A2,0,TE)=WOJ
 						MIASTA[MIASTO][1][M_PODATEK]=30;																	//	                  MIASTA(MIASTO,1,M_PODATEK)=30
 						ZOKNO();																														//	                  ZOKNO

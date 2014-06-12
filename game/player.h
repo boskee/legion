@@ -9,10 +9,12 @@ namespace World
     {
         public:
             Player(const std::string& name):
-                playerName(name) {}
+                playerName(name),
+                gold(0) {}
 
         //private: //TODO: fix this
             std::string playerName;
+            int gold;
 
         private:
             //AnimState::AnimState mAnimState;

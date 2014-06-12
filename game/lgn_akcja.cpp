@@ -2839,8 +2839,8 @@ void _GADKA_BULI(aint X, aint Y, aint &ILE, aint &TAK) {
 		ProcessEvents();
 		if( MouseClick()==1 ) {																		//	      If Mouse Click=1
 			STREFA=MouseZone();																			//	         STREFA=Mouse Zone
-			if( STREFA==10 && GRACZE[1][1]-ILE>=0 ) {								//	         If STREFA=10 and GRACZE(1,1)-ILE>=0
-				GRACZE[1][1]-=ILE;																		//	            Add GRACZE(1,1),-ILE
+			if( STREFA==10 && players[1]->gold-ILE>=0 ) {								//	         If STREFA=10 and GRACZE(1,1)-ILE>=0
+				players[1]->gold-=ILE;																		//	            Add GRACZE(1,1),-ILE
 				TAK=-1;																								//	            TAK=True
 				KONIEC2=-1;																						//	            KONIEC2=True
 			}																												//	         End If
@@ -3104,7 +3104,7 @@ void GADKA(aint NR,aint B) {
 				gad_text(1.0); NAPISZ(X+144,Y+15,140,70,A_S,0,30,25);	//	            Ink 30 : NAPISZ[X+144,Y+15,140,70,A$,0,30,25]
 				if( ODP==4 ) {																				//	            If ODP=4
 					F=Rnd(100);																					//	               F=Rnd(100)
-					GRACZE[1][1]+=F;																		//	               Add GRACZE(1,1),F
+					players[1]->gold+=F;																		//	               Add GRACZE(1,1),F
 					Text(X+164,Y+25,Str_S(F));													//	               Text X+164,Y+25,Str$(F)
 				}																											//	            End If
 				_store_ekran1_gadka();

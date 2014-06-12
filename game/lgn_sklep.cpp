@@ -37,7 +37,7 @@ void _SKLEP_NAPISZ(SklepVars &v) {
 	v.ls_napisz2=v.B_S;
 }
 void _SKLEP_SZMAL(SklepVars &v) {
-	v.ls_szmal1 = Str_S(GRACZE[1][1]);
+	v.ls_szmal1 = Str_S(players[1]->gold);
 	v.ls_szmal2 = BRON2_S[v.PUPIL];
 }
 void _SKLEP_KLIENT(SklepVars &v) {
@@ -95,7 +95,7 @@ void _SKLEP_PICK(SklepVars &v) {
 					SKLEP[v.SNR][v.J2]=v.BRO;																																			//	               SKLEP(SNR,J2)=BRO
 					v.KONIEC=-1;																																			//	               KONIEC=True
 					if( v.ZNAK==1 ) {																																			//	               If ZNAK=1
-						GRACZE[1][1]+=v.CENA*v.ZNAK;																										//	                  Add GRACZE(1,1),CENA*ZNAK
+						players[1]->gold+=v.CENA*v.ZNAK;																										//	                  Add GRACZE(1,1),CENA*ZNAK
 						_SKLEP_SZMAL(v);																																			//	                  Gosub SZMAL
 					}																																		//	               End If
 				}																																			//	            End If
@@ -116,8 +116,8 @@ void _SKLEP_PICK(SklepVars &v) {
 					_store_ekran1_sklep();
 					ARMIA[v.A][v.NR][TPLECAK+v.J2]=v.BRO;																																			//	               ARMIA(A,NR,TPLECAK+J2)=BRO
 					v.KONIEC=-1;																																			//	               KONIEC=True
-					if( v.ZNAK==-1 && GRACZE[1][1]+(v.CENA*v.ZNAK)>=0 ) {												//	               If ZNAK=-1 and GRACZE(1,1)+(CENA*ZNAK)>=0
-						GRACZE[1][1]+=v.CENA*v.ZNAK;																									//	                  Add GRACZE(1,1),CENA*ZNAK
+					if( v.ZNAK==-1 && players[1]->gold+(v.CENA*v.ZNAK)>=0 ) {												//	               If ZNAK=-1 and GRACZE(1,1)+(CENA*ZNAK)>=0
+						players[1]->gold+=v.CENA*v.ZNAK;																									//	                  Add GRACZE(1,1),CENA*ZNAK
 						_SKLEP_SZMAL(v);																																			//	                  Gosub SZMAL
 					}																																			//	               End If
 				}																																			//	            End If
@@ -187,7 +187,7 @@ void _SKLEP_SPICHLERZ(SklepVars &v) {
 	ReserveZone(3);																																			//	   Reserve Zone 3
 	v.WOJSKO=ARMIA[ARM][0][TAMO];																															//	   WOJSKO=ARMIA(ARM,0,TAMO) : SPICH=MIASTA(MIASTO,1,M_LUDZIE) : SZMAL=GRACZE(1,1) : CENA=10+((10*MIASTA(MIASTO,17,M_MUR))/100)
 	v.SPICH=MIASTA[v.MIASTO][1][M_LUDZIE];
-	v.SZMAL=GRACZE[1][1];
+	v.SZMAL=players[1]->gold;
 	v.CENA=10+((10*MIASTA[v.MIASTO][17][M_MUR])/100);
 	if( v.WOJSKO<0 ) v.WOJSKO=0;																																			//	   If WOJSKO<0 : WOJSKO=0 : End If
 																																				//	   Gr Writing 0
@@ -226,7 +226,7 @@ void _SKLEP_SPICHLERZ(SklepVars &v) {
 			}																																			//	         End If
 		}																																			//	      End If
 	} while ( v.MYSZ!=PRAWY );																																			//	   Until MYSZ=PRAWY
-	ARMIA[ARM][0][TAMO]=v.WOJSKO; MIASTA[v.MIASTO][1][M_LUDZIE]=v.SPICH; GRACZE[1][1]=v.SZMAL;																																			//	   ARMIA(ARM,0,TAMO)=WOJSKO : MIASTA(MIASTO,1,M_LUDZIE)=SPICH : GRACZE(1,1)=SZMAL
+	ARMIA[ARM][0][TAMO]=v.WOJSKO; MIASTA[v.MIASTO][1][M_LUDZIE]=v.SPICH; players[1]->gold=v.SZMAL;																																			//	   ARMIA(ARM,0,TAMO)=WOJSKO : MIASTA(MIASTO,1,M_LUDZIE)=SPICH : GRACZE(1,1)=SZMAL
 																																				//	   Screen Show 1
 	return;																																			//	   Return
 }
@@ -375,7 +375,7 @@ void _SKLEP(aint pMIASTO,aint pSNR,aint pA,aint pNR2) {
 					v.BRO2_S=BRON_S[v.BRO];																						//	               BRO2$=BRON$(BRO)
 					v.TYPB=BRON[v.BRO][B_TYP];																				//	               TYPB=BRON(BRO,B_TYP)
 					v.CENA=BRON[v.BRO][B_CENA]+((BRON[v.BRO][B_CENA]*MIASTA[v.MIASTO][v.TYPB][M_MUR])/100);	//	               CENA=BRON(BRO,B_CENA)+((BRON(BRO,B_CENA)*MIASTA(MIASTO,TYPB,M_MUR))/100)
-					if( GRACZE[1][1]-v.CENA>=0 ) {																	//	               If GRACZE(1,1)-CENA>=0
+					if( players[1]->gold-v.CENA>=0 ) {																	//	               If GRACZE(1,1)-CENA>=0
 						v.ZNAK=-1;																										//	                  ZNAK=-1
 						v.A_S=v.BRO2_S+" "+v.BRO1_S;																			//	                  A$=BRO2$+" "+BRO1$
 						v.B_S=GS("035")+Str_S(v.CENA);																		//	                  B$="costs:"+Str$(CENA)

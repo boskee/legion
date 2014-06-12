@@ -98,7 +98,15 @@ void _ZAPIS(astr NAME_S,aint NSAVE) {
 																															//	   'gracze(4,3)
 	for( I=0; I<=4; ++I ) {																			//	   For I=0 To 4
 		for( J=0; J<=3; ++J ) {																		//	      For J=0 To 3
-			DAT=GRACZE[I][J];																				//	         DAT=GRACZE(I,J)
+
+			if (J == 1)
+            {
+                DAT = players[I]->gold;																				//	         DAT=GRACZE(I,J)
+            }
+            else
+            {
+                DAT=GRACZE[I][J];																				//	         DAT=GRACZE(I,J)
+            }
 			Loke(MEM,DAT);																					//	         Loke MEM,DAT
 			MEM+=4;																									//	         Add MEM,4
 		}																													//	      Next
@@ -341,6 +349,14 @@ void ODCZYT(unsigned char *MEM) {
 		for( J=0; J<=3; ++J ) {														//	      For J=0 To 3
 			DAT=Leek(MEM);																	//	         DAT=Leek(MEM)
 			GRACZE[I][J]=DAT;																//	         GRACZE(I,J)=DAT
+			if (J == 1)
+            {																//	      Gosub _READ_STRING
+                if (players[I] == NULL)
+                {
+                    players[I] = new World::Player("");				//	      IMIONA$(I)=DAT$
+                }
+                players[I]->gold = DAT;
+            }
 			MEM+=4;																					//	         Add MEM,4
 		}																									//	      Next
 	}																										//	   Next
@@ -427,6 +443,15 @@ void CLEAR_TABLES(void) {
 	for(I=0;I<=4;++I) {							//	   For I=0 To 4
 		for(J=0;J<=3;++J) {						//	      For J=0 To 3
 			GRACZE[I][J]=0;							//	         GRACZE(I,J)=0
+			if (J == 1)
+            {
+                if (players[I] == NULL)
+                {
+                    players[I] = new World::Player("");
+                }
+
+                players[I]->gold = 0;
+            }
 		}															//	      Next
 	}																//	   Next
 																	//	   'armia$(40,10)

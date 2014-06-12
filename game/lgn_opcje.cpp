@@ -59,7 +59,7 @@ void _STATUS_NAPISZ(astr A_S,astr B_S,astr C_S) {								//	   NAPISZ:
 	Text(OKX+8,OKY+24+20,A_S);																		//	   Text OKX+8,OKY+24+20,A$
 	Text(OKX+8,OKY+24+30,B_S);																		//	   Text OKX+8,OKY+24+30,B$
 	Text(OKX+8,OKY+34+40,C_S);																		//	   Text OKX+8,OKY+34+40,C$
-	Text(OKX+8,OKY+34+50,GS("139")+Str_S(GRACZE[1][1]));					//	   Text OKX+8,OKY+34+50,"Treasury: "+Str$(GRACZE(1,1))
+	Text(OKX+8,OKY+34+50,GS("139")+Str_S(players[1]->gold));					//	   Text OKX+8,OKY+34+50,"Treasury: "+Str$(GRACZE(1,1))
 	return;																												//	   Return
 }
 void STATUS(void) {

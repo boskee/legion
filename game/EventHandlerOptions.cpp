@@ -69,7 +69,7 @@ void EventHandlerOptions::ProcessEvent(Rocket::Core::Event& event, const Rocket:
 		if (day_info != NULL)
 		{
             astr SZMAL_S="",DZIEN_S="",DZIEN_TEXT="";
-            SZMAL_S=Str_S(GRACZE[1][1]);				//	   SZMAL$=Str$(GRACZE(1,1))-" "
+            SZMAL_S=Str_S(players[1]->gold);				//	   SZMAL$=Str$(GRACZE(1,1))-" "
             DZIEN_S=Str_S(DZIEN);								//	   DZIEN$=Str$(DZIEN)-" "
             DZIEN_TEXT = GS("122")+DZIEN_S+GS("123")+SZMAL_S;
 			Rocket::Core::ElementText *text_el = dynamic_cast< Rocket::Core::ElementText* >(day_info->GetFirstChild());

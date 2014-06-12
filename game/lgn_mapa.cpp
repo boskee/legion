@@ -437,7 +437,7 @@ void MAPA_AKCJA(void) {
 			//clipu(MIASTA[M][1][M_MORALE],25);
 		}
 		PODATEK=MIASTA[M][0][M_PODATEK];						//	      PODATEK=MIASTA(M,0,M_PODATEK)
-		GRACZE[CZYJE][1] += PODATEK*MIASTA[M][0][M_LUDZIE]/25;//	      Add GRACZE(CZYJE,1),PODATEK*MIASTA(M,0,M_LUDZIE)/25
+		players[CZYJE]->gold += PODATEK*MIASTA[M][0][M_LUDZIE]/25;//	      Add GRACZE(CZYJE,1),PODATEK*MIASTA(M,0,M_LUDZIE)/25
 																								//	      'obsługa spichlerzy
 		SPI=0;																			//	      SPI=0
 		for(I=2;I<=20;++I) {												//	      For I=2 To 20
@@ -450,10 +450,10 @@ void MAPA_AKCJA(void) {
 																								//
 		if( CZYJE>1 ) {															//	      If CZYJE>1
 			MIASTA[M][0][M_LUDZIE] += Rnd(10)-2;			//	         Add MIASTA(M,0,M_LUDZIE),Rnd(10)-2
-			if( GRACZE[CZYJE][1]>10000 && Rnd(3)==1 && MIASTA[M][1][M_PODATEK]==0 ) {//	         If GRACZE(CZYJE,1)>10000 and Rnd(3)=1 and MIASTA(M,1,M_PODATEK)=0
+			if( players[CZYJE]->gold>10000 && Rnd(3)==1 && MIASTA[M][1][M_PODATEK]==0 ) {//	         If GRACZE(CZYJE,1)>10000 and Rnd(3)=1 and MIASTA(M,1,M_PODATEK)=0
 				for(I=20;I<=39;++I) {										//	            For I=20 To 39
 					if( ARMIA[I][0][TE]<=0 ) {						//	               If ARMIA(I,0,TE)<=0
-						GRACZE[CZYJE][1] -= 10000;					//	                  Add GRACZE(CZYJE,1),-10000
+						players[CZYJE]->gold -= 10000;					//	                  Add GRACZE(CZYJE,1),-10000
 						MIASTA[M][1][M_PODATEK]=20+Rnd(10);	//	                  MIASTA(M,1,M_PODATEK)=20+Rnd(10)
 						NOWA_ARMIA(I,10,-1);								//	                  NOWA_ARMIA[I,10,-1]
 						ARMIA[I][0][TMAG]=CZYJE;						//	                  ARMIA(I,0,TMAG)=CZYJE
@@ -1147,7 +1147,7 @@ void MA_PRZYGODA(aint A,aint NR) {
 			CO=ARM;																												//	         CO=ARM
 			A_S=GS("073")+Str_S(PRZYGODY[NR][P_NAGRODA])+GS("074");				//	         A$="You're getting "+Str$(PRZYGODY(NR,P_NAGRODA))+" gold pieces as a reward."
 			B=41;																													//	         B=41
-			GRACZE[1][1]+=PRZYGODY[NR][P_NAGRODA];												//	         Add GRACZE(1,1),PRZYGODY(NR,P_NAGRODA)
+			players[1]->gold+=PRZYGODY[NR][P_NAGRODA];												//	         Add GRACZE(1,1),PRZYGODY(NR,P_NAGRODA)
 		}																																//	      End If
 	}																																	//	   End If
 	if( TYP==4 ) {																										//	   If TYP=4
@@ -1311,7 +1311,7 @@ void MA_PRZYGODA(aint A,aint NR) {
 			M=0; CO=ARM;																									//	         M=0 : CO=ARM
 			A_S=GS("076")+Str_S(PRZYGODY[NR][P_NAGRODA])+GS("077");				//	         A$="You're getting "+Str$(PRZYGODY(NR,P_NAGRODA))+" gold pieces reward for ruffian's head."
 			B=41;																													//	         B=41
-			GRACZE[1][1]+=PRZYGODY[NR][P_NAGRODA];												//	         Add GRACZE(1,1),PRZYGODY(NR,P_NAGRODA)
+			players[1]->gold+=PRZYGODY[NR][P_NAGRODA];												//	         Add GRACZE(1,1),PRZYGODY(NR,P_NAGRODA)
 		}																																//	      End If
 	}																																	//	   End If
 																																		//
@@ -1781,7 +1781,7 @@ void SZPIEGUJ(aint NR,aint CO) {
 				//_SZPIEGUJ_WYPISZ(CENA,DNI);			//	            Gosub WYPISZ
 			}																	//	         End If
 			if( STREFA==4 ) {									//	         If STREFA=4
-				if( GRACZE[1][1]-CENA>=0 ) {		//	            If GRACZE(1,1)-CENA>=0
+				if( players[1]->gold-CENA>=0 ) {		//	            If GRACZE(1,1)-CENA>=0
 					if( CENA>100 ) {							//	               If CENA>100
 						if( CO==0 ) {								//	                  If CO=0
 							MIASTA[NR][1][M_Y]=DNI;		//	                     MIASTA(NR,1,M_Y)=DNI
@@ -1789,7 +1789,7 @@ void SZPIEGUJ(aint NR,aint CO) {
 						if( CO==1 ) {								//	                  If CO=1
 							ARMIA[NR][0][TMAGMA]=DNI;	//	                     ARMIA(NR,0,TMAGMA)=DNI
 						}														//	                  End If
-						GRACZE[1][1]-=CENA;					//	                  Add GRACZE(1,1),-CENA
+						players[1]->gold-=CENA;					//	                  Add GRACZE(1,1),-CENA
 					}															//	               End If
 					KONIEC=-1;										//	               KONIEC=True
 				}																//	            End If
@@ -2042,7 +2042,7 @@ void OBLICZ_POWER(aint PL) {
 			}														//	         End If
 		}															//	      Next
 		OPOWER += DZIEN*20;						//	      Add OPOWER,DZIEN*20
-		OPOWER += GRACZE[PL][1]/10;		//	      Add OPOWER,GRACZE(PL,1)/10
+		OPOWER += players[PL]->gold / 10;		//	      Add OPOWER,GRACZE(PL,1)/10
 		GRACZE[PL][2]=OPOWER;					//	      GRACZE(PL,2)=OPOWER
 	}																//	   End If
 	Param=OPOWER;										//	End Proc[OPOWER]
