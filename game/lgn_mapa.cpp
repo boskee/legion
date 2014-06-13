@@ -315,13 +315,13 @@ void MAPA_AKCJA(void) {
 	for(PL=1;PL<=4;++PL) {												//	   For PL=1 To 4 : OBLICZ_POWER[PL] : SR=SR+Param : Next
 		OBLICZ_POWER(PL); SR=SR+Param;
 	}
-	POWER=(GRACZE[1][2]/900)+7;										//	   POWER=(GRACZE(1,2)/900)+7 : If POWER>99 : POWER=99 : End If
+	POWER=(players[1]->power/900)+7;										//	   POWER=(GRACZE(1,2)/900)+7 : If POWER>99 : POWER=99 : End If
 	if( POWER>99 ) POWER=99;
 	SR/=4;																				//	   SR=SR/4
 																								//	   '   Pen 21 : Print At(1,0);"power:",POWER,GRACZE(1,2),SR
 	OLDSI=0;																			//	   OLDSI=0
 	for(I=1;I<=4;++I) {														//	   For I=1 To 4
-		SI=GRACZE[I][2];														//	      SI=GRACZE(I,2)
+		SI=players[I]->power;														//	      SI=GRACZE(I,2)
 																								//	      '      Pen GRACZE(I,3)+1 : Print At(1,I);SI
 		if( SI>SR+((40*SR)/100) && SI>OLDSI ) {			//	      If SI>SR+((40*SR)/100) and SI>OLDSI
 			OLDSI=SI;																	//	         OLDSI=SI
@@ -2043,7 +2043,7 @@ void OBLICZ_POWER(aint PL) {
 		}															//	      Next
 		OPOWER += DZIEN*20;						//	      Add OPOWER,DZIEN*20
 		OPOWER += players[PL]->gold / 10;		//	      Add OPOWER,GRACZE(PL,1)/10
-		GRACZE[PL][2]=OPOWER;					//	      GRACZE(PL,2)=OPOWER
+		players[PL]->power=OPOWER;					//	      GRACZE(PL,2)=OPOWER
 	}																//	   End If
 	Param=OPOWER;										//	End Proc[OPOWER]
 }

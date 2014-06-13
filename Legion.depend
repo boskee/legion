@@ -2107,7 +2107,7 @@
 	"version.h"
 	"../engine/Core.h"
 
-1402529906 /Users/voitek/Projects/legion-newest/game/legion.h
+1402688954 /Users/voitek/Projects/legion-newest/game/legion.h
 	"amos_types.h"
 	"player.h"
 
@@ -2173,7 +2173,7 @@
 	"lgn_util.h"
 	"utl_locale.h"
 
-1402530515 source:/Users/voitek/Projects/legion-newest/game/lgn_mapa.cpp
+1402687590 source:/Users/voitek/Projects/legion-newest/game/lgn_mapa.cpp
 	"Amos.h"
 	"legion.h"
 	"lgn_akcja.h"
@@ -2195,7 +2195,7 @@
 
 1402363634 /Users/voitek/Projects/legion-newest/game/lgn_opcje.h
 
-1402529681 source:/Users/voitek/Projects/legion-newest/game/lgn_miasto.cpp
+1402531042 source:/Users/voitek/Projects/legion-newest/game/lgn_miasto.cpp
 	"Amos.h"
 	"legion.h"
 	"lgn_akcja.h"
@@ -2208,7 +2208,7 @@
 	"lgn_util.h"
 	"utl_locale.h"
 
-1402529557 source:/Users/voitek/Projects/legion-newest/game/lgn_opcje.cpp
+1402688783 source:/Users/voitek/Projects/legion-newest/game/lgn_opcje.cpp
 	"Amos.h"
 	"legion.h"
 	"lgn_opcje.h"
@@ -2233,7 +2233,7 @@
 	"lgn_ekran1.h"
 	"lgn_util.h"
 
-1400240521 source:/Users/voitek/Projects/legion-newest/game/lgn_sklep.cpp
+1402531254 source:/Users/voitek/Projects/legion-newest/game/lgn_sklep.cpp
 	"Amos.h"
 	"legion.h"
 	"lgn_diskacs.h"
@@ -2980,6 +2980,6 @@
 1402528172 source:/Users/voitek/Projects/legion-newest/game/player.cpp
 	"player.h"
 
-1402530394 /Users/voitek/Projects/legion-newest/game/player.h
+1402688566 /Users/voitek/Projects/legion-newest/game/player.h
 	<iostream>
 

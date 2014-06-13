@@ -18,8 +18,7 @@ extern astr gs_default_language;
 extern astr KAT_S;
 extern aint LEWY,PRAWY;
 extern aint ARMIA[40+1][10+1][30+1]
-		 , WOJNA[5+1][5+1]
-		 , GRACZE[4+1][3+1];
+		 , WOJNA[5+1][5+1];
 extern astr ARMIA_S[40+1][10+1];
 extern World::Player *players[4+1];
 extern aint AN[4+1];

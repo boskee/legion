@@ -116,8 +116,8 @@ void STATUS(void) {
 				rysuj(); RestoreBuffer(sb);
 				gad_back(1.0); _Bar(OKX+5,OKY+5,OKX+150,OKY+90);				//	            Ink 30 : Bar OKX+5,OKY+5 To OKX+150,OKY+90
 				for( I=1; I<=4; ++I ) {																	//	            For I=1 To 4
-					WYS=GRACZE[I][2]/250;																	//	               WYS=GRACZE(I,2)/250
-					KOL=GRACZE[I][3];																			//	               KOL=GRACZE(I,3)
+					WYS=players[I]->power/250;																	//	               WYS=GRACZE(I,2)/250
+					KOL=players[I]->colour;																			//	               KOL=GRACZE(I,3)
 					if( WYS>100 ) WYS=100;																//	               If WYS>100 : WYS=100 : End If
 					if( WYS<4 ) WYS=4;																		//	               If WYS<4 : WYS=4 : End If
 					gad_text(1.0); Text(OKX+8,OKY+4+I*20,players[I]->playerName);		//	               Ink 1,30 : Text OKX+8,OKY+4+I*20,IMIONA$(I)

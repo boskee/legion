@@ -44,10 +44,9 @@ aint LEWY=1,PRAWY=2;						//	Global KAT$,LEWY,PRAWY
 //! aint M_X = (aint)sin(2);				//	M_X=Sin(2)
 
 aint ARMIA[40+1][10+1][30+1]
-	 , WOJNA[5+1][5+1]
-	 , GRACZE[4+1][3+1];					//	Dim ARMIA(40,10,30),WOJNA(5,5),GRACZE(4,3)
+	 , WOJNA[5+1][5+1];					//	Dim ARMIA(40,10,30),WOJNA(5,5)
 
-World::Player *players[4+1];                        // Dim IMIONA$(4)
+World::Player *players[4+1];                        // Dim IMIONA$(4),GRACZE(4,3)
 
 astr ARMIA_S[40+1][10+1];							//	Dim ARMIA$(40,10)
 
@@ -329,7 +328,7 @@ void main_code(void) {
 				DZIEN=1;																	//	         DZIEN=1
 				POWER=5; SX=0; SY=0;											//	         POWER=5 : SX=0 : SY=0
 				for(I=1;I<=4;++I) players[I]->gold = 5000;			//	         For I=1 To 4 : GRACZE(I,1)=5000 : Next I
-				GRACZE[1][3]=20; GRACZE[2][3]=16; GRACZE[3][3]=18; GRACZE[4][3]=22;	//	         GRACZE(1,3)=20 : GRACZE(2,3)=16 : GRACZE(3,3)=18 : GRACZE(4,3)=22
+				players[1]->colour=20; players[2]->colour=16; players[3]->colour=18; players[4]->colour=22;	//	         GRACZE(1,3)=20 : GRACZE(2,3)=16 : GRACZE(3,3)=18 : GRACZE(4,3)=22
 				PREFS[1]=1; PREFS[2]=1; PREFS[4]=1;				//	         PREFS(1)=1 : PREFS(2)=1 : PREFS(4)=1
 				ScreenClose(0);														//	         Screen Close 0
 				Gfx::Color(0.f,0.f,0.f);

@@ -103,9 +103,19 @@ void _ZAPIS(astr NAME_S,aint NSAVE) {
             {
                 DAT = players[I]->gold;																				//	         DAT=GRACZE(I,J)
             }
+            else if (J == 2)
+            {
+                DAT = players[I]->power;
+            }
+            else if (J == 3)
+            {
+                DAT = players[I]->colour;
+            }
             else
             {
-                DAT=GRACZE[I][J];																				//	         DAT=GRACZE(I,J)
+                ERROR("0 doesnt exist");
+                BLAD();
+                //DAT=GRACZE[I][J];																				//	         DAT=GRACZE(I,J)
             }
 			Loke(MEM,DAT);																					//	         Loke MEM,DAT
 			MEM+=4;																									//	         Add MEM,4
@@ -345,17 +355,25 @@ void ODCZYT(unsigned char *MEM) {
 		}																									//	      Next
 	}																										//	   Next
 																											//	   'gracze(4,3)
-	for( I=0; I<=4; ++I ) {															//	   For I=0 To 4
+	for( I=0; I<=4; ++I ) {															//	   For I=0 To 4												//	      Gosub _READ_STRING
+        if (players[I] == NULL)
+        {
+            players[I] = new World::Player("");				//	      IMIONA$(I)=DAT$
+        }
 		for( J=0; J<=3; ++J ) {														//	      For J=0 To 3
 			DAT=Leek(MEM);																	//	         DAT=Leek(MEM)
-			GRACZE[I][J]=DAT;																//	         GRACZE(I,J)=DAT
+			//GRACZE[I][J]=DAT;																//	         GRACZE(I,J)=DAT
 			if (J == 1)
-            {																//	      Gosub _READ_STRING
-                if (players[I] == NULL)
-                {
-                    players[I] = new World::Player("");				//	      IMIONA$(I)=DAT$
-                }
+            {
                 players[I]->gold = DAT;
+            }
+            else if (J == 2)
+            {
+                players[I]->power = DAT;
+            }
+            else if (J == 3)
+            {
+                players[I]->colour = DAT;
             }
 			MEM+=4;																					//	         Add MEM,4
 		}																									//	      Next
@@ -440,19 +458,17 @@ void CLEAR_TABLES(void) {
 		}															//	      Next
 	}																//	   Next
 																	//	   'gracze(4,3)
-	for(I=0;I<=4;++I) {							//	   For I=0 To 4
-		for(J=0;J<=3;++J) {						//	      For J=0 To 3
-			GRACZE[I][J]=0;							//	         GRACZE(I,J)=0
-			if (J == 1)
-            {
-                if (players[I] == NULL)
-                {
-                    players[I] = new World::Player("");
-                }
-
-                players[I]->gold = 0;
-            }
-		}															//	      Next
+	for(I=0;I<=4;++I) {							//	   For I=0 To 4											//	      Next
+        if (players[I] == NULL)
+        {
+            players[I] = new World::Player("");				//	      IMIONA$(I)=""
+        }
+        else
+        {
+            players[I]->gold = 0;
+            players[I]->power = 0;
+            players[I]->colour = 0;
+        }
 	}																//	   Next
 																	//	   'armia$(40,10)
 	for(I=0;I<=40;++I) {						//	   For I=0 To 40
