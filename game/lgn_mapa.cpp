@@ -8,7 +8,6 @@
 #include "lgn_intro.h"
 #include "lgn_mapa.h"
 #include "lgn_miasto.h"
-#include "lgn_opcje.h"
 #include "lgn_przygoda.h"
 #include "lgn_sceneria.h"
 #include "lgn_util.h"
@@ -17,6 +16,7 @@
 #include "EventHandlerStartGame.h"
 #include "EventHandlerOptions.h"
 #include "EventHandlerOptionsPreferences.h"
+#include "EventHandlerStatistics.h"
 //#include "../engine/EventInstancer.h"
 #include "../engine/EventManager.h"
 
@@ -60,6 +60,7 @@ void SETUP0(void) {
 	EventManager::RegisterEventHandler("map", new EventHandlerStartGame());
 	EventManager::RegisterEventHandler("options", new EventHandlerOptions());
 	EventManager::RegisterEventHandler("options_preferences", new EventHandlerOptionsPreferences());
+	EventManager::RegisterEventHandler("statistics", new EventHandlerStatistics());
     EventManager::LoadWindow("map");
 
     /*

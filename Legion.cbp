@@ -181,6 +181,8 @@
 		<Unit filename="engine/settings_scanner.hh" />
 		<Unit filename="engine/settings_token.cc" />
 		<Unit filename="engine/settings_token.hh" />
+		<Unit filename="engine/translation.cpp" />
+		<Unit filename="engine/translation.h" />
 		<Unit filename="engine/version.h" />
 		<Unit filename="game/Amos.cpp" />
 		<Unit filename="game/Amos.h" />
@@ -194,6 +196,8 @@
 		<Unit filename="game/EventHandlerOptionsPreferences.h" />
 		<Unit filename="game/EventHandlerStartGame.cpp" />
 		<Unit filename="game/EventHandlerStartGame.h" />
+		<Unit filename="game/EventHandlerStatistics.cpp" />
+		<Unit filename="game/EventHandlerStatistics.h" />
 		<Unit filename="game/amos_types.h" />
 		<Unit filename="game/hq2x.cpp" />
 		<Unit filename="game/legion.cpp" />
@@ -212,8 +216,6 @@
 		<Unit filename="game/lgn_mapa.h" />
 		<Unit filename="game/lgn_miasto.cpp" />
 		<Unit filename="game/lgn_miasto.h" />
-		<Unit filename="game/lgn_opcje.cpp" />
-		<Unit filename="game/lgn_opcje.h" />
 		<Unit filename="game/lgn_przygoda.cpp" />
 		<Unit filename="game/lgn_przygoda.h" />
 		<Unit filename="game/lgn_sceneria.cpp" />

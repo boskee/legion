@@ -1,0 +1,88 @@
+<rml>
+	<head>
+		<title>Statistics</title>
+		<link type="text/template" href="frame.rml" />
+		<style>
+			body.window
+			{
+				width: 400px;
+				height: 252px;
+				min-height: 252px;
+			}
+			
+			div#title_bar div#icon
+			{
+				display: none;
+			}
+			
+			div#content
+			{
+				text-align: left;
+			}
+
+			div.brown {
+				height: 200px;
+			}
+
+			button#btn_graphs {
+				position: absolute;
+				bottom: 8px;
+				left: 8px;
+				width: 30%;
+			}
+
+			button#btn_cancel {
+				position: absolute;
+				bottom: 8px;
+				right: 8px;
+				width: 30%;
+			}
+
+			td {
+				width: 150px;
+				display: inline-block;
+			}
+
+			tr {
+				display: block;
+			}
+
+			div.bar {
+				border-width: 2px;
+				border-right-color: #2e1d0c;
+				border-bottom-color: #2e1d0c;
+				min-width: 4px;
+				width: 4px;
+				height: 28px;
+				display: inline-block;
+			}
+		</style>
+	</head>
+	<body template="window" onload="restore">
+		<div class="brown">
+			<div id="day_info">INFO</div>
+			<div id="graphs" style="display: none;">
+				<table>
+					<tr>
+						<td id="name1">Name 1</td>
+						<th><div class="bar" id="bar1"></div></th>
+					</tr>
+					<tr>
+						<td id="name2">Name 2</td>
+						<td><div class="bar" id="bar2"></div></td>
+					</tr>
+					<tr>
+						<td id="name3">Name 3</td>
+						<td><div class="bar" id="bar3"></div></td>
+					</tr>
+					<tr>
+						<td id="name4">Name 4</td>
+						<td><div class="bar" id="bar4"></div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<button onclick="graphs" id="btn_graphs">Graphs</button>
+		<button onclick="cancel" id="btn_cancel">Ok</button>
+	</body>
+</rml>

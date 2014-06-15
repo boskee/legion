@@ -14,7 +14,7 @@
  *
  * The above copyright notice and this permission notice shall be included in
  * all copies or substantial portions of the Software.
- * 
+ *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -25,7 +25,20 @@
  *
  */
 #include <Rocket/Core.h>
+#include "translation.h"
 #include "SystemInterfaceSDL2.h"
+#include <iostream>
+
+int RocketSDL2SystemInterface::TranslateString(Rocket::Core::String& translated, const Rocket::Core::String& input)
+{
+    // Attempt to find the translation in the string table.
+    if (Core::StringTable::GetString(translated, input))
+        return 1;
+
+    // No translation; return the raw input string.
+    translated = input;
+    return 0;
+}
 
 Rocket::Core::Input::KeyIdentifier RocketSDL2SystemInterface::TranslateKey(SDL_Keycode sdlkey)
 {

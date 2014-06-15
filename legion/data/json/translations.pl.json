@@ -1,0 +1,16 @@
+{
+    "strings": {
+        "LOAD_GAME": "Odczyt gry",
+        "SAVE_GAME": "Zapis gry",
+        "STATISTICS": "Statystyka",
+        "PREFERENCES": "Preferencje",
+        "END_GAME": "Koniec gry",
+        "MENU_CANCEL": "Anuluj",
+
+        "RANDOM_NAMES": "Imiona Wojowników",
+        "FAST_SCROLLING": "Szybki skrol mapy",
+        "MUSIC": "Muzyka",
+        "DEAD_BODIES": "Trupy",
+        "WINDOWS_97": "Bajery"
+    }
+}

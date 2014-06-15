@@ -39,7 +39,6 @@
 #include "legion.h"
 #include "lgn_mapa.h"
 #include "lgn_util.h"
-#include "lgn_opcje.h"
 #include "lgn_diskacs.h"
 #include "EventHandlerOptions.h"
 #include "../engine/Core.h"

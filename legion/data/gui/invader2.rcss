@@ -17,6 +17,9 @@ body.window
 	
 	min-height: 350px;
 	max-height: 700px;
+				
+	margin: auto;
+	color: #fff;
 }
 
 
@@ -70,8 +73,14 @@ div#title_bar span
 div#window
 {
 	width: auto;
-	padding: 10px 15px;
+	padding: 6px;
 
+	border-color: #00ffff;
+	border-top-width: 2px;
+	border-right-width: 2px;
+	border-bottom-width: 2px;
+	border-left-width: 2px;
+	/*
 	background-decorator: tiled-box;
 	background-top-left-image: invader.tga 0px 0px 133px 140px;
 	background-top-right-image: invader.tga 136px 0px 146px 140px;
@@ -81,6 +90,7 @@ div#window
 	background-bottom-image: invader.tga stretch 11px 140px 12px 151px;
 	background-left-image: invader.tga stretch 0px 139px 10px 140px;
 	background-center-image: invader.tga stretch 11px 139px 12px 140px;
+	*/
 }
 
 div#content
@@ -138,18 +148,35 @@ input.submit
 {
 	display: inline-block;
 
-	width: 159px;
-	height: 37px;
+	width: auto;
+	height: 28px;
 
-	padding-top: 8px;
+	padding: 0;
 	vertical-align: -18px;
 
 	font-size: 18;
 	text-align: center;
 	tab-index: auto;
 
-	background-decorator: image;
-	background-image: invader.tga 247px 0px 406px 45px;
+	margin-bottom: 4px;
+
+	background: #776655;
+	border-width: 2px;
+	border-left-color: #8c7b6a;
+	border-top-color: #8c7b6a;
+	border-right-color: #2e1d0c;
+	border-bottom-color: #2e1d0c;
+}
+
+div.brown {
+	background: #776655;
+	border-width: 2px;
+	border-left-color: #8c7b6a;
+	border-top-color: #8c7b6a;
+	border-right-color: #2e1d0c;
+	border-bottom-color: #2e1d0c;
+	width: auto;
+	display: inline-block;
 }
 
 button:focus,

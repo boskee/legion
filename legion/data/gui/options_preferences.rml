@@ -29,11 +29,11 @@
 		</style>
 	</head>
 	<body template="window" onload="restore">
-		<button onclick="toggle_option 1"><input id="random_names" type="checkbox" class="checkbox" value="1" /> Random names</button>
-		<button onclick="toggle_option 2"><input id="fast_scrolling" type="checkbox" class="checkbox" value="1" /> Fast scrolling</button>
-		<button onclick="toggle_option 3"><input id="music" type="checkbox" class="checkbox" value="1" /> Music</button>
-		<button onclick="toggle_option 4"><input id="dead_bodies" type="checkbox" class="checkbox" value="1" /> Dead bodies</button>
-		<button onclick="toggle_option 5"><input id="windows_97" type="checkbox" class="checkbox" value="1" /> Windows 97</button>
-		<button onclick="cancel">Exit</button>
+		<button onclick="toggle_option 1"><input id="random_names" type="checkbox" class="checkbox" value="1" /> RANDOM_NAMES</button>
+		<button onclick="toggle_option 2"><input id="fast_scrolling" type="checkbox" class="checkbox" value="1" /> FAST_SCROLLING</button>
+		<button onclick="toggle_option 3"><input id="music" type="checkbox" class="checkbox" value="1" /> MUSIC</button>
+		<button onclick="toggle_option 4"><input id="dead_bodies" type="checkbox" class="checkbox" value="1" /> DEAD_BODIES</button>
+		<button onclick="toggle_option 5"><input id="windows_97" type="checkbox" class="checkbox" value="1" /> WINDOWS_97</button>
+		<button onclick="cancel">MENU_CANCEL</button>
 	</body>
 </rml>

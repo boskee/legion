@@ -1,0 +1,16 @@
+{
+    "strings": {
+        "LOAD_GAME": "Load Game",
+        "SAVE_GAME": "Save Game",
+        "STATISTICS": "Statistics",
+        "PREFERENCES": "Preferences",
+        "END_GAME": "End game",
+        "MENU_CANCEL": "Exit",
+
+        "RANDOM_NAMES": "Random names",
+        "FAST_SCROLLING": "Fast scrolling",
+        "MUSIC": "Music",
+        "DEAD_BODIES": "Dead bodies",
+        "WINDOWS_97": "Windows 97"
+    }
+}

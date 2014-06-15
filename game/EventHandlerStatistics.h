@@ -25,37 +25,22 @@
  *
  */
 
-#include "EventHandlerStartGame.h"
-#include <Rocket/Core/Context.h>
-#include <Rocket/Core/ElementDocument.h>
-#include <Rocket/Core/ElementUtilities.h>
-#include <Rocket/Core/Event.h>
-#include "../engine/EventManager.h"
-//#include "GameDetails.h"
-#include <iostream>
-#include "Amos.h"
-#include "lgn_mapa.h"
-#include "EventHandlerOptions.h"
+#ifndef ROCKETINVADERSEVENTHANDLERSTATISTICS_H
+#define ROCKETINVADERSEVENTHANDLERSTATISTICS_H
 
-EventHandlerStartGame::EventHandlerStartGame()
-{
-}
+#include "../engine/EventHandler.h"
 
-EventHandlerStartGame::~EventHandlerStartGame()
-{
-}
+/**
+	@author Peter Curry
+ */
 
-void EventHandlerStartGame::ProcessEvent(Rocket::Core::Event& event, const Rocket::Core::String& value)
+class EventHandlerStatistics : public EventHandler
 {
-    if (value == "action")
-    {
-        MAPA_AKCJA();
-    }
-    else if (value == "options")
-    {
-        if (EventManager::LoadWindow("options"))
-        {
-            EventManager::SetActiveHandler("options");
-        }
-    }
-}
+public:
+	EventHandlerStatistics();
+	virtual ~EventHandlerStatistics();
+
+	virtual void ProcessEvent(Rocket::Core::Event& event, const Rocket::Core::String& value);
+};
+
+#endif

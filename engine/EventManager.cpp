@@ -66,7 +66,6 @@ void EventManager::RemoveEventHandler(const Rocket::Core::String& handler_name)
 {
 	// Release any handler bound under the same name.
 	EventHandlerMap::iterator i = event_handlers.find(handler_name);
-	EventHandlerMap::iterator it;
 
 	if (i != event_handlers.end())
 		delete (*i).second;

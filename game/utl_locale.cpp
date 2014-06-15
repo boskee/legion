@@ -955,20 +955,8 @@ void InitLocale(void) {
 
 			,"EN:122:Day "							,"PL:122:Dzien "
 			,"EN:123:  Treasury:"				,"PL:123:  Skarbiec:"
-			,"EN:124:Load Game"					,"PL:124:Odczyt Gry"
-			,"EN:125:Save Game"					,"PL:125:Zapis Gry"
-			,"EN:126:Statistics"				,"PL:126:Statystyka"
-			,"EN:127:Preferences"				,"PL:127:Preferencje"
-			,"EN:128:End Game"					,"PL:128:Koniec Gry"
-			,"EN:129:Exit"							,"PL:129:Exit"
 
 			,"EN:130: Game Preferences"	,"PL:130: Preferencje Gry"
-			,"EN:131:Random names"			,"PL:131:Imiona Wojowników"
-			,"EN:132:Fast scrolling"		,"PL:132:Szybki skrol mapy "
-			,"EN:133:Music"							,"PL:133:Muzyka"
-			,"EN:134:Dead bodies"				,"PL:134:Trupy"
-			,"EN:135:Windows 97"				,"PL:135:Bajery"
-			,"EN:136:Exit"							,"PL:136:Exit"
 
 			,"EN:137:Report for day: "	,"PL:137:Raport na dzień: "
 			,"EN:138:You rule:"					,"PL:138:W twoim władaniu :"

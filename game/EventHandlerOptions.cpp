@@ -37,7 +37,6 @@
 #include "Amos.h"
 #include "legion.h"
 #include "lgn_mapa.h"
-#include "lgn_opcje.h"
 #include "lgn_diskacs.h"
 #include "../engine/Core.h"
 #include "lgn_util.h"
@@ -76,9 +75,34 @@ void EventHandlerOptions::ProcessEvent(Rocket::Core::Event& event, const Rocket:
 			text_el->SetText(DZIEN_TEXT.c_str());
 		}
     } else if (values[0] == "stats")
+    {							//	            ZOKNO
+        if (EventManager::LoadWindow("statistics"))
+        {
+            options_body->Close();
+        }										//	            ZOKNO
+        //STATUS();											//	            STATUS
+    }
+    else if (values[0] == "load")
     {
-        options_body->Close();											//	            ZOKNO
-        STATUS();											//	            STATUS
+        aint KONIEC=0, STREFA=0, JEST=0;
+        options_body->Close();
+        EventManager::SetActiveHandler("map");
+        _LOAD_GAME();									//	            _LOAD_GAME
+        JEST=Param;										//	            JEST=Param
+        if( JEST != 0 ) {							//	            If JEST
+            /*
+            KONIEC=-1;									//	               KONIEC=True
+            ResetZone(-1);							//	               Reset Zone
+            */
+            std::cout << "ZALADOWANO" << std::endl;
+                                                                    //	               Del Block
+            SpriteOnOff(2,false);				//	               Sprite Off 2
+            SETUP0();										//	               SETUP0
+            VISUAL_OBJECTS();						//	               VISUAL_OBJECTS
+            ChangeMouse(5);							//	               Change Mouse 5
+            Sprite(2,SPX,SPY,1);				//	               Sprite 2,SPX,SPY,1
+            CENTER(10,10,0);						//	               CENTER[10,10,0]
+        }
     }
     else if (values[0] == "save")
     {

@@ -1,15 +1,13 @@
 <rml>
 	<head>
-		<title>Demo</title>
+		<title>Menu</title>
 		<link type="text/template" href="frame.rml" />
 		<style>
-			body
+			body.window
 			{
 				width: 200px;
-				height: 200px;
-				
-				margin: auto;
-				color: #fff;
+				height: 252px;
+				min-height: 252px;
 			}
 			
 			div#title_bar div#icon
@@ -24,12 +22,12 @@
 		</style>
 	</head>
 	<body template="window" onload="restore">
-		<button id="day_info">Dzien</button>
-		<button onclick="load">Odczyt gry</button>
-		<button onclick="save">Zapis gry</button>
-		<button onclick="stats">Statystyka</button>
-		<button onclick="preferences">Preferencje</button>
-		<button onclick="end_game">Koniec gry</button>
-		<button onclick="cancel">Anuluj</button>
+		<button id="day_info">Day Info</button>
+		<button onclick="load">LOAD_GAME</button>
+		<button onclick="save">SAVE_GAME</button>
+		<button onclick="stats">STATISTICS</button>
+		<button onclick="preferences">PREFERENCES</button>
+		<button onclick="end_game">END_GAME</button>
+		<button onclick="cancel">MENU_CANCEL</button>
 	</body>
 </rml>

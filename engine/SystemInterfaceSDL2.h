@@ -35,6 +35,7 @@
 class RocketSDL2SystemInterface : public Rocket::Core::SystemInterface
 {
 public:
+    int TranslateString(Rocket::Core::String& translated, const Rocket::Core::String& input);
     Rocket::Core::Input::KeyIdentifier TranslateKey(SDL_Keycode sdlkey);
     int TranslateMouseButton(Uint8 button);
 	int GetKeyModifiers();

@@ -2091,7 +2091,7 @@
 1400240521 source:/Users/voitek/Projects/legion-newest/game/hq2x.cpp
 	<cstdlib>
 
-1402530575 source:/Users/voitek/Projects/legion-newest/game/legion.cpp
+1402712093 source:/Users/voitek/Projects/legion-newest/game/legion.cpp
 	"../engine/Gfx.h"
 	"Amos.h"
 	"legion.h"
@@ -2150,7 +2150,7 @@
 
 1400240521 /Users/voitek/Projects/legion-newest/game/lgn_sceneria.h
 
-1402530896 source:/Users/voitek/Projects/legion-newest/game/lgn_diskacs.cpp
+1402689248 source:/Users/voitek/Projects/legion-newest/game/lgn_diskacs.cpp
 	"Amos.h"
 	"legion.h"
 	"lgn_diskacs.h"
@@ -2173,7 +2173,7 @@
 	"lgn_util.h"
 	"utl_locale.h"
 
-1402687590 source:/Users/voitek/Projects/legion-newest/game/lgn_mapa.cpp
+1402798004 source:/Users/voitek/Projects/legion-newest/game/lgn_mapa.cpp
 	"Amos.h"
 	"legion.h"
 	"lgn_akcja.h"
@@ -2182,7 +2182,6 @@
 	"lgn_intro.h"
 	"lgn_mapa.h"
 	"lgn_miasto.h"
-	"lgn_opcje.h"
 	"lgn_przygoda.h"
 	"lgn_sceneria.h"
 	"lgn_util.h"
@@ -2191,9 +2190,10 @@
 	"EventHandlerStartGame.h"
 	"EventHandlerOptions.h"
 	"EventHandlerOptionsPreferences.h"
+	"EventHandlerStatistics.h"
 	"../engine/EventManager.h"
 
-1402363634 /Users/voitek/Projects/legion-newest/game/lgn_opcje.h
+1402797848 /Users/voitek/Projects/legion-newest/game/lgn_opcje.h
 
 1402531042 source:/Users/voitek/Projects/legion-newest/game/lgn_miasto.cpp
 	"Amos.h"
@@ -2208,14 +2208,7 @@
 	"lgn_util.h"
 	"utl_locale.h"
 
-1402688783 source:/Users/voitek/Projects/legion-newest/game/lgn_opcje.cpp
-	"Amos.h"
-	"legion.h"
-	"lgn_opcje.h"
-	"lgn_diskacs.h"
-	"lgn_mapa.h"
-	"lgn_util.h"
-	"utl_locale.h"
+1402797843 source:/Users/voitek/Projects/legion-newest/game/lgn_opcje.cpp
 
 1400240521 source:/Users/voitek/Projects/legion-newest/game/lgn_przygoda.cpp
 	"Amos.h"
@@ -2296,7 +2289,7 @@
 	"legion.h"
 	"utl_locale.h"
 
-1400240521 source:/Users/voitek/Projects/legion-newest/game/utl_locale.cpp
+1402712179 source:/Users/voitek/Projects/legion-newest/game/utl_locale.cpp
 	"../engine/Extras.h"
 	"utl_locale.h"
 
@@ -2692,7 +2685,7 @@
 1400536458 /Users/voitek/Projects/legion-newest/lib/libRocket/Include/Rocket/Debugger/Header.h
 	<Rocket/Core/Platform.h>
 
-1400628180 /Users/voitek/Projects/legion-newest/engine/SystemInterfaceSDL2.h
+1402703547 /Users/voitek/Projects/legion-newest/engine/SystemInterfaceSDL2.h
 	<Rocket/Core/SystemInterface.h>
 	<Rocket/Core/Input.h>
 	<SDL2/SDL.h>
@@ -2727,9 +2720,11 @@
 	<SDL2_image/SDL_image.h>
 	"RenderInterfaceSDL2.h"
 
-1400628117 source:/Users/voitek/Projects/legion-newest/engine/SystemInterfaceSDL2.cpp
+1402712243 source:/Users/voitek/Projects/legion-newest/engine/SystemInterfaceSDL2.cpp
 	<Rocket/Core.h>
+	"translation.h"
 	"SystemInterfaceSDL2.h"
+	<iostream>
 
 1353101044 /Users/voitek/Projects/legion-newest/lib/rapidjson/include/rapidjson/document.h
 	"reader.h"
@@ -2817,7 +2812,7 @@
 	"EventInstancer.h"
 	"Event.h"
 
-1402348682 source:/Users/voitek/Projects/legion-newest/engine/EventManager.cpp
+1402707544 source:/Users/voitek/Projects/legion-newest/engine/EventManager.cpp
 	"EventManager.h"
 	<Rocket/Core/Context.h>
 	<Rocket/Core/ElementDocument.h>
@@ -2830,7 +2825,7 @@
 1401843043 /Users/voitek/Projects/legion-newest/game/EventHandlerStartGame.h
 	"../engine/EventHandler.h"
 
-1402349186 source:/Users/voitek/Projects/legion-newest/game/EventHandlerStartGame.cpp
+1402797946 source:/Users/voitek/Projects/legion-newest/game/EventHandlerStartGame.cpp
 	"EventHandlerStartGame.h"
 	<Rocket/Core/Context.h>
 	<Rocket/Core/ElementDocument.h>
@@ -2840,13 +2835,12 @@
 	<iostream>
 	"Amos.h"
 	"lgn_mapa.h"
-	"lgn_opcje.h"
 	"EventHandlerOptions.h"
 
 1401832416 /Users/voitek/Projects/legion-newest/game/EventHandlerOptions.h
 	"../engine/EventHandler.h"
 
-1402530549 source:/Users/voitek/Projects/legion-newest/game/EventHandlerOptions.cpp
+1402797894 source:/Users/voitek/Projects/legion-newest/game/EventHandlerOptions.cpp
 	"EventHandlerOptions.h"
 	<Rocket/Core/Context.h>
 	<Rocket/Core/ElementDocument.h>
@@ -2858,13 +2852,12 @@
 	"Amos.h"
 	"legion.h"
 	"lgn_mapa.h"
-	"lgn_opcje.h"
 	"lgn_diskacs.h"
 	"../engine/Core.h"
 	"lgn_util.h"
 	"utl_locale.h"
 
-1402363887 source:/Users/voitek/Projects/legion-newest/game/EventHandlerOptionsPreferences.cpp
+1402797938 source:/Users/voitek/Projects/legion-newest/game/EventHandlerOptionsPreferences.cpp
 	"EventHandlerOptionsPreferences.h"
 	<Rocket/Core/Context.h>
 	<Rocket/Core/ElementDocument.h>
@@ -2878,7 +2871,6 @@
 	"legion.h"
 	"lgn_mapa.h"
 	"lgn_util.h"
-	"lgn_opcje.h"
 	"lgn_diskacs.h"
 	"EventHandlerOptions.h"
 	"../engine/Core.h"
@@ -2982,4 +2974,43 @@
 
 1402688566 /Users/voitek/Projects/legion-newest/game/player.h
 	<iostream>
+
+1402797992 source:/Users/voitek/Projects/legion-newest/game/EventHandlerStatistics.cpp
+	"EventHandlerStatistics.h"
+	<Rocket/Core/Context.h>
+	<Rocket/Core/ElementDocument.h>
+	<Rocket/Core/ElementUtilities.h>
+	<Rocket/Core/Event.h>
+	<Rocket/Controls/ElementFormControlInput.h>
+	"../engine/EventManager.h"
+	<stdlib.h>
+	<iostream>
+	"Amos.h"
+	"legion.h"
+	"lgn_mapa.h"
+	"lgn_util.h"
+	"lgn_diskacs.h"
+	"EventHandlerOptions.h"
+	"../engine/Core.h"
+	"utl_locale.h"
+
+1402694335 /Users/voitek/Projects/legion-newest/game/EventHandlerStatistics.h
+	"../engine/EventHandler.h"
+
+1402711866 source:/Users/voitek/Projects/legion-newest/engine/translation.cpp
+	"translation.h"
+	<iostream>
+	<fstream>
+	<vector>
+	"../game/Amos.h"
+	"../game/legion.h"
+	"../game/lgn_wczytaj.h"
+	"../game/utl_locale.h"
+	"rapidjson/document.h"
+	<algorithm>
+
+1402707195 /Users/voitek/Projects/legion-newest/engine/translation.h
+	<Rocket/Core/String.h>
+	<cstdio>
+	<map>
 
