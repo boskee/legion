@@ -63,21 +63,6 @@ void SETUP0(void) {
 	EventManager::RegisterEventHandler("statistics", new EventHandlerStatistics());
     EventManager::LoadWindow("map");
 
-    /*
-	Rocket::Core::ElementDocument *Document = Core::Context->LoadDocument("map.rml");
-
-	if(Document)
-	{
-		Document->Show();
-		Document->RemoveReference();
-		fprintf(stdout, "\nDocument loaded");
-	}
-	else
-	{
-		fprintf(stdout, "\nDocument is NULL");
-	}
-	*/
-
 	rysuj_ekran_ptr = rysuj_mape;
 	//	End Proc
 }

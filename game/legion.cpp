@@ -198,6 +198,8 @@ void main_code(void) {
 	aint KONIEC=0, KONIEC2=0, STREFA=0, NSAVE=0;
 	aint MZ=0, I=0;
 	astr A_S="",B_S="",L_S="",PAT_S="",NAME_S="";
+	astr Z_S="";
+	aint KLAW=0, X=0, Y=0, NEW_X=0, NEW_Y=0;
 
 											//	'TESTING=True
 											//	'Goto BITWA
@@ -207,6 +209,7 @@ void main_code(void) {
 
 	if( IB_INTRO ) _INTRO();						//	'_INTRO
 	EKRAN_WYBOR();			//	EKRAN_WYBOR
+		X=XMouse(); Y=YMouse();						//	   X=X Mouse : Y=Y Mouse
 
 
 	do {	//	Repeat
@@ -220,7 +223,53 @@ void main_code(void) {
 
 		WaitVbl();
 
-		MZ = MouseZone();
+
+
+
+
+
+															//	MAIN:
+
+
+
+
+
+
+
+
+		Z_S=Inkey_S();										//	   A$=Inkey$
+		KLAW=ScanCode();									//	   KLAW=Scancode
+
+		if( KLAW>=76 && KLAW<=77 ) {				//	   If KLAW>75 and KLAW<80
+		    if (KLAW==76)
+		    {
+		        MZ -= 1;
+		        if (MZ < 21)
+                {
+                    MZ = 23;
+                }
+		    }
+		    else if (KLAW == 77)
+            {
+                MZ += 1;
+                if (MZ > 23)
+                {
+                    MZ = 21;
+                }
+            }
+			//KLAWSKROL(KLAW);								//	      KLAWSKROL[KLAW]
+		}
+		ClearKey();
+
+		NEW_X=XMouse(); NEW_Y=YMouse();						//	   X=X Mouse : Y=Y Mouse
+
+		if (NEW_X != X || NEW_Y != Y)
+        {
+            MZ = MouseZone();
+            X = NEW_X;
+            Y = NEW_Y;
+        }
+
 		if( 21 == MZ ) {	//	   If Mouse Zone=21
 			//	      Rainbow 1,3,140,23
 			//	      Rainbow 2,3,163,23
@@ -228,7 +277,7 @@ void main_code(void) {
 			//	      Bob 1,,190,1 : View
 			_Bob(1,NOPARI,190,1);
 			//	      Bob Update : Wait Vbl
-			if( MouseClick() ) {	//	      If Mouse Click=1
+			if( MouseClick() || KLAW == 68) {	//	      If Mouse Click=1
 				Gfx::Color(0.f,0.f,0.f);
 				_ClearRaster();
 				// SwapBuffers(); _ClearRaster();
@@ -274,11 +323,11 @@ void main_code(void) {
 				WPI_S="";
 				WPISZ_PC(OKX+30,OKY+30,50,20,12,WPI_S,3);
 
-				if( WPI_S != "" ) {			//	         If WPI$<>""
-					players[1] = new World::Player(WPI_S);	//	            IMIONA$(1)=WPI$
-				} else {								//	         Else
-					players[1] = new World::Player(ROB_IMIE());	//	            ROB_IMIE : IMIONA$(1)=Param$
-				}												//	         End If
+
+					if( WPI_S == "" )	{					//	            If WPI$<>""
+					    WPI_S = ROB_IMIE();
+					}
+                    players[I+1] = new World::Player(WPI_S);		//	               IMIONA$(I+1)=WPI$
 
 				rysuj_ekran_ptr = _main_code_rysuj_oponent_name;
 				for( I=1; I<=3; ++I ) {	//	         For I=1 To 3
@@ -303,11 +352,10 @@ void main_code(void) {
 					WPI_S="";
 					WPISZ_PC(OKX+30,OKY+30,50,20,12,WPI_S,3);
 
-					if( WPI_S != "" )	{					//	            If WPI$<>""
-                        players[I+1] = new World::Player(WPI_S);		//	               IMIONA$(I+1)=WPI$
-					} else {										//	            Else
-                        players[I+1] = new World::Player(ROB_IMIE());	//	               ROB_IMIE : IMIONA$(I+1)=Param$
-					}														//	            End If
+					if( WPI_S == "" )	{					//	            If WPI$<>""
+					    WPI_S = ROB_IMIE();
+					}
+                    players[I+1] = new World::Player(WPI_S);		//	               IMIONA$(I+1)=WPI$												//	            End If
 				}	//	         Next I
 
 				rysuj_ekran_ptr = 0;
@@ -349,7 +397,7 @@ void main_code(void) {
 																																					//	      Bob Update : Wait Vbl
 			_Bob(1,NOPARI,237,1);
 			void *sb=0;
-			if( MouseClick()==1 ) {																							//	      If Mouse Click=1
+			if( MouseClick()==1 || KLAW == 68) {																							//	      If Mouse Click=1
 				OKX=320; OKY=180;																									//	         OKX=320 : OKY=180
 																																					//	         Get Block 100,OKX,OKY,176,180
 				Gfx::Color(0.0f, 0.0f, 0.0f); _Bar(320,180,480,350);													//	         Ink 0 : Bar 320,180 To 480,350
@@ -443,7 +491,7 @@ void main_code(void) {
 																	//	      Bob 1,,285,1 : View
 																	//	      Bob Update : Wait Vbl
 			_Bob(1,NOPARI,285,1);
-			if( MouseClick()==1 ) {			//	      If Mouse Click=1
+			if( MouseClick()==1 || KLAW == 68) {			//	      If Mouse Click=1
 				KONIEC=-1;								//	         KONIEC=True
 			}														//	      End If
 		}									//	   End If

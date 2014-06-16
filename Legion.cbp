@@ -230,6 +230,8 @@
 		<Unit filename="game/main.h" />
 		<Unit filename="game/player.cpp" />
 		<Unit filename="game/player.h" />
+		<Unit filename="game/preferences.cpp" />
+		<Unit filename="game/preferences.h" />
 		<Unit filename="game/utl_locale.cpp" />
 		<Unit filename="game/utl_locale.h" />
 		<Unit filename="game/version.h" />

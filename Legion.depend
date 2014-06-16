@@ -2091,7 +2091,7 @@
 1400240521 source:/Users/voitek/Projects/legion-newest/game/hq2x.cpp
 	<cstdlib>
 
-1402712093 source:/Users/voitek/Projects/legion-newest/game/legion.cpp
+1402951771 source:/Users/voitek/Projects/legion-newest/game/legion.cpp
 	"../engine/Gfx.h"
 	"Amos.h"
 	"legion.h"
@@ -2173,7 +2173,7 @@
 	"lgn_util.h"
 	"utl_locale.h"
 
-1402798004 source:/Users/voitek/Projects/legion-newest/game/lgn_mapa.cpp
+1402949474 source:/Users/voitek/Projects/legion-newest/game/lgn_mapa.cpp
 	"Amos.h"
 	"legion.h"
 	"lgn_akcja.h"
@@ -2997,7 +2997,7 @@
 1402694335 /Users/voitek/Projects/legion-newest/game/EventHandlerStatistics.h
 	"../engine/EventHandler.h"
 
-1402711866 source:/Users/voitek/Projects/legion-newest/engine/translation.cpp
+1402948085 source:/Users/voitek/Projects/legion-newest/engine/translation.cpp
 	"translation.h"
 	<iostream>
 	<fstream>
@@ -3012,5 +3012,14 @@
 1402948089 /Users/voitek/Projects/legion-newest/engine/translation.h
 	<Rocket/Core/String.h>
 	<cstdio>
+	<map>
+
+1402949168 source:/Users/voitek/Projects/legion-newest/game/preferences.cpp
+	"preferences.h"
+
+1402949110 /Users/voitek/Projects/legion-newest/game/preferences.h
+	<iostream>
+	<vector>
+	<algorithm>
 	<map>
 
