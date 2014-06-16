@@ -66,14 +66,8 @@ namespace Core
         d.Parse<0>(&buffer[0]);
         const rapidjson::Value& a = d["strings"];
 
-        // Iterate over the brewerys
-        aint I = 0;
-
         for (rapidjson::Value::ConstMemberIterator itr = a.MemberBegin(); itr != a.MemberEnd(); ++itr)
-        //for (rapidjson::SizeType i = 0; i < a.Size(); i++)
         {
-            //ROZMOWA2_S[I] = a[i][currentLang.c_str()].GetString();
-            //++I;
             StringTable::strings[itr->name.GetString()] = itr->value.GetString();
         }
 	}
