@@ -254,27 +254,6 @@ void B_DRAW(aint NR,aint X,aint Y,aint O) {
 	SetZone(NR+20,X-4,Y-7,X+4,Y);	//	   Set Zone NR+20,X-4,Y-7 To X+4,Y
 																//	End Proc
 }
-void B_UPDATE(aint NR) {
-	//	Procedure B_UPDATE[NR]
-
-	//inaczej podchodze do kwesti rysowania armi na mapie
-	;
-	//	   X=ARMIA(NR,0,TX)
-	//	   Y=ARMIA(NR,0,TY)
-	//	   O=ARMIA(NR,0,TBOB)
-	//	   Paste Bob X-4,Y-7,O
-	//	End Proc
-}
-void B_OFF(aint NR) {
-	//	Procedure B_OFF[NR]
-
-	//inaczej podchodze do kwesti rysowania armi na mapie
-	;
-	//	   X=ARMIA(NR,0,TX)
-	//	   Y=ARMIA(NR,0,TY)
-	//	   Put Block NR+1,X-4,Y-7
-	//	End Proc
-}
 
 void MAPA_AKCJA(void) {
 	//	Procedure MAPA_AKCJA
@@ -752,7 +731,7 @@ void MA_RUCH(aint A,aint TRYB) {
 					} else {										//	               Else
 						MIASTA[B][0][M_CZYJE]=PL;	//	                  MIASTA(B,0,M_CZYJE)=PL
 					}														//	               End If
-					B_OFF(A);										//	               B_OFF[A] : Paste Bob MIASTA(B,0,M_X)-8,MIASTA(B,0,M_Y)-8,MB : Wait Vbl : B_DRAW[A,X1,Y1,BB]
+															//	               Paste Bob MIASTA(B,0,M_X)-8,MIASTA(B,0,M_Y)-8,MB : Wait Vbl : B_DRAW[A,X1,Y1,BB]
 					PasteBob( MIASTA[B][0][M_X]-8,MIASTA[B][0][M_Y]-8,MB );
 					WaitVbl();
 					B_DRAW(A,X1,Y1,BB);
@@ -814,7 +793,7 @@ void MA_RUCH(aint A,aint TRYB) {
 								MIASTA[B][0][M_CZYJE]=PL;//	                        MIASTA(B,0,M_CZYJE)=PL
 								MESSAGE2(A,GS("062")+A_S+" ",30,0,0);//	                        MESSAGE2[A,"has conquered our town "+A$+" ",30,0,0]
 							}												//	                     End If
-							B_OFF(A);								//	                     B_OFF[A] : Paste Bob MIASTA(B,0,M_X)-8,MIASTA(B,0,M_Y)-8,MB : Wait Vbl : B_DRAW[A,X1,Y1,BB]
+														//	                    Paste Bob MIASTA(B,0,M_X)-8,MIASTA(B,0,M_Y)-8,MB : Wait Vbl : B_DRAW[A,X1,Y1,BB]
 							PasteBob( MIASTA[B][0][M_X]-8,MIASTA[B][0][M_Y]-8,MB);
 							WaitVbl();
 							B_DRAW(A,X1,Y1,BB);
@@ -839,7 +818,7 @@ void MA_RUCH(aint A,aint TRYB) {
 							CENTER(X1,Y1,1);				//	                     CENTER[X1,Y1,1]
 							MESSAGE(A,GS("064")+A_S+" ",0,0);//	                     MESSAGE[A,"has taken over our town "+A$+" ",0,0]
 						}													//	                  End If
-						B_OFF(A);									//	                  B_OFF[A] : Paste Bob MIASTA(B,0,M_X)-8,MIASTA(B,0,M_Y)-8,MB : Wait Vbl : B_DRAW[A,X1,Y1,BB]
+															//	                  Paste Bob MIASTA(B,0,M_X)-8,MIASTA(B,0,M_Y)-8,MB : Wait Vbl : B_DRAW[A,X1,Y1,BB]
 						PasteBob( MIASTA[B][0][M_X]-8,MIASTA[B][0][M_Y]-8,MB );
 						WaitVbl();
 						B_DRAW(A,X1,Y1,BB);
@@ -868,7 +847,7 @@ void MA_RUCH(aint A,aint TRYB) {
 					CENTER(X1,Y1,0);						//	               CENTER[X1,Y1,0]
 					if( ARMIA[40][0][TE]==0 ) {	//	               If ARMIA(40,0,TE)=0
 						MIASTA[B][0][M_CZYJE]=PL;	//	                  MIASTA(B,0,M_CZYJE)=PL
-						B_OFF(A);									//	                  B_OFF[A] : Paste Bob MIASTA(B,0,M_X)-8,MIASTA(B,0,M_Y)-8,MB : Wait Vbl : B_DRAW[A,X1,Y1,BB]
+															//	                  Paste Bob MIASTA(B,0,M_X)-8,MIASTA(B,0,M_Y)-8,MB : Wait Vbl : B_DRAW[A,X1,Y1,BB]
 						PasteBob( MIASTA[B][0][M_X]-8,MIASTA[B][0][M_Y]-8,MB );
 						WaitVbl();
 						B_DRAW(A,X1,Y1,BB);

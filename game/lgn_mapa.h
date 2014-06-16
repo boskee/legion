@@ -7,8 +7,6 @@ void rysuj_mape(void);
 
 void B_CLEAR(aint NR);
 void B_DRAW(aint NR,aint X,aint Y,aint O);
-void B_UPDATE(aint NR);
-void B_OFF(aint NR);
 
 void MAPA_AKCJA(void);
 void MA_RUCH(aint A,aint TRYB);
