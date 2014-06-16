@@ -151,7 +151,7 @@ void _ZAPIS(astr NAME_S,aint NSAVE) {
 	}																														//	   Next I
 																															//	   'miasta$(50)
 	for( I=0; I<=50; ++I ) {																		//	   For I=0 To 50
-		DAT_S=MIASTA_S[I];																				//	      DAT$=MIASTA$(I)
+		DAT_S=cities[I]->cityName;																				//	      DAT$=MIASTA$(I)
 		_WRITE_STRING(MEM,DAT_S);																	//	      Gosub WRITE_STRING
 	}																														//	   Next
 	Doke(MEM,DZIEN); MEM+=2;																		//	   Doke MEM,DZIEN : Add MEM,2
@@ -416,7 +416,14 @@ void ODCZYT(unsigned char *MEM) {
 																											//	   'miasta$(50)
 	for( I=0; I<=50; ++I ) {														//	   For I=0 To 50
 																		//	      Gosub _READ_STRING
-		MIASTA_S[I]=_READ_STRING(MEM);															//	      MIASTA$(I)=DAT$
+        if (cities[I] == NULL)
+        {
+            cities[I] = new World::City(_READ_STRING(MEM));					//	      MIASTA$(I)=DAT$
+        }
+        else
+        {
+            cities[I]->cityName = _READ_STRING(MEM);					//	      MIASTA$(I)=DAT$
+        }
 	}																										//	   Next
 	DZIEN=Deek(MEM); MEM+=2;														//	   DZIEN=Deek(MEM) : Add MEM,2
 	POWER=Deek(MEM); MEM+=2;														//	   POWER=Deek(MEM) : Add MEM,2
@@ -501,7 +508,14 @@ void CLEAR_TABLES(void) {
 	}																//	   Next I
 																	//	   'miasta$(50)
 	for(I=0;I<=50;++I) {						//	   For I=0 To 50
-		MIASTA_S[I]="";								//	      MIASTA$(I)=""
+        if (cities[I] == NULL)
+        {
+            cities[I] = new World::City("");				//	      IMIONA$(I)=""
+        }
+        else
+        {
+            cities[I]->cityName = "";				//	      IMIONA$(I)=""
+        }							//	      MIASTA$(I)=""
 	}																//	   Next
 																	//	   'przygody(3,10)
 	for(I=0;I<=3;++I) {							//	   For I=0 To 3

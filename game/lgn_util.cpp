@@ -538,7 +538,7 @@ void MESSAGE(aint A,astr A_S,aint P,aint M) {
 	astr NA_S="";
 	aint BB=0,AX=0,AY=0,MUR=0,PL=0;
 	if( M>0 ) {												//	   If M>0
-		NA_S=MIASTA_S[A];								//	      NA$=MIASTA$(A)
+		NA_S=cities[A]->cityName;								//	      NA$=MIASTA$(A)
 		MUR=MIASTA[A][0][M_MUR];				//	      MUR=MIASTA(A,0,M_MUR)
 		BB=20+MUR;											//	      BB=20+MUR
 		AX=MIASTA[A][0][M_X];						//	      AX=MIASTA(A,0,M_X)
@@ -576,7 +576,7 @@ void MESSAGE2(aint A,astr A_S,aint B,aint M,aint WLOT) {
 	astr NA_S="";
 	aint X=0,Y=0,MUR=0,P=0;
 	if( M>0 ) {														//	   If M>0
-		NA_S=MIASTA_S[A];										//	      NA$=MIASTA$(A)
+		NA_S=cities[A]->cityName;										//	      NA$=MIASTA$(A)
 		MUR=MIASTA[A][0][M_MUR];						//	      MUR=MIASTA(A,0,M_MUR)
 																				//
 		X=MIASTA[A][0][M_X];								//	      X=MIASTA(A,0,M_X)
@@ -929,8 +929,8 @@ void NAPISZ(aint X,aint Y,aint SZER,aint WYS,astr A_S,aint P,aint K1,aint K2) {
 
 																									//
 		if(Z_S=="*") {Z_S=ROB_IMIE();}				//	      If Z$="*" : ROB_IMIE : Z$=Param$ : End If
-		if(Z_S=="§") {Z_S=MIASTA_S[PRZYGODY[P][P_X]];}//	      If Z$="#" : Z$=MIASTA$(PRZYGODY(P,P_X)) : End If
-		if(Z_S=="&") {Z_S=MIASTA_S[PRZYGODY[P][P_NAGRODA]];}//	      If Z$="&" : Z$=MIASTA$(PRZYGODY(P,P_NAGRODA)) : End If
+		if(Z_S=="§") {Z_S=cities[PRZYGODY[P][P_X]]->cityName;}//	      If Z$="#" : Z$=MIASTA$(PRZYGODY(P,P_X)) : End If
+		if(Z_S=="&") {Z_S=cities[PRZYGODY[P][P_NAGRODA]]->cityName;}//	      If Z$="&" : Z$=MIASTA$(PRZYGODY(P,P_NAGRODA)) : End If
 		if(Z_S=="$") {Z_S=IM_PRZYGODY_S[P];}					//	      If Z$="$" : Z$=IM_PRZYGODY$(P) : End If
 		if(Z_S=="%") {BRO=PRZYGODY[P][P_BRON]; Z_S=BRON2_S[BRON[BRO][B_TYP]]+" "+BRON_S[BRO];}//	      If Z$="%" : BRO=PRZYGODY(P,P_BRON) : Z$=BRON2$(BRON(BRO,B_TYP))+" "+BRON$(BRO) : End If
 		if(Z_S=="°") {Z_S=RASY_S[PRZYGODY[P][P_BRON]];}//	      If Z$="ą" : Z$=RASY$(PRZYGODY(P,P_BRON)) : End If

@@ -11,6 +11,7 @@
 #include "lgn_sceneria.h"
 #include "lgn_util.h"
 #include "utl_locale.h"
+#include "city.h"
 
 void _MIASTO_RYSUJ_ROZKAZY(void) {
 	OKNO(110,90,90,110);															//	   OKNO[110,90,90,110]
@@ -71,7 +72,7 @@ void _MIASTO_RYSUJ_INFO(aint NR) {
 		M_S=GS("115");														//	      M$="Village: "
 	}																						//	   End If
 	gad_text(1.0);															//	   Ink 1,30 : Text OKX+50,OKY+15,M$+MIASTA$(NR)
-	Text(OKX+50,OKY+15,M_S+MIASTA_S[NR]);
+	Text(OKX+50,OKY+15,M_S+cities[NR]->cityName);
 	SetZone(3,OKX+85,OKY+5,OKX+145,OKY+16);			//	   Set Zone 3,OKX+85,OKY+5 To OKX+145,OKY+16
 	if( DANE!=0 ) {															//	   If DANE
 		Text(OKX+50,OKY+25,Str_S(LUDZIE)+GS("116"));//	      Text OKX+50,OKY+25,Str$(LUDZIE)+" inhabitants"
@@ -132,10 +133,10 @@ void MIASTO(aint NR) {
 
 				_rysuj_tlo_miasto = rysuj_ekran_ptr;
 				rysuj_ekran_ptr = _rysuj_miasto;
-				WPISZ_PC(OKX+50+TextLength(M_S),OKY+15-TextBase(),100,10,12,MIASTA_S[NR],2);	//rysuj tylko tlo i kursor
+				WPISZ_PC(OKX+50+TextLength(M_S),OKY+15-TextBase(),100,10,12,cities[NR]->cityName,2);	//rysuj tylko tlo i kursor
 				rysuj_ekran_ptr = _rysuj_tlo_miasto;
 				sb = StoreBuffer(OKX-1,OKY-1,150+2,100+2);
-				MIASTA_S[NR]=WPI_S;										//	            MIASTA$(NR)=WPI$
+				cities[NR]->cityName=WPI_S;										//	            MIASTA$(NR)=WPI$
 			}																				//	         End If
 			if( STREFA==1 && CZYJE!=1 ) {						//	         If STREFA=1 and CZYJE<>1
 				ZOKNO();															//	            ZOKNO
@@ -299,7 +300,14 @@ void ZROB_MIASTA() {
 			MIASTA[I][0][M_MUR]=MUR;			//	         MIASTA(I,0,M_MUR)=MUR
 			MIASTA[I][1][M_Y]=30;					//	         MIASTA(I,1,M_Y)=30
 													//	         ROB_IMIE
-			MIASTA_S[I]=ROB_IMIE();					//	         MIASTA$(I)=Param$
+            if (cities[I] == NULL)
+            {
+                cities[I] = new World::City(ROB_IMIE());
+            }
+            else
+            {
+                cities[I]->cityName=ROB_IMIE();					//	         MIASTA$(I)=Param$
+            }
 			X=50; Y=50;										//	         X=50 : Y=50
 			for(J=2;J<=9;++J)	{						//	         For J=2 To 9
 				BUD=Rnd(9);									//	            BUD=Rnd(9)
@@ -433,7 +441,7 @@ void ROZBUDOWA(aint MIASTO) {
 			 B1=0, TYP=0, KONIEC=0, KLAW=0, X=0, Y=0, MOZNA=0, RAMKA=0, PREV_STREFA=0;
 	astr MIA_S="", BB_S="", A_S="", B_S="";
 
-	MIA_S=MIASTA_S[MIASTO];											//	   MIA$=MIASTA$(MIASTO)
+	MIA_S=cities[MIASTO]->cityName;											//	   MIA$=MIASTA$(MIASTO)
 	_TEREN=MIASTA[MIASTO][1][M_X];								//	   TEREN=MIASTA(MIASTO,1,M_X)
 	if( PREFS[3]==1 ) _TRACK_FADE(1);						//	   If PREFS(3)=1 : _TRACK_FADE[1] : End If
 	SpriteOnOff(2,false);												//	   Sprite Off 2
@@ -620,7 +628,7 @@ void _REKRUTACJA_RYSUJ(aint &A, aint &A1,aint &A2, aint &JEST,aint *REKRUCI, ain
 	JEST=-1;																																		//	   JEST=True
 	rysuj();
 	OKNO(70,30,162,210);																												//	   OKNO[70,30,162,210]
-	A_S=GS("154")+MIASTA_S[MIASTO]+GS("155");																		//	   A$="Recruits of "+MIASTA$(MIASTO)
+	A_S=GS("154")+cities[MIASTO]->cityName+GS("155");																		//	   A$="Recruits of "+MIASTA$(MIASTO)
 	GADGET(OKX+4,OKY+4,154,15,A_S,31,2,30,1,-1);																//	   GADGET[OKX+4,OKY+4,154,15,A$,31,2,30,1,-1]
 	if( A1==-1 ) {																															//	   If A1=-1
 		A_S=GS("156")+Str_S(A+1);																									//	      A$="Legion "+Str$(A+1)

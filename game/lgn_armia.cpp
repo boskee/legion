@@ -178,7 +178,7 @@ void _ARMIA_RYSUJ_INFO(aint A) {
 		if(	ROZ==0 ) {												//	      If ROZ=0
 			RO_S=GS("197");											//	         RO$="Unit is tenting"
 			if( TEREN>69 ) {										//	         If TEREN>69
-				RO_S+=GS("198")+MIASTA_S[TEREN-70];	//	            RO$=RO$+" in "+MIASTA$(TEREN-70)
+				RO_S+=GS("198")+cities[TEREN-70]->cityName;	//	            RO$=RO$+" in "+MIASTA$(TEREN-70)
 			}																		//	         End If
 		}																			//	      End If
 		if( ROZ==1 || ROZ==2 ) {							//	      If ROZ=1 or ROZ=2 : RO$="Unit is moving." : End If
@@ -188,7 +188,7 @@ void _ARMIA_RYSUJ_INFO(aint A) {
 			if( CELY==0 ) {											//	         If CELY=0
 				R2_S=ARMIA_S[CELX][0];						//	            R2$=ARMIA$(CELX,0)
 			} else {														//	         Else
-				R2_S=MIASTA_S[CELX];							//	            R2$=MIASTA$(CELX)
+				R2_S=cities[CELX]->cityName;							//	            R2$=MIASTA$(CELX)
 			}																		//	         End If
 			RO_S=GS("200")+R2_S;				//	         RO$="We're attacking "+R2$
 		}																			//	      End If

@@ -2091,7 +2091,7 @@
 1400240521 source:/Users/voitek/Projects/legion-newest/game/hq2x.cpp
 	<cstdlib>
 
-1402951771 source:/Users/voitek/Projects/legion-newest/game/legion.cpp
+1402952383 source:/Users/voitek/Projects/legion-newest/game/legion.cpp
 	"../engine/Gfx.h"
 	"Amos.h"
 	"legion.h"
@@ -2107,9 +2107,10 @@
 	"version.h"
 	"../engine/Core.h"
 
-1402688954 /Users/voitek/Projects/legion-newest/game/legion.h
+1402954092 /Users/voitek/Projects/legion-newest/game/legion.h
 	"amos_types.h"
 	"player.h"
+	"city.h"
 
 1400240521 /Users/voitek/Projects/legion-newest/game/lgn_armia.h
 
@@ -2134,7 +2135,7 @@
 
 1400240521 /Users/voitek/Projects/legion-newest/game/version.h
 
-1402529795 source:/Users/voitek/Projects/legion-newest/game/lgn_armia.cpp
+1402953753 source:/Users/voitek/Projects/legion-newest/game/lgn_armia.cpp
 	"Amos.h"
 	"legion.h"
 	"lgn_akcja.h"
@@ -2173,7 +2174,7 @@
 	"lgn_util.h"
 	"utl_locale.h"
 
-1402949474 source:/Users/voitek/Projects/legion-newest/game/lgn_mapa.cpp
+1402953802 source:/Users/voitek/Projects/legion-newest/game/lgn_mapa.cpp
 	"Amos.h"
 	"legion.h"
 	"lgn_akcja.h"
@@ -2195,7 +2196,7 @@
 
 1402797848 /Users/voitek/Projects/legion-newest/game/lgn_opcje.h
 
-1402531042 source:/Users/voitek/Projects/legion-newest/game/lgn_miasto.cpp
+1402953859 source:/Users/voitek/Projects/legion-newest/game/lgn_miasto.cpp
 	"Amos.h"
 	"legion.h"
 	"lgn_akcja.h"
@@ -2207,6 +2208,7 @@
 	"lgn_sceneria.h"
 	"lgn_util.h"
 	"utl_locale.h"
+	"city.h"
 
 1402797843 source:/Users/voitek/Projects/legion-newest/game/lgn_opcje.cpp
 
@@ -2238,7 +2240,7 @@
 
 1400240521 /Users/voitek/Projects/legion-newest/game/lgn_sklep.h
 
-1400639067 source:/Users/voitek/Projects/legion-newest/game/lgn_util.cpp
+1402953912 source:/Users/voitek/Projects/legion-newest/game/lgn_util.cpp
 	<cmath>
 	"Amos.h"
 	"legion.h"
@@ -3022,4 +3024,10 @@
 	<vector>
 	<algorithm>
 	<map>
+
+1402952348 /Users/voitek/Projects/legion-newest/game/city.h
+	<iostream>
+
+1402952314 source:/Users/voitek/Projects/legion-newest/game/city.cpp
+	"city.h"
 

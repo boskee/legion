@@ -58,7 +58,7 @@ aint PREFS[10+1];								//	Dim PREFS(10)
 
 			//	Dim MIASTA(50,20,6),MIASTA$(50),MUR(10),SKLEP(20,21),STRZALY(10),ZNAKI$(30)
 aint MIASTA[50+1][20+1][6+1+1], MUR[10+1], SKLEP[20+1][21+1], STRZALY[10+1];
-astr MIASTA_S[50+1];
+World::City *cities[50+1];
 
 			//	Dim BOARD#(125)
 

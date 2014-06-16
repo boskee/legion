@@ -585,7 +585,7 @@ void MA_RUCH(aint A,aint TRYB) {
 		} else {													//	      Else
 			X2=MIASTA[B][0][M_X];						//	         X2=MIASTA(B,0,M_X)
 			Y2=MIASTA[B][0][M_Y];						//	         Y2=MIASTA(B,0,M_Y)
-			A_S=MIASTA_S[B];								//	         A$=MIASTA$(B)
+			A_S=cities[B]->cityName;								//	         A$=MIASTA$(B)
 			PL2=MIASTA[B][0][M_CZYJE];			//	         PL2=MIASTA(B,0,M_CZYJE)
 			if( PL==PL2 ) {									//	         If PL=PL2 : ARMIA(A,0,TTRYB)=0 : Goto OVER : End If
 				ARMIA[A][0][TTRYB]=0;
@@ -1493,7 +1493,7 @@ void PLAGA(aint MIASTO,aint PLAGA) {
 	astr M_S="", A_S="";
 	aint LUDZIE=0, BB=0, I=0;
 
-	M_S=MIASTA_S[MIASTO];								//	   M$=MIASTA$(MIASTO)
+	M_S=cities[MIASTO]->cityName;								//	   M$=MIASTA$(MIASTO)
 	LUDZIE=MIASTA[MIASTO][0][M_LUDZIE];	//	   LUDZIE=MIASTA(MIASTO,0,M_LUDZIE)
 	if( PLAGA==0 ) {										//	   If PLAGA=0
 		BB=32;														//	      BB=32
