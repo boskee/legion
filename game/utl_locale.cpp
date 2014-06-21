@@ -1078,7 +1078,7 @@ void InitLocale(void) {
 			//------------------
 			//---Nazwy plików---
 			//------------------
-			,"EN:FILE000:kam_eng.pic"					,"PL:FILE000:kam.pic"
+			,"EN:FILE000:kam_eng.png"					,"PL:FILE000:kam.png"
 			,"EN:FILE001:mapa_eng"						,"PL:FILE001:mapa"
 
 		,0
