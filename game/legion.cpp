@@ -257,7 +257,6 @@ void main_code(void) {
                     MZ = 21;
                 }
             }
-			//KLAWSKROL(KLAW);								//	      KLAWSKROL[KLAW]
 		}
 		ClearKey();
 

@@ -47,8 +47,6 @@ void SETUP0(void) {
 	BUBY=-1;														//	   BUBY=-1
 	SPX=425; SPY=270;										//	   SPX=425 : SPY=270
 	MSX=320; MSY=256;										//	   MSX=320 : MSY=256
-	Sprite(2,SPX,SPY,1);								//	   Sprite 2,SPX,SPY,1
-	SpriteOnOff(2,true);
 																			//	   '   View
 	//	   If PREFS(3)=1 : _LOAD[KAT$+"mod.legion","legion:mod.legion","Legion",6] : Track Play : Track Loop On : End If
   if( PREFS[3]==1 ) {
@@ -954,7 +952,7 @@ void MA_POLOWANIE(aint A) {
 		CENTER(X,Y,1);									//	      CENTER[X,Y,1]
 		MESSAGE(A,GS("068"),0,0);//	      MESSAGE[A,"We have tracked down a beast !",0,0]
 		ARM=A; WRG=40;									//	      ARM=A : WRG=40
-		SpriteOnOff(2,false);						//	      Sprite Off 2
+		//SpriteOnOff(2,false);						//	      Sprite Off 2
 		SETUP("",GS("069"),"");					//	      SETUP["","Hunting",""]
 		for(I=1;I<=10;++I) {						//	      For I=1 To 10 : ARMIA(40,I,TE)=0 : Next
 			ARMIA[40][I][TE]=0;
@@ -971,7 +969,7 @@ void MA_POLOWANIE(aint A) {
 		ARMIA[A][0][TTRYB]=0;						//	      ARMIA(A,0,TTRYB)=0
 		SETUP0();												//	      SETUP0
 		VISUAL_OBJECTS();								//	      VISUAL_OBJECTS
-		Sprite(2,SPX,SPY,1);						//	      Sprite 2,SPX,SPY,1
+		//Sprite(2,SPX,SPY,1);						//	      Sprite 2,SPX,SPY,1
 		CENTER(ARMIA[A][0][TX],ARMIA[A][0][TY],0);//	      CENTER[ARMIA(A,0,TX),ARMIA(A,0,TY),0]
 		BUSY_ANIM();										//	      BUSY_ANIM
 																		//
@@ -1029,7 +1027,8 @@ void MA_PRZYGODA(aint A,aint NR) {
 	TYP=PRZYGODY[NR][P_TYP];																					//	   TYP=PRZYGODY(NR,P_TYP)
 	A_S=PRZYGODY_S[TYP][7];																						//	   A$=PRZYGODY$(TYP,7)
 	if( TESTING==0 ) {																								//	   If Not TESTING
-		MESSAGE(A,A_S,NR,0); SpriteOnOff(2,false);											//	      MESSAGE[A,A$,NR,0] : Sprite Off 2
+		MESSAGE(A,A_S,NR,0);
+		//SpriteOnOff(2,false);											//	      MESSAGE[A,A$,NR,0] : Sprite Off 2
 	}																																	//	   End If
 																																		//	   'żadnych komunikatów po akcji 0 armie lub 1 miasta
 	M=-1;																															//	   M=-1
@@ -1369,7 +1368,7 @@ void MA_PRZYGODA(aint A,aint NR) {
 		if( TYP!=13 ) { PRZYGODY[NR][P_TYP]=0; }												//	      If TYP<>13 : PRZYGODY(NR,P_TYP)=0 : End If
 		SETUP0();																												//	      SETUP0
 		VISUAL_OBJECTS();																								//	      VISUAL_OBJECTS
-		Sprite(2,SPX,SPY,1);																						//	      Sprite 2,SPX,SPY,1
+		//Sprite(2,SPX,SPY,1);																						//	      Sprite 2,SPX,SPY,1
 		CENTER(ARMIA[A][0][TX],ARMIA[A][0][TY],0);											//	      CENTER[ARMIA(A,0,TX),ARMIA(A,0,TY),0]
 		if( M>-1 ) {																										//	      If M>-1
 			MESSAGE2(CO,A_S,B,M,0);																				//	         MESSAGE2[CO,A$,B,M,0]
@@ -1438,7 +1437,7 @@ void MA_WYPADEK(aint A,aint TYP) {
 	CENTER(X,Y,1);																						//	   CENTER[X,Y,1]
 	MESSAGE2(A,A_S,BB,0,1);																		//	   MESSAGE2[A,A$,BB,0,1]
 	ARM=A; WRG=40;																						//	   ARM=A : WRG=40
-	SpriteOnOff(2,false);																			//	   Sprite Off 2
+	//SpriteOnOff(2,false);																			//	   Sprite Off 2
 	SETUP(GS("070"),GS("71"),GS("72"));												//	   SETUP["","Action",""]
 	for( I=0; I<=10; ++I ) ARMIA[40][I][TE]=0;								//	   For I=0 To 10 : ARMIA(40,I,TE)=0 : Next I
 	if( POT>9 ) {																							//	   If POT>9
@@ -1462,7 +1461,7 @@ void MA_WYPADEK(aint A,aint TYP) {
 	for( I=0; I<=10; ++I ) { ARMIA[40][I][TE]=0; }						//	   For I=0 To 10 : ARMIA(40,I,TE)=0 : Next I
 	SETUP0();																									//	   SETUP0
 	VISUAL_OBJECTS();																					//	   VISUAL_OBJECTS
-	Sprite(2,SPX,SPY,1);																			//	   Sprite 2,SPX,SPY,1
+	//Sprite(2,SPX,SPY,1);																			//	   Sprite 2,SPX,SPY,1
 	CENTER(ARMIA[A][0][TX],ARMIA[A][0][TY],0);								//	   CENTER[ARMIA(A,0,TX),ARMIA(A,0,TY),0]
 	BUSY_ANIM();																							//	   BUSY_ANIM
 																														//	End Proc
@@ -1864,7 +1863,7 @@ void BITWA(aint A,aint B,aint X1,aint Y1,aint T1,aint X2,aint Y2,aint T2,aint SC
 
 	ARM=A; WRG=B;										//	   ARM=A : WRG=B
 	PL2=ARMIA[B][0][TMAG];					//	   PL2=ARMIA(B,0,TMAG)
-	SpriteOnOff(2,false);						//	   Sprite Off 2
+	//SpriteOnOff(2,false);						//	   Sprite Off 2
 	SETUP("",GS("007"),"");					//	   SETUP["","Battle",""]
 	if( ARMIA[B][0][TMAG]==5 ) {		//	   If ARMIA(B,0,TMAG)=5
 		for(I=1;I<=16;++I) {					//	      For I=1 To 16
@@ -1884,7 +1883,7 @@ void BITWA(aint A,aint B,aint X1,aint Y1,aint T1,aint X2,aint Y2,aint T2,aint SC
 	if( TESTING!=0 ) return;				//	   If TESTING Then Pop Proc
 	SETUP0();												//	   SETUP0
 	VISUAL_OBJECTS();								//	   VISUAL_OBJECTS
-	Sprite(2,SPX,SPY,1);						//	   Sprite 2,SPX,SPY,1
+	//Sprite(2,SPX,SPY,1);						//	   Sprite 2,SPX,SPY,1
 																	//
 																	//	End Proc
 }
