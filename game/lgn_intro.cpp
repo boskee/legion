@@ -96,7 +96,7 @@ void _INTRO(void) {
 	//	   Auto View On
 
 	//	   _LOAD[KAT$+"title2","legion:title2","Legion",2]
-	_LOAD(KAT_S+"title2",KAT_S+"title2.iff","Legion",2);
+	_LOAD(KAT_S+"title2.png",KAT_S+"title2.iff","Legion",2);
 
 	//	   For I=16 To 31 : Screen 0 : KOL=Colour(I) : Screen 1 : Colour I,KOL : Next I
 	//	   Screen 3 : Get Palette 1
