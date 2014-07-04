@@ -68,45 +68,6 @@ div#title_bar span
 	background-right-image: invader.tga 231px 0px 246px 85px;
 }
 
-
-
-div#window
-{
-	width: auto;
-	padding: 6px;
-
-	border-color: #00ffff;
-	border-top-width: 2px;
-	border-right-width: 2px;
-	border-bottom-width: 2px;
-	border-left-width: 2px;
-	/*
-	background-decorator: tiled-box;
-	background-top-left-image: invader.tga 0px 0px 133px 140px;
-	background-top-right-image: invader.tga 136px 0px 146px 140px;
-	background-top-image: invader.tga stretch 134px 0px 135px 140px;
-	background-bottom-left-image: invader.tga 0px 140px 11px 151px;
-	background-bottom-right-image: invader.tga 136px 140px 146px 151px;
-	background-bottom-image: invader.tga stretch 11px 140px 12px 151px;
-	background-left-image: invader.tga stretch 0px 139px 10px 140px;
-	background-center-image: invader.tga stretch 11px 139px 12px 140px;
-	*/
-}
-
-div#content
-{
-	z-index: 2;
-
-	width: auto;
-	height: 100%;
-
-	overflow: hidden auto;
-
-	text-align: center;
-}
-
-
-
 p
 {
 	text-align: left;
@@ -166,17 +127,6 @@ input.submit
 	border-top-color: #8c7b6a;
 	border-right-color: #2e1d0c;
 	border-bottom-color: #2e1d0c;
-}
-
-div.brown {
-	background: #776655;
-	border-width: 2px;
-	border-left-color: #8c7b6a;
-	border-top-color: #8c7b6a;
-	border-right-color: #2e1d0c;
-	border-bottom-color: #2e1d0c;
-	width: auto;
-	display: inline-block;
 }
 
 button:focus,

@@ -141,7 +141,7 @@ void EventHandlerOptionsPreferences::ProcessEvent(Rocket::Core::Event& event, co
         {
             if (PREFS[zone] == 0)
             {
-                _TRACK_FADE(1);																			//	                  _TRACK_FADE[1]
+                _TRACK_FADE(0);																			//	                  _TRACK_FADE[1]
                 Erase(3);
             }
             else

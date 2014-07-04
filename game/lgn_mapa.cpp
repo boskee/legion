@@ -19,6 +19,7 @@
 #include "EventHandlerStatistics.h"
 //#include "../engine/EventInstancer.h"
 #include "../engine/EventManager.h"
+#include "../engine/Core.h"
 
 void SETUP0(void) {
 	//	Procedure SETUP0
@@ -129,6 +130,21 @@ void MAIN(void) {
 				_ARMIA(STREFA-20);						//	         ARMIA[STREFA-20]
 			}																//	      End If
 			if( STREFA>69 && STREFA<121 ) {	//	      If STREFA>69 and STREFA<121
+
+
+			Rocket::Core::ElementDocument* target_document = NULL;
+
+				target_document = Core::Context->GetDocument("legion/data/gui/map.rml");
+
+				if (target_document != NULL)
+                {
+                    std::cout << "ZLAPALEM" << std::endl;
+                }
+                else
+                {
+                    std::cout << "NIE MA" << std::endl;
+                }
+
 				MIASTO(STREFA-70);						//	         MIASTO[STREFA-70]
 			}																//	      End If
 			if( STREFA>120 && STREFA<125 ) {//	      If STREFA>120 and STREFA<125

@@ -11,6 +11,9 @@
         "FAST_SCROLLING": "Szybki skrol mapy",
         "MUSIC": "Muzyka",
         "DEAD_BODIES": "Trupy",
-        "WINDOWS_97": "Bajery"
+        "WINDOWS_97": "Bajery",
+
+        "START_GAME": "Start",
+        "OPTIONS": "Opcje"
     }
 }

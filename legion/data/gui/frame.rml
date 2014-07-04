@@ -2,6 +2,7 @@
 <head>
 	<link type="text/rcss" href="rkt2.rcss"/>
 	<link type="text/rcss" href="invader2.rcss"/>
+	<link type="text/rcss" href="window.rcss"/>
 </head>
 <body class="window">
 	<div id="title_bar">

@@ -1,6 +1,7 @@
 <rml>
 	<head>
 		<title>Demo</title>
+		<link type="text/rcss" href="window.rcss"/>
 		<style>
 			body
 			{
@@ -50,10 +51,19 @@
 	</head>
 	<body class="window">
 		<div id="container">
-			<handle move_target="#document">
-				<button class="start_game" onclick="action">Start</button>
-				<button class="options" onclick="options">Opcje</button>
+			<handle move_target="container">
+				<button class="start_game" onclick="action">START_GAME</button>
+				<button class="options" onclick="options">OPTIONS</button>
 			</handle>
+		</div>
+
+		<div id="window" style="width: 286px; height: 186px; position: absolute; left: 50%; top: 50%; margin-left: -143px; margin-top: -93px;">
+			<div id="content">
+				<div class="brown">
+					<img src="mapa_eng.26.png" width="64" height="64" />
+					<div style="position: absolute; left: 90px; top: 6px; background: red; width: 160px; height: 64px;">Miasto: fsdfds<br />100 inhabitants<br />Taxes  : 100<br />Morale : 100</div>
+				</div>
+			</div>
 		</div>
 	</body>
 </rml>

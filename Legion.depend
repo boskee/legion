@@ -2166,7 +2166,7 @@
 
 1400240521 /Users/voitek/Projects/legion-newest/game/lgn_ekran1.h
 
-1401586657 source:/Users/voitek/Projects/legion-newest/game/lgn_intro.cpp
+1403311977 source:/Users/voitek/Projects/legion-newest/game/lgn_intro.cpp
 	"Amos.h"
 	"legion.h"
 	"lgn_diskacs.h"
@@ -2174,7 +2174,7 @@
 	"lgn_util.h"
 	"utl_locale.h"
 
-1402956004 source:/Users/voitek/Projects/legion-newest/game/lgn_mapa.cpp
+1404074522 source:/Users/voitek/Projects/legion-newest/game/lgn_mapa.cpp
 	"Amos.h"
 	"legion.h"
 	"lgn_akcja.h"
@@ -2193,6 +2193,7 @@
 	"EventHandlerOptionsPreferences.h"
 	"EventHandlerStatistics.h"
 	"../engine/EventManager.h"
+	"../engine/Core.h"
 
 1402797848 /Users/voitek/Projects/legion-newest/game/lgn_opcje.h
 
@@ -2240,7 +2241,7 @@
 
 1400240521 /Users/voitek/Projects/legion-newest/game/lgn_sklep.h
 
-1402953912 source:/Users/voitek/Projects/legion-newest/game/lgn_util.cpp
+1403312441 source:/Users/voitek/Projects/legion-newest/game/lgn_util.cpp
 	<cmath>
 	"Amos.h"
 	"legion.h"
@@ -2814,7 +2815,7 @@
 	"EventInstancer.h"
 	"Event.h"
 
-1402707544 source:/Users/voitek/Projects/legion-newest/engine/EventManager.cpp
+1403313126 source:/Users/voitek/Projects/legion-newest/engine/EventManager.cpp
 	"EventManager.h"
 	<Rocket/Core/Context.h>
 	<Rocket/Core/ElementDocument.h>
@@ -2827,7 +2828,7 @@
 1401843043 /Users/voitek/Projects/legion-newest/game/EventHandlerStartGame.h
 	"../engine/EventHandler.h"
 
-1402797946 source:/Users/voitek/Projects/legion-newest/game/EventHandlerStartGame.cpp
+1403313667 source:/Users/voitek/Projects/legion-newest/game/EventHandlerStartGame.cpp
 	"EventHandlerStartGame.h"
 	<Rocket/Core/Context.h>
 	<Rocket/Core/ElementDocument.h>
@@ -2859,7 +2860,7 @@
 	"lgn_util.h"
 	"utl_locale.h"
 
-1402797938 source:/Users/voitek/Projects/legion-newest/game/EventHandlerOptionsPreferences.cpp
+1403312601 source:/Users/voitek/Projects/legion-newest/game/EventHandlerOptionsPreferences.cpp
 	"EventHandlerOptionsPreferences.h"
 	<Rocket/Core/Context.h>
 	<Rocket/Core/ElementDocument.h>

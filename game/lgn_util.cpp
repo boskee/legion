@@ -878,7 +878,7 @@ astr ROB_IMIE(void) {
 
 														//
 	DL=Rnd(2)+1;							//	   DL=Rnd(2)+1
-	for(I=0;I<DL;++I) {				//	   For I=0 To DL
+	for(I=0;I<=DL;++I) {				//	   For I=0 To DL
 		SAM_S=SAMOGL_S[Rnd(9)];	//	      SAM$=SAMOGL$(Rnd(9))
 		SPD_S=DZW_S[Rnd(30)];		//	      SPD$=DZW$(Rnd(30))
 		A=Rnd(2);								//	      A=Rnd(2)

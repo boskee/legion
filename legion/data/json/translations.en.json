@@ -11,6 +11,9 @@
         "FAST_SCROLLING": "Fast scrolling",
         "MUSIC": "Music",
         "DEAD_BODIES": "Dead bodies",
-        "WINDOWS_97": "Windows 97"
+        "WINDOWS_97": "Windows 97",
+
+        "START_GAME": "Start",
+        "OPTIONS": "Options"
     }
 }
